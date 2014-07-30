@@ -34,7 +34,7 @@ ServiceLevelObjectiveRepository {
     /**
      * The cached value of the '{@link #getServicelevelobjectives() <em>Servicelevelobjectives</em>}
      * ' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getServicelevelobjectives()
      * @generated
      * @ordered
@@ -43,7 +43,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ServiceLevelObjectiveRepositoryImpl() {
@@ -52,7 +52,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -62,7 +62,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -77,7 +77,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -92,7 +92,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -106,7 +106,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -123,7 +123,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -138,7 +138,7 @@ ServiceLevelObjectiveRepository {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

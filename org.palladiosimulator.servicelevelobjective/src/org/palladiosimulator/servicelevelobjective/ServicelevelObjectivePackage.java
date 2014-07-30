@@ -21,7 +21,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectiveFactory
  * @model kind="package"
  * @generated
@@ -29,28 +29,28 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNAME = "servicelevelobjective";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_URI = "http://palladiosimulator.org/ServiceLevelObjective/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_PREFIX = "slo";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     ServicelevelObjectivePackage eINSTANCE = org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl
@@ -61,7 +61,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveRepositoryImpl
      * <em>Service Level Objective Repository</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveRepositoryImpl
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getServiceLevelObjectiveRepository()
      * @generated
@@ -71,7 +71,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Servicelevelobjectives</b></em>' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -80,7 +80,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Service Level Objective Repository</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -90,7 +90,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.servicelevelobjective.impl.NamedElementImpl
      * <em>Named Element</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.servicelevelobjective.impl.NamedElementImpl
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getNamedElement()
      * @generated
@@ -100,7 +100,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -109,7 +109,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -118,7 +118,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Named Element</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -128,7 +128,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl
      * <em>Service Level Objective</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getServiceLevelObjective()
      * @generated
@@ -138,7 +138,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -147,7 +147,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -156,7 +156,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -181,22 +181,22 @@ public interface ServicelevelObjectivePackage extends EPackage {
     int SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Metric Description</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+    /**
      * The feature id for the '<em><b>Measuring Point</b></em>' containment reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Metric Description</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     * 
-     * @generated
-     * @ordered
-     */
-    int SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 4;
+    int SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Service Level Objective</em>' class. <!--
@@ -211,7 +211,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.servicelevelobjective.impl.ThresholdImpl <em>Threshold</em>}'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.servicelevelobjective.impl.ThresholdImpl
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getThreshold()
      * @generated
@@ -221,7 +221,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -230,7 +230,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Threshold Limit</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -239,7 +239,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Threshold</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -249,7 +249,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.servicelevelobjective.impl.HardThresholdImpl
      * <em>Hard Threshold</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.servicelevelobjective.impl.HardThresholdImpl
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getHardThreshold()
      * @generated
@@ -259,7 +259,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -268,7 +268,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Threshold Limit</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -277,7 +277,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Hard Threshold</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -287,7 +287,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * The meta object id for the '
      * {@link org.palladiosimulator.servicelevelobjective.impl.LinearFuzzyThresholdImpl
      * <em>Linear Fuzzy Threshold</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.palladiosimulator.servicelevelobjective.impl.LinearFuzzyThresholdImpl
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getLinearFuzzyThreshold()
      * @generated
@@ -297,7 +297,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -306,7 +306,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Threshold Limit</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -315,7 +315,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Soft Limit</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -333,7 +333,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The meta object id for the '<em>JS Measure</em>' data type. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see javax.measure.Measure
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSMeasure()
      * @generated
@@ -343,7 +343,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * The meta object id for the '<em>JS Quantity</em>' data type. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see javax.measure.quantity.Quantity
      * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSQuantity()
      * @generated
@@ -354,7 +354,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository
      * <em>Service Level Objective Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Service Level Objective Repository</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository
      * @generated
@@ -365,7 +365,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository#getServicelevelobjectives
      * <em>Servicelevelobjectives</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference list '<em>Servicelevelobjectives</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository#getServicelevelobjectives()
      * @see #getServiceLevelObjectiveRepository()
@@ -377,7 +377,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective
      * <em>Service Level Objective</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Service Level Objective</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective
      * @generated
@@ -388,7 +388,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getDescription
      * <em>Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Description</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getDescription()
      * @see #getServiceLevelObjective()
@@ -400,7 +400,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getLowerThreshold
      * <em>Lower Threshold</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference '<em>Lower Threshold</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getLowerThreshold()
      * @see #getServiceLevelObjective()
@@ -412,7 +412,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the containment reference '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getUpperThreshold
      * <em>Upper Threshold</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference '<em>Upper Threshold</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getUpperThreshold()
      * @see #getServiceLevelObjective()
@@ -421,11 +421,11 @@ public interface ServicelevelObjectivePackage extends EPackage {
     EReference getServiceLevelObjective_UpperThreshold();
 
     /**
-     * Returns the meta object for the containment reference '
+     * Returns the meta object for the reference '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint
      * <em>Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @return the meta object for the containment reference '<em>Measuring Point</em>'.
+     *
+     * @return the meta object for the reference '<em>Measuring Point</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint()
      * @see #getServiceLevelObjective()
      * @generated
@@ -436,7 +436,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription
      * <em>Metric Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Metric Description</em>'.
      * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription()
      * @see #getServiceLevelObjective()
@@ -459,7 +459,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.servicelevelobjective.Threshold#getThresholdLimit
      * <em>Threshold Limit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Threshold Limit</em>'.
      * @see org.palladiosimulator.servicelevelobjective.Threshold#getThresholdLimit()
      * @see #getThreshold()
@@ -471,7 +471,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.servicelevelobjective.HardThreshold <em>Hard Threshold</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Hard Threshold</em>'.
      * @see org.palladiosimulator.servicelevelobjective.HardThreshold
      * @generated
@@ -482,7 +482,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold
      * <em>Linear Fuzzy Threshold</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Linear Fuzzy Threshold</em>'.
      * @see org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold
      * @generated
@@ -493,7 +493,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold#getSoftLimit
      * <em>Soft Limit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Soft Limit</em>'.
      * @see org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold#getSoftLimit()
      * @see #getLinearFuzzyThreshold()
@@ -505,7 +505,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * Returns the meta object for class '
      * {@link org.palladiosimulator.servicelevelobjective.NamedElement <em>Named Element</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Named Element</em>'.
      * @see org.palladiosimulator.servicelevelobjective.NamedElement
      * @generated
@@ -527,7 +527,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * Returns the meta object for data type '{@link javax.measure.Measure <em>JS Measure</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for data type '<em>JS Measure</em>'.
      * @see javax.measure.Measure
      * @model instanceClass="javax.measure.Measure" typeParameters="V Q"
@@ -539,7 +539,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * Returns the meta object for data type '{@link javax.measure.quantity.Quantity
      * <em>JS Quantity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for data type '<em>JS Quantity</em>'.
      * @see javax.measure.quantity.Quantity
      * @model instanceClass="javax.measure.quantity.Quantity"
@@ -550,7 +550,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -566,7 +566,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     interface Literals {
@@ -575,7 +575,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveRepositoryImpl
          * <em>Service Level Objective Repository</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveRepositoryImpl
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getServiceLevelObjectiveRepository()
          * @generated
@@ -585,7 +585,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Servicelevelobjectives</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES = eINSTANCE
@@ -595,7 +595,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl
          * <em>Service Level Objective</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getServiceLevelObjective()
          * @generated
@@ -613,7 +613,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Lower Threshold</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD = eINSTANCE.getServiceLevelObjective_LowerThreshold();
@@ -621,15 +621,15 @@ public interface ServicelevelObjectivePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Upper Threshold</b></em>' containment reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD = eINSTANCE.getServiceLevelObjective_UpperThreshold();
 
         /**
-         * The meta object literal for the '<em><b>Measuring Point</b></em>' containment reference
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         * The meta object literal for the '<em><b>Measuring Point</b></em>' reference feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
          * @generated
          */
         EReference SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT = eINSTANCE.getServiceLevelObjective_MeasuringPoint();
@@ -637,7 +637,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Metric Description</b></em>' reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION = eINSTANCE.getServiceLevelObjective_MetricDescription();
@@ -646,7 +646,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.servicelevelobjective.impl.ThresholdImpl <em>Threshold</em>}
          * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.servicelevelobjective.impl.ThresholdImpl
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getThreshold()
          * @generated
@@ -665,7 +665,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.servicelevelobjective.impl.HardThresholdImpl
          * <em>Hard Threshold</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.servicelevelobjective.impl.HardThresholdImpl
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getHardThreshold()
          * @generated
@@ -676,7 +676,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.servicelevelobjective.impl.LinearFuzzyThresholdImpl
          * <em>Linear Fuzzy Threshold</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.servicelevelobjective.impl.LinearFuzzyThresholdImpl
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getLinearFuzzyThreshold()
          * @generated
@@ -695,7 +695,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * The meta object literal for the '
          * {@link org.palladiosimulator.servicelevelobjective.impl.NamedElementImpl
          * <em>Named Element</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see org.palladiosimulator.servicelevelobjective.impl.NamedElementImpl
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getNamedElement()
          * @generated
@@ -713,7 +713,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
         /**
          * The meta object literal for the '<em>JS Measure</em>' data type. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * 
+         *
          * @see javax.measure.Measure
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSMeasure()
          * @generated
@@ -723,7 +723,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
         /**
          * The meta object literal for the '<em>JS Quantity</em>' data type. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
-         * 
+         *
          * @see javax.measure.quantity.Quantity
          * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSQuantity()
          * @generated

@@ -18,11 +18,11 @@ import org.palladiosimulator.metricspec.MetricDescription;
  * <em>Lower Threshold</em>}</li>
  * <li>{@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getUpperThreshold
  * <em>Upper Threshold</em>}</li>
- * <li>{@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint
- * <em>Measuring Point</em>}</li>
  * <li>
  * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription
  * <em>Metric Description</em>}</li>
+ * <li>{@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint
+ * <em>Measuring Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,7 +38,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Description</em>' attribute.
      * @see #setDescription(String)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjective_Description()
@@ -51,7 +51,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getDescription
      * <em>Description</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Description</em>' attribute.
      * @see #getDescription()
@@ -157,7 +157,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Metric Description</em>' reference.
      * @see #setMetricDescription(MetricDescription)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjective_MetricDescription()
@@ -170,7 +170,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription
      * <em>Metric Description</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Metric Description</em>' reference.
      * @see #getMetricDescription()

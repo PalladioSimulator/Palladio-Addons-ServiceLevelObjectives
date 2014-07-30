@@ -28,7 +28,7 @@ public interface LinearFuzzyThreshold extends Threshold {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Soft Limit</em>' attribute.
      * @see #setSoftLimit(Measure)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getLinearFuzzyThreshold_SoftLimit()
@@ -41,7 +41,7 @@ public interface LinearFuzzyThreshold extends Threshold {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold#getSoftLimit
      * <em>Soft Limit</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Soft Limit</em>' attribute.
      * @see #getSoftLimit()

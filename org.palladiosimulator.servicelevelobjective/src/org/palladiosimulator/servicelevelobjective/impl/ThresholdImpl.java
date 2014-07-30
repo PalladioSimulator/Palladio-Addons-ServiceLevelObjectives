@@ -29,7 +29,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
     /**
      * The cached value of the '{@link #getThresholdLimit() <em>Threshold Limit</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getThresholdLimit()
      * @generated
      * @ordered
@@ -38,7 +38,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ThresholdImpl() {
@@ -47,7 +47,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -57,7 +57,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -67,7 +67,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -82,7 +82,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -96,7 +96,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

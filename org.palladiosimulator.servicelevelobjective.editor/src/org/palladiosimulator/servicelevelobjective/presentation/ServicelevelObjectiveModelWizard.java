@@ -61,7 +61,7 @@ import org.palladiosimulator.servicelevelobjective.provider.Servicelevelobjectiv
 /**
  * This is a simple wizard for creating a new model file. <!-- begin-user-doc --> <!-- end-user-doc
  * -->
- * 
+ *
  * @generated
  */
 public class ServicelevelObjectiveModelWizard extends Wizard implements INewWizard {
@@ -115,7 +115,7 @@ public class ServicelevelObjectiveModelWizard extends Wizard implements INewWiza
     /**
      * Remember the selection during initialization for populating the default container. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IStructuredSelection selection;
@@ -499,7 +499,7 @@ public class ServicelevelObjectiveModelWizard extends Wizard implements INewWiza
         /**
          * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc
          * -->
-         * 
+         *
          * @generated
          */
         protected String getLabel(final String typeName) {

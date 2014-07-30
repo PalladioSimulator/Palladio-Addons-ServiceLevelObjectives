@@ -12,7 +12,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectiveFactory;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
@@ -48,6 +47,7 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
 
             this.addDescriptionPropertyDescriptor(object);
             this.addMetricDescriptionPropertyDescriptor(object);
+            this.addMeasuringPointPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
     }
@@ -85,6 +85,22 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     }
 
     /**
+     * This adds a property descriptor for the Measuring Point feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addMeasuringPointPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_ServiceLevelObjective_measuringPoint_feature"), this.getString(
+                        "_UI_PropertyDescriptor_description", "_UI_ServiceLevelObjective_measuringPoint_feature",
+                        "_UI_ServiceLevelObjective_type"),
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, true, false, true,
+                null, null, null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate
      * feature for an {@link org.eclipse.emf.edit.command.AddCommand},
      * {@link org.eclipse.emf.edit.command.RemoveCommand} or
@@ -99,7 +115,6 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD);
             this.childrenFeatures.add(ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD);
-            this.childrenFeatures.add(ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT);
         }
         return this.childrenFeatures;
     }
@@ -157,7 +172,6 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
             return;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD:
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
@@ -189,14 +203,6 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
         newChildDescriptors.add(this.createChildParameter(
                 ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
                 ServicelevelObjectiveFactory.eINSTANCE.createLinearFuzzyThreshold()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT,
-                MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT,
-                MeasuringpointFactory.eINSTANCE.createResourceURIMeasuringPoint()));
     }
 
     /**

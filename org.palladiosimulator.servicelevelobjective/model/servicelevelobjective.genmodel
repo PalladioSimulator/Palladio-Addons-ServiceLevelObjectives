@@ -21,8 +21,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute servicelevelobjective.ecore#//ServiceLevelObjective/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference servicelevelobjective.ecore#//ServiceLevelObjective/lowerThreshold"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference servicelevelobjective.ecore#//ServiceLevelObjective/upperThreshold"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference servicelevelobjective.ecore#//ServiceLevelObjective/measuringPoint"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference servicelevelobjective.ecore#//ServiceLevelObjective/metricDescription"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference servicelevelobjective.ecore#//ServiceLevelObjective/measuringPoint"/>
     </genClasses>
     <genClasses ecoreClass="servicelevelobjective.ecore#//Threshold">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute servicelevelobjective.ecore#//Threshold/thresholdLimit"/>

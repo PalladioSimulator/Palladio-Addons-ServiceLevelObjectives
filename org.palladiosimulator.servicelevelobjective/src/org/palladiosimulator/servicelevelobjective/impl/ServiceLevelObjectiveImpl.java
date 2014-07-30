@@ -29,11 +29,11 @@ import org.palladiosimulator.servicelevelobjective.Threshold;
  * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl#getUpperThreshold
  * <em>Upper Threshold</em>}</li>
  * <li>
- * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl#getMeasuringPoint
- * <em>Measuring Point</em>}</li>
- * <li>
  * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl#getMetricDescription
  * <em>Metric Description</em>}</li>
+ * <li>
+ * {@link org.palladiosimulator.servicelevelobjective.impl.ServiceLevelObjectiveImpl#getMeasuringPoint
+ * <em>Measuring Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,7 +63,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     /**
      * The cached value of the '{@link #getLowerThreshold() <em>Lower Threshold</em>}' containment
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getLowerThreshold()
      * @generated
      * @ordered
@@ -73,7 +73,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     /**
      * The cached value of the '{@link #getUpperThreshold() <em>Upper Threshold</em>}' containment
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getUpperThreshold()
      * @generated
      * @ordered
@@ -81,19 +81,9 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     protected Threshold upperThreshold;
 
     /**
-     * The cached value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' containment
-     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @see #getMeasuringPoint()
-     * @generated
-     * @ordered
-     */
-    protected MeasuringPoint measuringPoint;
-
-    /**
      * The cached value of the '{@link #getMetricDescription() <em>Metric Description</em>}'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getMetricDescription()
      * @generated
      * @ordered
@@ -101,8 +91,18 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     protected MetricDescription metricDescription;
 
     /**
+     * The cached value of the '{@link #getMeasuringPoint() <em>Measuring Point</em>}' reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
+     * @see #getMeasuringPoint()
+     * @generated
+     * @ordered
+     */
+    protected MeasuringPoint measuringPoint;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     protected ServiceLevelObjectiveImpl() {
@@ -111,7 +111,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -121,7 +121,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -146,7 +146,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -156,7 +156,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetLowerThreshold(final Threshold newLowerThreshold, NotificationChain msgs) {
@@ -177,7 +177,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -215,7 +215,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetUpperThreshold(final Threshold newUpperThreshold, NotificationChain msgs) {
@@ -236,7 +236,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -264,66 +264,53 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public MeasuringPoint getMeasuringPoint() {
+        if (this.measuringPoint != null && this.measuringPoint.eIsProxy()) {
+            final InternalEObject oldMeasuringPoint = (InternalEObject) this.measuringPoint;
+            this.measuringPoint = (MeasuringPoint) this.eResolveProxy(oldMeasuringPoint);
+            if (this.measuringPoint != oldMeasuringPoint) {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                            ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, oldMeasuringPoint,
+                            this.measuringPoint));
+                }
+            }
+        }
         return this.measuringPoint;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public NotificationChain basicSetMeasuringPoint(final MeasuringPoint newMeasuringPoint, NotificationChain msgs) {
-        final MeasuringPoint oldMeasuringPoint = this.measuringPoint;
-        this.measuringPoint = newMeasuringPoint;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, oldMeasuringPoint,
-                    newMeasuringPoint);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
-        return msgs;
+    public MeasuringPoint basicGetMeasuringPoint() {
+        return this.measuringPoint;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public void setMeasuringPoint(final MeasuringPoint newMeasuringPoint) {
-        if (newMeasuringPoint != this.measuringPoint) {
-            NotificationChain msgs = null;
-            if (this.measuringPoint != null) {
-                msgs = ((InternalEObject) this.measuringPoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-                        - ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, null, msgs);
-            }
-            if (newMeasuringPoint != null) {
-                msgs = ((InternalEObject) newMeasuringPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-                        - ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, null, msgs);
-            }
-            msgs = this.basicSetMeasuringPoint(newMeasuringPoint, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
+        final MeasuringPoint oldMeasuringPoint = this.measuringPoint;
+        this.measuringPoint = newMeasuringPoint;
+        if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, newMeasuringPoint,
-                    newMeasuringPoint));
+                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, oldMeasuringPoint,
+                    this.measuringPoint));
         }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -344,7 +331,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public MetricDescription basicGetMetricDescription() {
@@ -353,7 +340,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -369,7 +356,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -380,15 +367,13 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
             return this.basicSetLowerThreshold(null, msgs);
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
             return this.basicSetUpperThreshold(null, msgs);
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
-            return this.basicSetMeasuringPoint(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -400,20 +385,23 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
             return this.getLowerThreshold();
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
             return this.getUpperThreshold();
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
-            return this.getMeasuringPoint();
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION:
             if (resolve) {
                 return this.getMetricDescription();
             }
             return this.basicGetMetricDescription();
+        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
+            if (resolve) {
+                return this.getMeasuringPoint();
+            }
+            return this.basicGetMeasuringPoint();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -428,11 +416,11 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
             this.setUpperThreshold((Threshold) newValue);
             return;
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
-            this.setMeasuringPoint((MeasuringPoint) newValue);
-            return;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION:
             this.setMetricDescription((MetricDescription) newValue);
+            return;
+        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
+            this.setMeasuringPoint((MeasuringPoint) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -440,7 +428,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -455,11 +443,11 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
             this.setUpperThreshold((Threshold) null);
             return;
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
-            this.setMeasuringPoint((MeasuringPoint) null);
-            return;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION:
             this.setMetricDescription((MetricDescription) null);
+            return;
+        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
+            this.setMeasuringPoint((MeasuringPoint) null);
             return;
         }
         super.eUnset(featureID);
@@ -467,7 +455,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -480,17 +468,17 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
             return this.lowerThreshold != null;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
             return this.upperThreshold != null;
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
-            return this.measuringPoint != null;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION:
             return this.metricDescription != null;
+        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT:
+            return this.measuringPoint != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
