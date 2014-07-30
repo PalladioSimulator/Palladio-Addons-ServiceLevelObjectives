@@ -14,7 +14,7 @@
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn">
       <rm:property key="buckminster.source" value="true"/>
       <rm:property key="buckminster.mutable" value="true"/>
-      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/ServiceLevelObjectives/trunk/{0}">
+      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Incubation/ServiceLevelObjectives/trunk/{0}">
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
