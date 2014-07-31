@@ -23,30 +23,6 @@
             <styles xmi:type="notation:ShapeStyle" xmi:id="_JE0wgBh7EeSoUsjueZK-JA" fontName="Segoe UI" fontHeight="8"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JE0wgRh7EeSoUsjueZK-JA" x="840" y="160"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_JE0whhh7EeSoUsjueZK-JA" type="2003" element="_JEeLMBh7EeSoUsjueZK-JA">
-            <children xmi:type="notation:Node" xmi:id="_JE0wiRh7EeSoUsjueZK-JA" type="5007"/>
-            <children xmi:type="notation:Node" xmi:id="_JE0wihh7EeSoUsjueZK-JA" type="7004">
-              <children xmi:type="notation:Node" xmi:id="_JE3Mwxh7EeSoUsjueZK-JA" type="3010" element="_JEup5Rh7EeSoUsjueZK-JA">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_JE3MxBh7EeSoUsjueZK-JA"/>
-              </children>
-              <styles xmi:type="notation:SortingStyle" xmi:id="_JE0wixh7EeSoUsjueZK-JA"/>
-              <styles xmi:type="notation:FilteringStyle" xmi:id="_JE0wjBh7EeSoUsjueZK-JA"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_JE0whxh7EeSoUsjueZK-JA" fontName="Segoe UI" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JE0wiBh7EeSoUsjueZK-JA"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_JE0wjRh7EeSoUsjueZK-JA" type="2003" element="_JEeyQBh7EeSoUsjueZK-JA">
-            <children xmi:type="notation:Node" xmi:id="_JE1XkBh7EeSoUsjueZK-JA" type="5007"/>
-            <children xmi:type="notation:Node" xmi:id="_JE1XkRh7EeSoUsjueZK-JA" type="7004">
-              <children xmi:type="notation:Node" xmi:id="_JE3MxRh7EeSoUsjueZK-JA" type="3010" element="_JEvQ9Bh7EeSoUsjueZK-JA">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_JE3Mxhh7EeSoUsjueZK-JA"/>
-              </children>
-              <styles xmi:type="notation:SortingStyle" xmi:id="_JE1Xkhh7EeSoUsjueZK-JA"/>
-              <styles xmi:type="notation:FilteringStyle" xmi:id="_JE1Xkxh7EeSoUsjueZK-JA"/>
-            </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_JE0wjhh7EeSoUsjueZK-JA" fontName="Segoe UI" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JE0wjxh7EeSoUsjueZK-JA" x="200"/>
-          </children>
           <children xmi:type="notation:Node" xmi:id="_JE1XlBh7EeSoUsjueZK-JA" type="2003" element="_JEeyRhh7EeSoUsjueZK-JA">
             <children xmi:type="notation:Node" xmi:id="_JE1Xlxh7EeSoUsjueZK-JA" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_JE1XmBh7EeSoUsjueZK-JA" type="7004">
@@ -273,71 +249,25 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_JEeLMBh7EeSoUsjueZK-JA" name="JSMeasure" tooltipText="" width="14" height="5">
-        <target xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSMeasure"/>
-        <semanticElements xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSMeasure"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JEeLMRh7EeSoUsjueZK-JA" backgroundStyle="Liquid">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeLMhh7EeSoUsjueZK-JA"/>
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeLMxh7EeSoUsjueZK-JA" red="125" green="125" blue="125"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeLNBh7EeSoUsjueZK-JA" red="255" green="255" blue="255"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeLNRh7EeSoUsjueZK-JA" red="255" green="250" blue="191"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JEup5Rh7EeSoUsjueZK-JA" name="javax.measure.Measure" tooltipText="">
-          <target xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSMeasure"/>
-          <semanticElements xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSMeasure"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_JEvQ8Bh7EeSoUsjueZK-JA" labelFormat="italic" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEvQ8Rh7EeSoUsjueZK-JA"/>
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@subNodeMappings[name='EC_DataType_InstanceClassName']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEvQ8hh7EeSoUsjueZK-JA"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_JEvQ8xh7EeSoUsjueZK-JA"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@subNodeMappings[name='EC_DataType_InstanceClassName']"/>
-        </ownedElements>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_JEeyQBh7EeSoUsjueZK-JA" name="JSQuantity" tooltipText="" width="14" height="5">
-        <target xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSQuantity"/>
-        <semanticElements xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSQuantity"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JEeyQRh7EeSoUsjueZK-JA" backgroundStyle="Liquid">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeyQhh7EeSoUsjueZK-JA"/>
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeyQxh7EeSoUsjueZK-JA" red="125" green="125" blue="125"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeyRBh7EeSoUsjueZK-JA" red="255" green="255" blue="255"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEeyRRh7EeSoUsjueZK-JA" red="255" green="250" blue="191"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JEvQ9Bh7EeSoUsjueZK-JA" name="javax.measure.quantity.Quantity" tooltipText="">
-          <target xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSQuantity"/>
-          <semanticElements xmi:type="ecore:EDataType" href="servicelevelobjective.ecore#//JSQuantity"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_JEvQ9Rh7EeSoUsjueZK-JA" labelFormat="italic" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEvQ9hh7EeSoUsjueZK-JA"/>
-            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@subNodeMappings[name='EC_DataType_InstanceClassName']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEvQ9xh7EeSoUsjueZK-JA"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_JEvQ-Bh7EeSoUsjueZK-JA"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@subNodeMappings[name='EC_DataType_InstanceClassName']"/>
-        </ownedElements>
-      </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_JEeyRhh7EeSoUsjueZK-JA" name="LinearFuzzyThreshold" tooltipText="&#xA;WARNING : The generic type associated with the 'JSMeasure' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier " outgoingEdges="_JExtNxh7EeSoUsjueZK-JA" width="12" height="10">
         <target xmi:type="ecore:EClass" href="servicelevelobjective.ecore#//LinearFuzzyThreshold"/>
         <semanticElements xmi:type="ecore:EClass" href="servicelevelobjective.ecore#//LinearFuzzyThreshold"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JEfZUBh7EeSoUsjueZK-JA" backgroundStyle="Liquid">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEfZURh7EeSoUsjueZK-JA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_5MRG8Bh7EeSoUsjueZK-JA" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_5MRG8Rh7EeSoUsjueZK-JA"/>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEfZUhh7EeSoUsjueZK-JA"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEfZUxh7EeSoUsjueZK-JA" red="255" green="255" blue="255"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEfZVBh7EeSoUsjueZK-JA" red="255" green="252" blue="216"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_5MRG8hh7EeSoUsjueZK-JA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_5MRG8xh7EeSoUsjueZK-JA" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_5MRG9Bh7EeSoUsjueZK-JA" red="255" green="252" blue="216"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JEs0sBh7EeSoUsjueZK-JA" name="softLimit : JSMeasure" tooltipText="&#xA;WARNING : The generic type associated with the 'JSMeasure' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier ">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JEs0sBh7EeSoUsjueZK-JA" name="softLimit : EJSMeasure" tooltipText="&#xA;WARNING : The generic type associated with the 'JSMeasure' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier ">
           <target xmi:type="ecore:EAttribute" href="servicelevelobjective.ecore#//LinearFuzzyThreshold/softLimit"/>
           <semanticElements xmi:type="ecore:EAttribute" href="servicelevelobjective.ecore#//LinearFuzzyThreshold/softLimit"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_JEtbwBh7EeSoUsjueZK-JA" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEtbwRh7EeSoUsjueZK-JA"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_B2rSUBh8EeSoUsjueZK-JA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_B2rSURh8EeSoUsjueZK-JA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEtbwhh7EeSoUsjueZK-JA"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_JEtbwxh7EeSoUsjueZK-JA"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_B2rSUhh8EeSoUsjueZK-JA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_B2rSUxh8EeSoUsjueZK-JA"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -403,22 +333,22 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_JEhOhhh7EeSoUsjueZK-JA" name="Threshold" tooltipText="&#xA;WARNING : The generic type associated with the 'JSMeasure' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier " incomingEdges="_JEv4ABh7EeSoUsjueZK-JA _JEwfFxh7EeSoUsjueZK-JA _JExtMBh7EeSoUsjueZK-JA _JExtNxh7EeSoUsjueZK-JA" width="12" height="10">
         <target xmi:type="ecore:EClass" href="servicelevelobjective.ecore#//Threshold"/>
         <semanticElements xmi:type="ecore:EClass" href="servicelevelobjective.ecore#//Threshold"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JEhOhxh7EeSoUsjueZK-JA" labelFormat="italic" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" backgroundStyle="Liquid">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEhOiBh7EeSoUsjueZK-JA"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_6cqX0Bh7EeSoUsjueZK-JA" labelFormat="italic" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_6cqX0Rh7EeSoUsjueZK-JA"/>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEhOiRh7EeSoUsjueZK-JA" red="125" green="125" blue="125"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEhOihh7EeSoUsjueZK-JA" red="255" green="255" blue="255"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_JEhOixh7EeSoUsjueZK-JA" red="228" green="228" blue="228"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_6cqX0hh7EeSoUsjueZK-JA" red="125" green="125" blue="125"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_6cqX0xh7EeSoUsjueZK-JA" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_6cqX1Bh7EeSoUsjueZK-JA" red="228" green="228" blue="228"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JEup4Bh7EeSoUsjueZK-JA" name="thresholdLimit : JSMeasure" tooltipText="&#xA;WARNING : The generic type associated with the 'JSMeasure' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier ">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_JEup4Bh7EeSoUsjueZK-JA" name="thresholdLimit : EJSMeasure" tooltipText="&#xA;WARNING : The generic type associated with the 'JSMeasure' classifier should have 2 type argument(s) to match the number of type parameter(s) of the classifier ">
           <target xmi:type="ecore:EAttribute" href="servicelevelobjective.ecore#//Threshold/thresholdLimit"/>
           <semanticElements xmi:type="ecore:EAttribute" href="servicelevelobjective.ecore#//Threshold/thresholdLimit"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_JEup4Rh7EeSoUsjueZK-JA" labelAlignment="LEFT">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEup4hh7EeSoUsjueZK-JA"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_6csNABh7EeSoUsjueZK-JA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_6csNARh7EeSoUsjueZK-JA"/>
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_JEup4xh7EeSoUsjueZK-JA"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_JEup5Bh7EeSoUsjueZK-JA"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_6csNAhh7EeSoUsjueZK-JA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_6csNAxh7EeSoUsjueZK-JA"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
@@ -489,14 +419,14 @@
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_JExtNxh7EeSoUsjueZK-JA" sourceNode="_JEeyRhh7EeSoUsjueZK-JA" targetNode="_JEhOhhh7EeSoUsjueZK-JA">
         <target xmi:type="ecore:EClass" href="servicelevelobjective.ecore#//LinearFuzzyThreshold"/>
         <semanticElements xmi:type="ecore:EGenericType" href="servicelevelobjective.ecore#//LinearFuzzyThreshold/@eGenericSuperTypes.0"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_JEyUQBh7EeSoUsjueZK-JA" targetArrow="InputClosedArrow" routingStyle="tree">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_5MWmgBh7EeSoUsjueZK-JA" targetArrow="InputClosedArrow" routingStyle="tree">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_JEyUQRh7EeSoUsjueZK-JA" red="136" green="136" blue="136"/>
-          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_JEyUQhh7EeSoUsjueZK-JA" labelFormat="italic" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEyUQxh7EeSoUsjueZK-JA"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_5MWmgRh7EeSoUsjueZK-JA" red="136" green="136" blue="136"/>
+          <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_5MWmghh7EeSoUsjueZK-JA" labelFormat="italic" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_5MWmgxh7EeSoUsjueZK-JA"/>
           </beginLabelStyle>
-          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_JEyURBh7EeSoUsjueZK-JA" showIcon="false">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_JEyURRh7EeSoUsjueZK-JA"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_5MWmhBh7EeSoUsjueZK-JA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_5MWmhRh7EeSoUsjueZK-JA"/>
           </centerLabelStyle>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
