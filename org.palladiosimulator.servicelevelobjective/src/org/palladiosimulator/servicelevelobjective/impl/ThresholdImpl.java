@@ -34,7 +34,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
      * @generated
      * @ordered
      */
-    protected Measure thresholdLimit;
+    protected Measure<?, ?> thresholdLimit;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -61,7 +61,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
      * @generated
      */
     @Override
-    public Measure getThresholdLimit() {
+    public Measure<?, ?> getThresholdLimit() {
         return this.thresholdLimit;
     }
 
@@ -71,8 +71,8 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
      * @generated
      */
     @Override
-    public void setThresholdLimit(final Measure newThresholdLimit) {
-        final Measure oldThresholdLimit = this.thresholdLimit;
+    public void setThresholdLimit(final Measure<?, ?> newThresholdLimit) {
+        final Measure<?, ?> oldThresholdLimit = this.thresholdLimit;
         this.thresholdLimit = newThresholdLimit;
         if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
@@ -103,7 +103,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            this.setThresholdLimit((Measure) newValue);
+            this.setThresholdLimit((Measure<?, ?>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -118,7 +118,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
     public void eUnset(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            this.setThresholdLimit((Measure) null);
+            this.setThresholdLimit((Measure<?, ?>) null);
             return;
         }
         super.eUnset(featureID);

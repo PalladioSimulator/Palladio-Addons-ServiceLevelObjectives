@@ -2,16 +2,11 @@
  */
 package org.palladiosimulator.servicelevelobjective.impl;
 
-import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
@@ -75,20 +70,6 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * @generated
      */
     private EClass namedElementEClass = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType jsMeasureEDataType = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType jsQuantityEDataType = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -317,26 +298,6 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * @generated
      */
     @Override
-    public EDataType getJSMeasure() {
-        return this.jsMeasureEDataType;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EDataType getJSQuantity() {
-        return this.jsQuantityEDataType;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
     public ServicelevelObjectiveFactory getServicelevelObjectiveFactory() {
         return (ServicelevelObjectiveFactory) this.getEFactoryInstance();
     }
@@ -382,10 +343,6 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
         this.namedElementEClass = this.createEClass(NAMED_ELEMENT);
         this.createEAttribute(this.namedElementEClass, NAMED_ELEMENT__NAME);
-
-        // Create data types
-        this.jsMeasureEDataType = this.createEDataType(JS_MEASURE);
-        this.jsQuantityEDataType = this.createEDataType(JS_QUANTITY);
     }
 
     /**
@@ -419,14 +376,12 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
                 .getEPackage(MeasuringpointPackage.eNS_URI);
         final IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
                 .getEPackage(IdentifierPackage.eNS_URI);
+        final ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
+                .getEPackage(ExperimentDataPackage.eNS_URI);
 
         // Create type parameters
-        this.addETypeParameter(this.jsMeasureEDataType, "V");
-        final ETypeParameter jsMeasureEDataType_Q = this.addETypeParameter(this.jsMeasureEDataType, "Q");
 
         // Set bounds for type parameters
-        final EGenericType g1 = this.createEGenericType(this.getJSQuantity());
-        jsMeasureEDataType_Q.getEBounds().add(g1);
 
         // Add supertypes to classes
         this.serviceLevelObjectiveEClass.getESuperTypes().add(this.getNamedElement());
@@ -465,16 +420,25 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
         this.initEClass(this.thresholdEClass, Threshold.class, "Threshold", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEAttribute(this.getThreshold_ThresholdLimit(), this.getJSMeasure(), "thresholdLimit", null, 0, 1,
-                Threshold.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
+        EGenericType g1 = this.createEGenericType(theExperimentDataPackage.getEJSMeasure());
+        EGenericType g2 = this.createEGenericType();
+        g1.getETypeArguments().add(g2);
+        g2 = this.createEGenericType();
+        g1.getETypeArguments().add(g2);
+        this.initEAttribute(this.getThreshold_ThresholdLimit(), g1, "thresholdLimit", null, 0, 1, Threshold.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.hardThresholdEClass, HardThreshold.class, "HardThreshold", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.linearFuzzyThresholdEClass, LinearFuzzyThreshold.class, "LinearFuzzyThreshold",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEAttribute(this.getLinearFuzzyThreshold_SoftLimit(), this.getJSMeasure(), "softLimit", null, 0, 1,
+        g1 = this.createEGenericType(theExperimentDataPackage.getEJSMeasure());
+        g2 = this.createEGenericType();
+        g1.getETypeArguments().add(g2);
+        g2 = this.createEGenericType();
+        g1.getETypeArguments().add(g2);
+        this.initEAttribute(this.getLinearFuzzyThreshold_SoftLimit(), g1, "softLimit", null, 0, 1,
                 LinearFuzzyThreshold.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -483,12 +447,6 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         this.initEAttribute(this.getNamedElement_Name(), this.ecorePackage.getEString(), "name", null, 0, 1,
                 NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, IS_ORDERED);
-
-        // Initialize data types
-        this.initEDataType(this.jsMeasureEDataType, Measure.class, "JSMeasure", IS_SERIALIZABLE,
-                !IS_GENERATED_INSTANCE_CLASS);
-        this.initEDataType(this.jsQuantityEDataType, Quantity.class, "JSQuantity", IS_SERIALIZABLE,
-                !IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         this.createResource(eNS_URI);

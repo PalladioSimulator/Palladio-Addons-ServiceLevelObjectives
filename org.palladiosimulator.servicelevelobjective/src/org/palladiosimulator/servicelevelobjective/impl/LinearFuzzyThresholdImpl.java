@@ -33,7 +33,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
      * @generated
      * @ordered
      */
-    protected Measure softLimit;
+    protected Measure<?, ?> softLimit;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -60,7 +60,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
      * @generated
      */
     @Override
-    public Measure getSoftLimit() {
+    public Measure<?, ?> getSoftLimit() {
         return this.softLimit;
     }
 
@@ -70,8 +70,8 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
      * @generated
      */
     @Override
-    public void setSoftLimit(final Measure newSoftLimit) {
-        final Measure oldSoftLimit = this.softLimit;
+    public void setSoftLimit(final Measure<?, ?> newSoftLimit) {
+        final Measure<?, ?> oldSoftLimit = this.softLimit;
         this.softLimit = newSoftLimit;
         if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
@@ -102,7 +102,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT:
-            this.setSoftLimit((Measure) newValue);
+            this.setSoftLimit((Measure<?, ?>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -117,7 +117,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
     public void eUnset(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT:
-            this.setSoftLimit((Measure) null);
+            this.setSoftLimit((Measure<?, ?>) null);
             return;
         }
         super.eUnset(featureID);

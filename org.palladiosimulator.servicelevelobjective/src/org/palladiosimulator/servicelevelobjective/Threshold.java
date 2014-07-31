@@ -36,10 +36,10 @@ public interface Threshold extends EObject, Identifier {
      * @return the value of the '<em>Threshold Limit</em>' attribute.
      * @see #setThresholdLimit(Measure)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getThreshold_ThresholdLimit()
-     * @model dataType="org.palladiosimulator.servicelevelobjective.JSMeasure"
+     * @model dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSMeasure<?, ?>"
      * @generated
      */
-    Measure getThresholdLimit();
+    Measure<?, ?> getThresholdLimit();
 
     /**
      * Sets the value of the '
@@ -51,6 +51,6 @@ public interface Threshold extends EObject, Identifier {
      * @see #getThresholdLimit()
      * @generated
      */
-    void setThresholdLimit(Measure value);
+    void setThresholdLimit(Measure<?, ?> value);
 
 } // Threshold

@@ -4,7 +4,6 @@ package org.palladiosimulator.servicelevelobjective;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -331,26 +330,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
     int LINEAR_FUZZY_THRESHOLD_FEATURE_COUNT = THRESHOLD_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '<em>JS Measure</em>' data type. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see javax.measure.Measure
-     * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSMeasure()
-     * @generated
-     */
-    int JS_MEASURE = 6;
-
-    /**
-     * The meta object id for the '<em>JS Quantity</em>' data type. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see javax.measure.quantity.Quantity
-     * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSQuantity()
-     * @generated
-     */
-    int JS_QUANTITY = 7;
-
-    /**
      * Returns the meta object for class '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository
      * <em>Service Level Objective Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -525,29 +504,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
     EAttribute getNamedElement_Name();
 
     /**
-     * Returns the meta object for data type '{@link javax.measure.Measure <em>JS Measure</em>}'.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for data type '<em>JS Measure</em>'.
-     * @see javax.measure.Measure
-     * @model instanceClass="javax.measure.Measure" typeParameters="V Q"
-     *        QBounds="org.palladiosimulator.servicelevelobjective.JSQuantity"
-     * @generated
-     */
-    EDataType getJSMeasure();
-
-    /**
-     * Returns the meta object for data type '{@link javax.measure.quantity.Quantity
-     * <em>JS Quantity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for data type '<em>JS Quantity</em>'.
-     * @see javax.measure.quantity.Quantity
-     * @model instanceClass="javax.measure.quantity.Quantity"
-     * @generated
-     */
-    EDataType getJSQuantity();
-
-    /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -709,26 +665,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
          * @generated
          */
         EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-        /**
-         * The meta object literal for the '<em>JS Measure</em>' data type. <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         *
-         * @see javax.measure.Measure
-         * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSMeasure()
-         * @generated
-         */
-        EDataType JS_MEASURE = eINSTANCE.getJSMeasure();
-
-        /**
-         * The meta object literal for the '<em>JS Quantity</em>' data type. <!-- begin-user-doc -->
-         * <!-- end-user-doc -->
-         *
-         * @see javax.measure.quantity.Quantity
-         * @see org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectivePackageImpl#getJSQuantity()
-         * @generated
-         */
-        EDataType JS_QUANTITY = eINSTANCE.getJSQuantity();
 
     }
 

@@ -2,11 +2,7 @@
  */
 package org.palladiosimulator.servicelevelobjective.impl;
 
-import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -81,40 +77,6 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
      * @generated
      */
     @Override
-    public Object createFromString(final EDataType eDataType, final String initialValue) {
-        switch (eDataType.getClassifierID()) {
-        case ServicelevelObjectivePackage.JS_MEASURE:
-            return this.createJSMeasureFromString(eDataType, initialValue);
-        case ServicelevelObjectivePackage.JS_QUANTITY:
-            return this.createJSQuantityFromString(eDataType, initialValue);
-        default:
-            throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String convertToString(final EDataType eDataType, final Object instanceValue) {
-        switch (eDataType.getClassifierID()) {
-        case ServicelevelObjectivePackage.JS_MEASURE:
-            return this.convertJSMeasureToString(eDataType, instanceValue);
-        case ServicelevelObjectivePackage.JS_QUANTITY:
-            return this.convertJSQuantityToString(eDataType, instanceValue);
-        default:
-            throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
     public ServiceLevelObjectiveRepository createServiceLevelObjectiveRepository() {
         final ServiceLevelObjectiveRepositoryImpl serviceLevelObjectiveRepository = new ServiceLevelObjectiveRepositoryImpl();
         return serviceLevelObjectiveRepository;
@@ -162,42 +124,6 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
     public NamedElement createNamedElement() {
         final NamedElementImpl namedElement = new NamedElementImpl();
         return namedElement;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Measure<?, ?> createJSMeasureFromString(final EDataType eDataType, final String initialValue) {
-        return (Measure<?, ?>) super.createFromString(initialValue);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public String convertJSMeasureToString(final EDataType eDataType, final Object instanceValue) {
-        return super.convertToString(instanceValue);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Quantity createJSQuantityFromString(final EDataType eDataType, final String initialValue) {
-        return (Quantity) super.createFromString(eDataType, initialValue);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public String convertJSQuantityToString(final EDataType eDataType, final Object instanceValue) {
-        return super.convertToString(eDataType, instanceValue);
     }
 
     /**
