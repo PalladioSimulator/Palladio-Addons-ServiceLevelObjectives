@@ -5090,6 +5090,18 @@
             <styles xmi:type="notation:ShapeStyle" xmi:id="_pPc3sRmpEeSEc_H88kIWfg" fontName="Segoe UI" fontHeight="8" italic="true"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pPc3shmpEeSEc_H88kIWfg" x="130" y="-195"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_QTWk8Bu2EeSjVshcyJPx7Q" type="Note" fontName="Segoe UI" description="* Wann wird gemessen. Wie oft? -> Bisher definiert durch Probes.&#xD;&#xA;* Statistische Aggregation (Mean, Median, Min, Max) für &amp;&quot;Basismetriken&quot; (=Calculator)&#xD;&#xA;* Related Work: SLA@SOI, ..." fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_QTbdcBu2EeSjVshcyJPx7Q" type="DiagramName">
+              <element xsi:nil="true"/>
+            </children>
+            <children xmi:type="notation:BasicDecorationNode" xmi:id="_QTcEgBu2EeSjVshcyJPx7Q" type="Description">
+              <element xsi:nil="true"/>
+            </children>
+            <styles xmi:type="notation:TextStyle" xmi:id="_QTXMABu2EeSjVshcyJPx7Q"/>
+            <styles xmi:type="notation:LineTypeStyle" xmi:id="_QTXMARu2EeSjVshcyJPx7Q"/>
+            <element xsi:nil="true"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QTXMAhu2EeSjVshcyJPx7Q" x="505" y="-155" width="281" height="146"/>
+          </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_gl8EMhmpEeSEc_H88kIWfg"/>
           <edges xmi:type="notation:Edge" xmi:id="_iKlt0BmpEeSEc_H88kIWfg" type="4001" element="_iJm2YBmpEeSEc_H88kIWfg" source="_iKaHpBmpEeSEc_H88kIWfg" target="_iKb81BmpEeSEc_H88kIWfg">
             <children xmi:type="notation:Node" xmi:id="_iKnjABmpEeSEc_H88kIWfg" type="6001">
