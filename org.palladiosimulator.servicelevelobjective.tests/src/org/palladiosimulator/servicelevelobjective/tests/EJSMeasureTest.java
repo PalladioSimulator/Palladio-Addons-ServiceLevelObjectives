@@ -24,7 +24,7 @@ public class EJSMeasureTest {
     private static final double DURATION_THRESHOLD = 3.0d;
 
     @Test
-    public void test() {
+    public void saveHardDurationThreshold() {
         final Measure<Double, Duration> durationThreshold = DecimalMeasure.valueOf(DURATION_THRESHOLD, SI.SECOND);
         final double doubleValue = durationThreshold.getValue();
         assertTrue(doubleValue == DURATION_THRESHOLD);
@@ -44,7 +44,7 @@ public class EJSMeasureTest {
             resource.save(Collections.EMPTY_MAP);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
+        }        
+    }    
 
 }
