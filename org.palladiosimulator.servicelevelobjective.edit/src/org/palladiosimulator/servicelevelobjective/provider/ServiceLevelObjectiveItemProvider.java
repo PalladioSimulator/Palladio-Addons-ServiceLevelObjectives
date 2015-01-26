@@ -221,9 +221,10 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
                 || childFeature == ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD;
 
         if (qualify) {
-            return this.getString("_UI_CreateChild_text2", new Object[] {
-                    this.getTypeText(childObject), this.getFeatureText(childFeature), this.getTypeText(owner)
-            });
+            return this.getString(
+                    "_UI_CreateChild_text2",
+                    new Object[] { this.getTypeText(childObject), this.getFeatureText(childFeature),
+                            this.getTypeText(owner) });
         }
         return super.getCreateChildText(owner, feature, child, selection);
     }

@@ -8,7 +8,7 @@
     importOrganizing="true" cleanup="true">
   <foreignModel>servicelevelobjective.ecore</foreignModel>
   <genPackages prefix="ServicelevelObjective" basePackage="org.palladiosimulator"
-      disposableProviderFactory="true" fileExtensions="slo" ecorePackage="servicelevelobjective.ecore#/">
+      resource="XML" disposableProviderFactory="true" fileExtensions="slo" ecorePackage="servicelevelobjective.ecore#/">
     <genClasses ecoreClass="servicelevelobjective.ecore#//ServiceLevelObjectiveRepository">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference servicelevelobjective.ecore#//ServiceLevelObjectiveRepository/servicelevelobjectives"/>
     </genClasses>

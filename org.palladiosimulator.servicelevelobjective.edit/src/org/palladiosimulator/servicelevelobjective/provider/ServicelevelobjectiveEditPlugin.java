@@ -36,9 +36,8 @@ public final class ServicelevelobjectiveEditPlugin extends EMFPlugin {
      * @generated
      */
     public ServicelevelobjectiveEditPlugin() {
-        super(new ResourceLocator[] {
-                EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE, MetricSpecEditPlugin.INSTANCE,
-        });
+        super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
+                MetricSpecEditPlugin.INSTANCE, });
     }
 
     /**
