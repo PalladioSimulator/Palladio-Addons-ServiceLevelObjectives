@@ -121,8 +121,31 @@ import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProvi
 import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
 import org.palladiosimulator.metricspec.provider.MetricSpecItemProviderAdapterFactory;
 import org.palladiosimulator.servicelevelobjective.provider.ServicelevelObjectiveItemProviderAdapterFactory;
+import org.palladiosimulator.simulizar.monitorrepository.provider.MonitorrepositoryItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.allocation.provider.AllocationItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.core.composition.provider.CompositionItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.core.entity.provider.EntityItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.core.provider.CoreItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.parameter.provider.ParameterItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.protocol.provider.ProtocolItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.provider.PcmItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.qosannotations.provider.QosannotationsItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.qosannotations.qos_performance.provider.QosPerformanceItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.qosannotations.qos_reliability.provider.QosReliabilityItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.reliability.provider.ReliabilityItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.resourceenvironment.provider.ResourceenvironmentItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.resourcetype.provider.ResourcetypeItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.seff.provider.SeffItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.seff.seff_performance.provider.SeffPerformanceItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.seff.seff_reliability.provider.SeffReliabilityItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.subsystem.provider.SubsystemItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.system.provider.SystemItemProviderAdapterFactory;
+import de.uka.ipd.sdq.pcm.usagemodel.provider.UsagemodelItemProviderAdapterFactory;
+import de.uka.ipd.sdq.probfunction.provider.ProbfunctionItemProviderAdapterFactory;
+import de.uka.ipd.sdq.stoex.provider.StoexItemProviderAdapterFactory;
+import de.uka.ipd.sdq.units.provider.UnitsItemProviderAdapterFactory;
 
 /**
  * This is an example of a ServicelevelObjective model editor. <!-- begin-user-doc --> <!--
@@ -653,6 +676,31 @@ ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
         this.adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new MonitorrepositoryItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new PcmItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new EntityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new CompositionItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new UsagemodelItemProviderAdapterFactory());
+        this.adapterFactory
+        .addAdapterFactory(new de.uka.ipd.sdq.pcm.repository.provider.RepositoryItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ResourcetypeItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ParameterItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ReliabilityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SeffItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SeffPerformanceItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SeffReliabilityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new QosannotationsItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new QosPerformanceItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new QosReliabilityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SystemItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ResourceenvironmentItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new AllocationItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SubsystemItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ProbfunctionItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new StoexItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new UnitsItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
         // Create the command stack that will notify this editor as commands are executed.
