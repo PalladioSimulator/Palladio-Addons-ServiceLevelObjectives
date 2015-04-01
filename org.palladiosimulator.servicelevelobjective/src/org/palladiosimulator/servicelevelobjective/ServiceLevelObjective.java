@@ -2,8 +2,7 @@
  */
 package org.palladiosimulator.servicelevelobjective;
 
-import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
-import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.simulizar.monitorrepository.MeasurementSpecification;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -19,10 +18,8 @@ import org.palladiosimulator.metricspec.MetricDescription;
  * <li>{@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getUpperThreshold
  * <em>Upper Threshold</em>}</li>
  * <li>
- * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription
- * <em>Metric Description</em>}</li>
- * <li>{@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint
- * <em>Measuring Point</em>}</li>
+ * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasurementSpecification
+ * <em>Measurement Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -120,62 +117,32 @@ public interface ServiceLevelObjective extends NamedElement {
     void setUpperThreshold(Threshold value);
 
     /**
-     * Returns the value of the '<em><b>Measuring Point</b></em>' containment reference. <!--
+     * Returns the value of the '<em><b>Measurement Specification</b></em>' reference. <!--
      * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Measuring Point</em>' containment reference isn't clear, there
+     * If the meaning of the '<em>Measurement Specification</em>' reference isn't clear, there
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
      *
-     * @return the value of the '<em>Measuring Point</em>' containment reference.
-     * @see #setMeasuringPoint(MeasuringPoint)
-     * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjective_MeasuringPoint()
-     * @model containment="true" required="true"
+     * @return the value of the '<em>Measurement Specification</em>' reference.
+     * @see #setMeasurementSpecification(MeasurementSpecification)
+     * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjective_MeasurementSpecification()
+     * @model
      * @generated
      */
-    MeasuringPoint getMeasuringPoint();
+    MeasurementSpecification getMeasurementSpecification();
 
     /**
      * Sets the value of the '
-     * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint
-     * <em>Measuring Point</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-     * -->
+     * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasurementSpecification
+     * <em>Measurement Specification</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @param value
-     *            the new value of the '<em>Measuring Point</em>' containment reference.
-     * @see #getMeasuringPoint()
+     *            the new value of the '<em>Measurement Specification</em>' reference.
+     * @see #getMeasurementSpecification()
      * @generated
      */
-    void setMeasuringPoint(MeasuringPoint value);
-
-    /**
-     * Returns the value of the '<em><b>Metric Description</b></em>' reference. <!-- begin-user-doc
-     * -->
-     * <p>
-     * If the meaning of the '<em>Metric Description</em>' reference isn't clear, there really
-     * should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     *
-     * @return the value of the '<em>Metric Description</em>' reference.
-     * @see #setMetricDescription(MetricDescription)
-     * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjective_MetricDescription()
-     * @model required="true"
-     * @generated
-     */
-    MetricDescription getMetricDescription();
-
-    /**
-     * Sets the value of the '
-     * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription
-     * <em>Metric Description</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Metric Description</em>' reference.
-     * @see #getMetricDescription()
-     * @generated
-     */
-    void setMetricDescription(MetricDescription value);
+    void setMeasurementSpecification(MeasurementSpecification value);
 
 } // ServiceLevelObjective

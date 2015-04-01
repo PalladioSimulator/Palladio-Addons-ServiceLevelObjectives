@@ -9,9 +9,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
-import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
-import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
-import org.palladiosimulator.metricspec.MetricSpecPackage;
 import org.palladiosimulator.servicelevelobjective.HardThreshold;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.NamedElement;
@@ -20,6 +17,7 @@ import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveReposito
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectiveFactory;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 import org.palladiosimulator.servicelevelobjective.Threshold;
+import org.palladiosimulator.simulizar.monitorrepository.MonitorrepositoryPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
@@ -124,9 +122,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         isInited = true;
 
         // Initialize simple dependencies
-        ExperimentDataPackage.eINSTANCE.eClass();
-        RepositoryPackage.eINSTANCE.eClass();
-        MeasuringpointPackage.eINSTANCE.eClass();
+        MonitorrepositoryPackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
         theServicelevelObjectivePackage.createPackageContents();
@@ -208,17 +204,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * @generated
      */
     @Override
-    public EReference getServiceLevelObjective_MeasuringPoint() {
-        return (EReference) this.serviceLevelObjectiveEClass.getEStructuralFeatures().get(4);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EReference getServiceLevelObjective_MetricDescription() {
+    public EReference getServiceLevelObjective_MeasurementSpecification() {
         return (EReference) this.serviceLevelObjectiveEClass.getEStructuralFeatures().get(3);
     }
 
@@ -330,8 +316,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         this.createEAttribute(this.serviceLevelObjectiveEClass, SERVICE_LEVEL_OBJECTIVE__DESCRIPTION);
         this.createEReference(this.serviceLevelObjectiveEClass, SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD);
         this.createEReference(this.serviceLevelObjectiveEClass, SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD);
-        this.createEReference(this.serviceLevelObjectiveEClass, SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION);
-        this.createEReference(this.serviceLevelObjectiveEClass, SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT);
+        this.createEReference(this.serviceLevelObjectiveEClass, SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION);
 
         this.thresholdEClass = this.createEClass(THRESHOLD);
         this.createEAttribute(this.thresholdEClass, THRESHOLD__THRESHOLD_LIMIT);
@@ -370,10 +355,8 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         this.setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        final MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage) EPackage.Registry.INSTANCE
-                .getEPackage(MetricSpecPackage.eNS_URI);
-        final MeasuringpointPackage theMeasuringpointPackage = (MeasuringpointPackage) EPackage.Registry.INSTANCE
-                .getEPackage(MeasuringpointPackage.eNS_URI);
+        final MonitorrepositoryPackage theMonitorrepositoryPackage = (MonitorrepositoryPackage) EPackage.Registry.INSTANCE
+                .getEPackage(MonitorrepositoryPackage.eNS_URI);
         final IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
                 .getEPackage(IdentifierPackage.eNS_URI);
         final ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
@@ -409,13 +392,9 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         this.initEReference(this.getServiceLevelObjective_UpperThreshold(), this.getThreshold(), null,
                 "upperThreshold", null, 0, 1, ServiceLevelObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getServiceLevelObjective_MetricDescription(),
-                theMetricSpecPackage.getMetricDescription(), null, "metricDescription", null, 1, 1,
-                ServiceLevelObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getServiceLevelObjective_MeasuringPoint(),
-                theMeasuringpointPackage.getMeasuringPoint(), null, "measuringPoint", null, 1, 1,
-                ServiceLevelObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+        this.initEReference(this.getServiceLevelObjective_MeasurementSpecification(),
+                theMonitorrepositoryPackage.getMeasurementSpecification(), null, "measurementSpecification", null, 0,
+                1, ServiceLevelObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.thresholdEClass, Threshold.class, "Threshold", IS_ABSTRACT, !IS_INTERFACE,

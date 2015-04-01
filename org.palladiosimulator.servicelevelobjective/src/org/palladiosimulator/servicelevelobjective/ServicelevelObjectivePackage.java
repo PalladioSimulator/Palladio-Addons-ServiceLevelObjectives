@@ -180,22 +180,13 @@ public interface ServicelevelObjectivePackage extends EPackage {
     int SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Metric Description</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-    /**
-     * The feature id for the '<em><b>Measuring Point</b></em>' containment reference. <!--
+     * The feature id for the '<em><b>Measurement Specification</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+    int SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Service Level Objective</em>' class. <!--
@@ -204,7 +195,7 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SERVICE_LEVEL_OBJECTIVE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+    int SERVICE_LEVEL_OBJECTIVE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The meta object id for the '
@@ -401,27 +392,15 @@ public interface ServicelevelObjectivePackage extends EPackage {
 
     /**
      * Returns the meta object for the reference '
-     * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint
-     * <em>Measuring Point</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasurementSpecification
+     * <em>Measurement Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @return the meta object for the reference '<em>Measuring Point</em>'.
-     * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasuringPoint()
+     * @return the meta object for the reference '<em>Measurement Specification</em>'.
+     * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasurementSpecification()
      * @see #getServiceLevelObjective()
      * @generated
      */
-    EReference getServiceLevelObjective_MeasuringPoint();
-
-    /**
-     * Returns the meta object for the reference '
-     * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription
-     * <em>Metric Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the reference '<em>Metric Description</em>'.
-     * @see org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMetricDescription()
-     * @see #getServiceLevelObjective()
-     * @generated
-     */
-    EReference getServiceLevelObjective_MetricDescription();
+    EReference getServiceLevelObjective_MeasurementSpecification();
 
     /**
      * Returns the meta object for class '
@@ -583,20 +562,13 @@ public interface ServicelevelObjectivePackage extends EPackage {
         EReference SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD = eINSTANCE.getServiceLevelObjective_UpperThreshold();
 
         /**
-         * The meta object literal for the '<em><b>Measuring Point</b></em>' reference feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the '<em><b>Measurement Specification</b></em>' reference
+         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @generated
          */
-        EReference SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT = eINSTANCE.getServiceLevelObjective_MeasuringPoint();
-
-        /**
-         * The meta object literal for the '<em><b>Metric Description</b></em>' reference feature.
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EReference SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION = eINSTANCE.getServiceLevelObjective_MetricDescription();
+        EReference SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION = eINSTANCE
+                .getServiceLevelObjective_MeasurementSpecification();
 
         /**
          * The meta object literal for the '
