@@ -46,8 +46,7 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
             super.getPropertyDescriptors(object);
 
             this.addDescriptionPropertyDescriptor(object);
-            this.addMetricDescriptionPropertyDescriptor(object);
-            this.addMeasuringPointPropertyDescriptor(object);
+            this.addMeasurementSpecificationPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
     }
@@ -69,35 +68,21 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     }
 
     /**
-     * This adds a property descriptor for the Metric Description feature. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * This adds a property descriptor for the Measurement Specification feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected void addMetricDescriptionPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ServiceLevelObjective_metricDescription_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ServiceLevelObjective_metricDescription_feature",
-                        "_UI_ServiceLevelObjective_type"),
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__METRIC_DESCRIPTION, true, false, true,
-                null, null, null));
-    }
-
-    /**
-     * This adds a property descriptor for the Measuring Point feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
-    protected void addMeasuringPointPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ServiceLevelObjective_measuringPoint_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ServiceLevelObjective_measuringPoint_feature",
-                        "_UI_ServiceLevelObjective_type"),
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASURING_POINT, true, false, true,
-                null, null, null));
+    protected void addMeasurementSpecificationPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors
+                .add(this.createItemPropertyDescriptor(((ComposeableAdapterFactory) this.adapterFactory)
+                .getRootAdapterFactory(), this.getResourceLocator(), this
+                .getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_ServiceLevelObjective_measurementSpecification_feature",
+                                "_UI_ServiceLevelObjective_type"),
+                        ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION, true,
+                        false, true, null, null, null));
     }
 
     /**

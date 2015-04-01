@@ -6,8 +6,13 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
 import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
+import org.palladiosimulator.simulizar.monitorrepository.provider.MonitorrepositoryEditPlugin;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
+import de.uka.ipd.sdq.pcm.core.provider.PalladioComponentModelEditPlugin;
+import de.uka.ipd.sdq.probfunction.provider.ProbabilityFunctionEditPlugin;
+import de.uka.ipd.sdq.stoex.provider.StoexEditPlugin;
+import de.uka.ipd.sdq.units.provider.UnitsEditPlugin;
 
 /**
  * This is the central singleton for the Servicelevelobjective edit plugin. <!-- begin-user-doc -->
@@ -37,7 +42,9 @@ public final class ServicelevelobjectiveEditPlugin extends EMFPlugin {
      */
     public ServicelevelobjectiveEditPlugin() {
         super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
-                MetricSpecEditPlugin.INSTANCE, });
+                MetricSpecEditPlugin.INSTANCE, MonitorrepositoryEditPlugin.INSTANCE,
+                PalladioComponentModelEditPlugin.INSTANCE, ProbabilityFunctionEditPlugin.INSTANCE,
+                StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
     }
 
     /**
