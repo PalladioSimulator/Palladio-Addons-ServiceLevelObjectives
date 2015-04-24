@@ -120,8 +120,8 @@ import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataI
 import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
 import org.palladiosimulator.metricspec.provider.MetricSpecItemProviderAdapterFactory;
+import org.palladiosimulator.monitorrepository.provider.MonitorRepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.servicelevelobjective.provider.ServicelevelObjectiveItemProviderAdapterFactory;
-import org.palladiosimulator.simulizar.monitorrepository.provider.MonitorrepositoryItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 import de.uka.ipd.sdq.pcm.allocation.provider.AllocationItemProviderAdapterFactory;
@@ -676,7 +676,7 @@ ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
         this.adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
-        this.adapterFactory.addAdapterFactory(new MonitorrepositoryItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new MonitorRepositoryItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new PcmItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new EntityItemProviderAdapterFactory());

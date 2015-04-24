@@ -7,7 +7,7 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
 import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
-import org.palladiosimulator.simulizar.monitorrepository.provider.MonitorrepositoryEditPlugin;
+import org.palladiosimulator.monitorrepository.provider.MonitorrepositoryEditPlugin;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
 import de.uka.ipd.sdq.pcm.core.provider.PalladioComponentModelEditPlugin;
