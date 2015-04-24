@@ -73,7 +73,7 @@
       <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/measurementframework/nightly/"/>
     </rm:provider>
   </rm:searchPath>
-    <rm:searchPath name="simulizar">
+    <rm:searchPath name="monitor">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
       <rm:property key="buckminster.source" value="false"/>
       <rm:property key="buckminster.mutable" value="false"/>
