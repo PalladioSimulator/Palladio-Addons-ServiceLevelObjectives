@@ -37,7 +37,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected LinearFuzzyThresholdImpl() {
@@ -46,7 +46,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -56,7 +56,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,7 +66,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -81,7 +81,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -95,7 +95,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +110,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -139,7 +139,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

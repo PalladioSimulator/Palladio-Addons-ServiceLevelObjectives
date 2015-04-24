@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.monitorrepository.MonitorRepositoryPackage;
 import org.palladiosimulator.servicelevelobjective.HardThreshold;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.NamedElement;
@@ -17,54 +18,53 @@ import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveReposito
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectiveFactory;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 import org.palladiosimulator.servicelevelobjective.Threshold;
-import org.palladiosimulator.simulizar.monitorrepository.MonitorrepositoryPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class ServicelevelObjectivePackageImpl extends EPackageImpl implements ServicelevelObjectivePackage {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass serviceLevelObjectiveRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass serviceLevelObjectiveEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass thresholdEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass hardThresholdEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass linearFuzzyThresholdEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass namedElementEClass = null;
@@ -77,7 +77,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#eNS_URI
      * @see #init()
@@ -89,7 +89,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private static boolean isInited = false;
@@ -102,7 +102,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * This method is used to initialize {@link ServicelevelObjectivePackage#eINSTANCE} when that
      * field is accessed. Clients should not invoke it directly. Instead, they should simply access
      * that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -122,7 +122,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         isInited = true;
 
         // Initialize simple dependencies
-        MonitorrepositoryPackage.eINSTANCE.eClass();
+        MonitorRepositoryPackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
         theServicelevelObjectivePackage.createPackageContents();
@@ -140,7 +140,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -150,7 +150,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -160,7 +160,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -170,7 +170,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -180,7 +180,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -190,7 +190,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -200,7 +200,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -210,7 +210,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -220,7 +220,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -230,7 +230,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -240,7 +240,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -250,7 +250,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -260,7 +260,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -270,7 +270,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -280,7 +280,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -290,7 +290,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isCreated = false;
@@ -298,7 +298,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void createPackageContents() {
@@ -332,7 +332,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isInitialized = false;
@@ -340,7 +340,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void initializePackageContents() {
@@ -355,8 +355,8 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         this.setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        final MonitorrepositoryPackage theMonitorrepositoryPackage = (MonitorrepositoryPackage) EPackage.Registry.INSTANCE
-                .getEPackage(MonitorrepositoryPackage.eNS_URI);
+        final MonitorRepositoryPackage theMonitorRepositoryPackage = (MonitorRepositoryPackage) EPackage.Registry.INSTANCE
+                .getEPackage(MonitorRepositoryPackage.eNS_URI);
         final IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
                 .getEPackage(IdentifierPackage.eNS_URI);
         final ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
@@ -393,7 +393,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
                 "upperThreshold", null, 0, 1, ServiceLevelObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEReference(this.getServiceLevelObjective_MeasurementSpecification(),
-                theMonitorrepositoryPackage.getMeasurementSpecification(), null, "measurementSpecification", null, 0,
+                theMonitorRepositoryPackage.getMeasurementSpecification(), null, "measurementSpecification", null, 0,
                 1, ServiceLevelObjective.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

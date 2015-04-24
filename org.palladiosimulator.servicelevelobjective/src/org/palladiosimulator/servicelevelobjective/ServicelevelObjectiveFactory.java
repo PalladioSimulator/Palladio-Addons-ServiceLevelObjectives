@@ -7,14 +7,14 @@ import org.eclipse.emf.ecore.EFactory;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a create method for each
  * non-abstract class of the model. <!-- end-user-doc -->
- *
+ * 
  * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage
  * @generated
  */
 public interface ServicelevelObjectiveFactory extends EFactory {
     /**
      * The singleton instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     ServicelevelObjectiveFactory eINSTANCE = org.palladiosimulator.servicelevelobjective.impl.ServicelevelObjectiveFactoryImpl
@@ -32,7 +32,7 @@ public interface ServicelevelObjectiveFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Service Level Objective</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @return a new object of class '<em>Service Level Objective</em>'.
      * @generated
      */
@@ -41,7 +41,7 @@ public interface ServicelevelObjectiveFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Hard Threshold</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return a new object of class '<em>Hard Threshold</em>'.
      * @generated
      */
@@ -50,7 +50,7 @@ public interface ServicelevelObjectiveFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Linear Fuzzy Threshold</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return a new object of class '<em>Linear Fuzzy Threshold</em>'.
      * @generated
      */
@@ -59,7 +59,7 @@ public interface ServicelevelObjectiveFactory extends EFactory {
     /**
      * Returns a new object of class '<em>Named Element</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return a new object of class '<em>Named Element</em>'.
      * @generated
      */
@@ -67,7 +67,7 @@ public interface ServicelevelObjectiveFactory extends EFactory {
 
     /**
      * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the package supported by this factory.
      * @generated
      */

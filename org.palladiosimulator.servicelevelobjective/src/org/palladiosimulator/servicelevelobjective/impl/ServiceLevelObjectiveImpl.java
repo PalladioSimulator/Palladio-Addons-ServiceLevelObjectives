@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 import org.palladiosimulator.servicelevelobjective.Threshold;
-import org.palladiosimulator.simulizar.monitorrepository.MeasurementSpecification;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -59,7 +58,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     /**
      * The cached value of the '{@link #getLowerThreshold() <em>Lower Threshold</em>}' containment
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getLowerThreshold()
      * @generated
      * @ordered
@@ -69,7 +68,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     /**
      * The cached value of the '{@link #getUpperThreshold() <em>Upper Threshold</em>}' containment
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getUpperThreshold()
      * @generated
      * @ordered
@@ -79,16 +78,16 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     /**
      * The cached value of the '{@link #getMeasurementSpecification()
      * <em>Measurement Specification</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getMeasurementSpecification()
      * @generated
      * @ordered
      */
-    protected MeasurementSpecification measurementSpecification;
+    protected org.palladiosimulator.monitorrepository.MeasurementSpecification measurementSpecification;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ServiceLevelObjectiveImpl() {
@@ -97,7 +96,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -107,7 +106,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -117,7 +116,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -132,7 +131,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -142,7 +141,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetLowerThreshold(final Threshold newLowerThreshold, NotificationChain msgs) {
@@ -163,7 +162,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -191,7 +190,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -201,7 +200,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetUpperThreshold(final Threshold newUpperThreshold, NotificationChain msgs) {
@@ -222,7 +221,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -250,14 +249,15 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
-    public MeasurementSpecification getMeasurementSpecification() {
+    public org.palladiosimulator.monitorrepository.MeasurementSpecification getMeasurementSpecification() {
         if (this.measurementSpecification != null && this.measurementSpecification.eIsProxy()) {
             final InternalEObject oldMeasurementSpecification = (InternalEObject) this.measurementSpecification;
-            this.measurementSpecification = (MeasurementSpecification) this.eResolveProxy(oldMeasurementSpecification);
+            this.measurementSpecification = (org.palladiosimulator.monitorrepository.MeasurementSpecification) this
+                    .eResolveProxy(oldMeasurementSpecification);
             if (this.measurementSpecification != oldMeasurementSpecification) {
                 if (this.eNotificationRequired()) {
                     this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -271,21 +271,22 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
-    public MeasurementSpecification basicGetMeasurementSpecification() {
+    public org.palladiosimulator.monitorrepository.MeasurementSpecification basicGetMeasurementSpecification() {
         return this.measurementSpecification;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
-    public void setMeasurementSpecification(final MeasurementSpecification newMeasurementSpecification) {
-        final MeasurementSpecification oldMeasurementSpecification = this.measurementSpecification;
+    public void setMeasurementSpecification(
+            final org.palladiosimulator.monitorrepository.MeasurementSpecification newMeasurementSpecification) {
+        final org.palladiosimulator.monitorrepository.MeasurementSpecification oldMeasurementSpecification = this.measurementSpecification;
         this.measurementSpecification = newMeasurementSpecification;
         if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
@@ -296,7 +297,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -313,7 +314,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -336,7 +337,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -352,7 +353,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
             this.setUpperThreshold((Threshold) newValue);
             return;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION:
-            this.setMeasurementSpecification((MeasurementSpecification) newValue);
+            this.setMeasurementSpecification((org.palladiosimulator.monitorrepository.MeasurementSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -360,7 +361,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -376,7 +377,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
             this.setUpperThreshold((Threshold) null);
             return;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION:
-            this.setMeasurementSpecification((MeasurementSpecification) null);
+            this.setMeasurementSpecification((org.palladiosimulator.monitorrepository.MeasurementSpecification) null);
             return;
         }
         super.eUnset(featureID);
@@ -384,7 +385,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -405,7 +406,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

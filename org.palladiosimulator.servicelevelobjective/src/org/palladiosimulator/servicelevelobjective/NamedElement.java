@@ -29,7 +29,7 @@ public interface NamedElement extends EObject, Identifier {
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Name</em>' attribute.
      * @see #setName(String)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getNamedElement_Name()
@@ -42,7 +42,7 @@ public interface NamedElement extends EObject, Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.NamedElement#getName <em>Name</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Name</em>' attribute.
      * @see #getName()

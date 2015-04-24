@@ -17,13 +17,13 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements ServicelevelObjectiveFactory {
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public static ServicelevelObjectiveFactory init() {
@@ -41,7 +41,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public ServicelevelObjectiveFactoryImpl() {
@@ -50,7 +50,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -73,7 +73,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -84,7 +84,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -95,7 +95,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -106,7 +106,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -117,7 +117,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -138,7 +138,7 @@ public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @deprecated
      * @generated
      */

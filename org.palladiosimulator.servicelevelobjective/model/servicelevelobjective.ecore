@@ -13,7 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="upperThreshold" eType="#//Threshold"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="measurementSpecification"
-        eType="ecore:EClass ../../org.palladiosimulator.simulizar.monitorrepository/model/monitorrepository.ecore#//MeasurementSpecification"/>
+        eType="ecore:EClass ../../org.palladiosimulator.monitorrepository/model/monitorrepository.ecore#//MeasurementSpecification"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Threshold" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="thresholdLimit">
