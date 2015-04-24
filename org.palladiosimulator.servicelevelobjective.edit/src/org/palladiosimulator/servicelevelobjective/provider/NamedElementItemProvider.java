@@ -43,7 +43,8 @@ public class NamedElementItemProvider extends IdentifierItemProvider {
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addNamePropertyDescriptor(object);
@@ -58,12 +59,20 @@ public class NamedElementItemProvider extends IdentifierItemProvider {
      * @generated
      */
     protected void addNamePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_NamedElement_name_feature"), this.getString("_UI_PropertyDescriptor_description",
-                        "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-                        ServicelevelObjectivePackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_NamedElement_name_feature"),
+                        this.getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
+                                "_UI_NamedElement_type"),
+                                ServicelevelObjectivePackage.Literals.NAMED_ELEMENT__NAME,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
@@ -85,8 +94,9 @@ public class NamedElementItemProvider extends IdentifierItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((NamedElement) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_NamedElement_type") : this
-                .getString("_UI_NamedElement_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_NamedElement_type") :
+                this.getString("_UI_NamedElement_type") + " " + label;
     }
 
     /**
@@ -100,7 +110,8 @@ public class NamedElementItemProvider extends IdentifierItemProvider {
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(NamedElement.class)) {
+        switch (notification.getFeatureID(NamedElement.class))
+        {
         case ServicelevelObjectivePackage.NAMED_ELEMENT__NAME:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;

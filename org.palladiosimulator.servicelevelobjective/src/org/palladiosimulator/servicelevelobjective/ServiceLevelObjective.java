@@ -2,7 +2,7 @@
  */
 package org.palladiosimulator.servicelevelobjective;
 
-import org.palladiosimulator.simulizar.monitorrepository.MeasurementSpecification;
+import org.palladiosimulator.monitorrepository.MeasurementSpecification;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '

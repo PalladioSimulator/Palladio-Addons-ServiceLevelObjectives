@@ -87,7 +87,8 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
      */
     @Override
     public Adapter createServiceLevelObjectiveRepositoryAdapter() {
-        if (this.serviceLevelObjectiveRepositoryItemProvider == null) {
+        if (this.serviceLevelObjectiveRepositoryItemProvider == null)
+        {
             this.serviceLevelObjectiveRepositoryItemProvider = new ServiceLevelObjectiveRepositoryItemProvider(this);
         }
 
@@ -112,7 +113,8 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
      */
     @Override
     public Adapter createServiceLevelObjectiveAdapter() {
-        if (this.serviceLevelObjectiveItemProvider == null) {
+        if (this.serviceLevelObjectiveItemProvider == null)
+        {
             this.serviceLevelObjectiveItemProvider = new ServiceLevelObjectiveItemProvider(this);
         }
 
@@ -137,7 +139,8 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
      */
     @Override
     public Adapter createHardThresholdAdapter() {
-        if (this.hardThresholdItemProvider == null) {
+        if (this.hardThresholdItemProvider == null)
+        {
             this.hardThresholdItemProvider = new HardThresholdItemProvider(this);
         }
 
@@ -162,7 +165,8 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
      */
     @Override
     public Adapter createLinearFuzzyThresholdAdapter() {
-        if (this.linearFuzzyThresholdItemProvider == null) {
+        if (this.linearFuzzyThresholdItemProvider == null)
+        {
             this.linearFuzzyThresholdItemProvider = new LinearFuzzyThresholdItemProvider(this);
         }
 
@@ -187,7 +191,8 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
      */
     @Override
     public Adapter createNamedElementAdapter() {
-        if (this.namedElementItemProvider == null) {
+        if (this.namedElementItemProvider == null)
+        {
             this.namedElementItemProvider = new NamedElementItemProvider(this);
         }
 
@@ -244,9 +249,11 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
      */
     @Override
     public Object adapt(final Object object, final Object type) {
-        if (this.isFactoryForType(type)) {
+        if (this.isFactoryForType(type))
+        {
             final Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
+            {
                 return adapter;
             }
         }
@@ -284,7 +291,8 @@ public class ServicelevelObjectiveItemProviderAdapterFactory extends Serviceleve
     public void fireNotifyChanged(final Notification notification) {
         this.changeNotifier.fireNotifyChanged(notification);
 
-        if (this.parentAdapterFactory != null) {
+        if (this.parentAdapterFactory != null)
+        {
             this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }

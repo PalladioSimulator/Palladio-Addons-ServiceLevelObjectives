@@ -42,7 +42,8 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addDescriptionPropertyDescriptor(object);
@@ -58,13 +59,21 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
      * @generated
      */
     protected void addDescriptionPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_ServiceLevelObjective_description_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_ServiceLevelObjective_description_feature",
-                        "_UI_ServiceLevelObjective_type"),
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_ServiceLevelObjective_description_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_ServiceLevelObjective_description_feature",
+                                "_UI_ServiceLevelObjective_type"),
+                                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
@@ -75,14 +84,21 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
      */
     protected void addMeasurementSpecificationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
-                .add(this.createItemPropertyDescriptor(((ComposeableAdapterFactory) this.adapterFactory)
-                .getRootAdapterFactory(), this.getResourceLocator(), this
-                .getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
+        .add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
                         this.getString("_UI_PropertyDescriptor_description",
                                 "_UI_ServiceLevelObjective_measurementSpecification_feature",
                                 "_UI_ServiceLevelObjective_type"),
-                        ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION, true,
-                        false, true, null, null, null));
+                                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
+                                true,
+                                false,
+                                true,
+                                null,
+                                null,
+                                null));
     }
 
     /**
@@ -96,7 +112,8 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+        if (this.childrenFeatures == null)
+        {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD);
             this.childrenFeatures.add(ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD);
@@ -136,8 +153,9 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     @Override
     public String getText(final Object object) {
         final String label = ((ServiceLevelObjective) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_ServiceLevelObjective_type") : this
-                .getString("_UI_ServiceLevelObjective_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_ServiceLevelObjective_type") :
+                this.getString("_UI_ServiceLevelObjective_type") + " " + label;
     }
 
     /**
@@ -151,7 +169,8 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(ServiceLevelObjective.class)) {
+        switch (notification.getFeatureID(ServiceLevelObjective.class))
+        {
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
@@ -173,21 +192,25 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD,
-                ServicelevelObjectiveFactory.eINSTANCE.createHardThreshold()));
+        newChildDescriptors.add
+                (this.createChildParameter
+                (ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD,
+                        ServicelevelObjectiveFactory.eINSTANCE.createHardThreshold()));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD,
-                ServicelevelObjectiveFactory.eINSTANCE.createLinearFuzzyThreshold()));
+        newChildDescriptors.add
+                (this.createChildParameter
+                (ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD,
+                        ServicelevelObjectiveFactory.eINSTANCE.createLinearFuzzyThreshold()));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
-                ServicelevelObjectiveFactory.eINSTANCE.createHardThreshold()));
+        newChildDescriptors.add
+                (this.createChildParameter
+                (ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
+                        ServicelevelObjectiveFactory.eINSTANCE.createHardThreshold()));
 
-        newChildDescriptors.add(this.createChildParameter(
-                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
-                ServicelevelObjectiveFactory.eINSTANCE.createLinearFuzzyThreshold()));
+        newChildDescriptors.add
+                (this.createChildParameter
+                (ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
+                        ServicelevelObjectiveFactory.eINSTANCE.createLinearFuzzyThreshold()));
     }
 
     /**
@@ -202,10 +225,12 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
         final Object childFeature = feature;
         final Object childObject = child;
 
-        final boolean qualify = childFeature == ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD
-                || childFeature == ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD;
+        final boolean qualify =
+                childFeature == ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD ||
+                        childFeature == ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD;
 
-        if (qualify) {
+        if (qualify)
+        {
             return this.getString(
                     "_UI_CreateChild_text2",
                     new Object[] { this.getTypeText(childObject), this.getFeatureText(childFeature),

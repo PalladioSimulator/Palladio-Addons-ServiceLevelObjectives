@@ -12,7 +12,7 @@
   <rm:locator pattern="^org\.palladiosimulator\.edp2.*" searchPathRef="edp2" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\.metricspec.*" searchPathRef="metricspec" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\.measurementframework.*" searchPathRef="measurementframework" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.simulizar.*" searchPathRef="simulizar" failOnError="false"/>
+  <rm:locator pattern="^org\.palladiosimulator\.monitor.*" searchPathRef="monitor" failOnError="false"/>
   <rm:locator searchPathRef="eclipse-release" failOnError="false"/>
   <rm:locator searchPathRef="orbit" failOnError="false"/>
   <rm:searchPath name="ServiceLevelObjective">
@@ -77,7 +77,7 @@
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
       <rm:property key="buckminster.source" value="false"/>
       <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/simulizar/nightly/"/>
+      <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/monitorrepository/nightly/"/>
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="eclipse-release">

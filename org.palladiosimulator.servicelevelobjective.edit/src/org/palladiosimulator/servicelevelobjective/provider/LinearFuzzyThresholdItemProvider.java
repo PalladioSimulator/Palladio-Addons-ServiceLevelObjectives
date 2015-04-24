@@ -40,7 +40,8 @@ public class LinearFuzzyThresholdItemProvider extends ThresholdItemProvider {
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+        if (this.itemPropertyDescriptors == null)
+        {
             super.getPropertyDescriptors(object);
 
             this.addSoftLimitPropertyDescriptor(object);
@@ -55,13 +56,21 @@ public class LinearFuzzyThresholdItemProvider extends ThresholdItemProvider {
      * @generated
      */
     protected void addSoftLimitPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_LinearFuzzyThreshold_softLimit_feature"), this.getString(
-                        "_UI_PropertyDescriptor_description", "_UI_LinearFuzzyThreshold_softLimit_feature",
-                        "_UI_LinearFuzzyThreshold_type"),
-                ServicelevelObjectivePackage.Literals.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT, true, false, false,
-                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        this.itemPropertyDescriptors.add
+                (this.createItemPropertyDescriptor
+                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
+                        this.getResourceLocator(),
+                        this.getString("_UI_LinearFuzzyThreshold_softLimit_feature"),
+                        this.getString("_UI_PropertyDescriptor_description",
+                                "_UI_LinearFuzzyThreshold_softLimit_feature",
+                                "_UI_LinearFuzzyThreshold_type"),
+                                ServicelevelObjectivePackage.Literals.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT,
+                                true,
+                                false,
+                                false,
+                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                                null,
+                                null));
     }
 
     /**
@@ -83,8 +92,9 @@ public class LinearFuzzyThresholdItemProvider extends ThresholdItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((LinearFuzzyThreshold) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_LinearFuzzyThreshold_type") : this
-                .getString("_UI_LinearFuzzyThreshold_type") + " " + label;
+        return label == null || label.length() == 0 ?
+                this.getString("_UI_LinearFuzzyThreshold_type") :
+                this.getString("_UI_LinearFuzzyThreshold_type") + " " + label;
     }
 
     /**
@@ -98,7 +108,8 @@ public class LinearFuzzyThresholdItemProvider extends ThresholdItemProvider {
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(LinearFuzzyThreshold.class)) {
+        switch (notification.getFeatureID(LinearFuzzyThreshold.class))
+        {
         case ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;

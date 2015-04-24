@@ -6,6 +6,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
 import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
+import org.palladiosimulator.monitorrepository.provider.MonitorrepositoryEditPlugin;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
 import de.uka.ipd.sdq.pcm.core.provider.PalladioComponentModelEditPlugin;
@@ -40,11 +41,17 @@ public final class ServicelevelobjectiveEditPlugin extends EMFPlugin {
      * @generated
      */
     public ServicelevelobjectiveEditPlugin() {
-        super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
+        super(new ResourceLocator[]
+        {
+                EDP2EditPlugin.INSTANCE,
+                IdentifierEditPlugin.INSTANCE,
                 MetricSpecEditPlugin.INSTANCE,
-                org.palladiosimulator.simulizar.monitorrepository.provider.MonitorrepositoryEditPlugin.INSTANCE,
-                PalladioComponentModelEditPlugin.INSTANCE, ProbabilityFunctionEditPlugin.INSTANCE,
-                StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
+                MonitorrepositoryEditPlugin.INSTANCE,
+                PalladioComponentModelEditPlugin.INSTANCE,
+                ProbabilityFunctionEditPlugin.INSTANCE,
+                StoexEditPlugin.INSTANCE,
+                UnitsEditPlugin.INSTANCE,
+        });
     }
 
     /**
