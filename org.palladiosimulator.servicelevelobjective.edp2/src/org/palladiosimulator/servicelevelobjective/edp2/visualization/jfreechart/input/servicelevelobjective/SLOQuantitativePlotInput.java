@@ -22,7 +22,6 @@ import org.jfree.data.xy.DefaultXYDataset;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
-import org.palladiosimulator.edp2.ui.EDP2UIPlugin;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.editor.JFreeChartEditor;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.AbstractXYVisualizationInput;
@@ -34,6 +33,7 @@ import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
+import org.palladiosimulator.servicelevelobjective.edp2.SLOEDP2UIPlugin;
 import org.palladiosimulator.servicelevelobjective.edp2.visualization.wizards.SLODialogAggDataPage;
 import org.palladiosimulator.servicelevelobjective.edp2.visualization.wizards.SLOViewsWizard;
 
@@ -131,8 +131,8 @@ public class SLOQuantitativePlotInput extends AbstractXYVisualizationInput {
     protected Plot generatePlot(PropertyConfigurable config, AbstractDataset dataset) {
 
         final SLOViewsWizard wizard = new SLOViewsWizard(getInputs());
-        final WizardDialog wdialog = new WizardDialog(EDP2UIPlugin.INSTANCE.getWorkbench().getActiveWorkbenchWindow()
-                .getShell(), wizard);
+        final WizardDialog wdialog = new WizardDialog(SLOEDP2UIPlugin.INSTANCE.getWorkbench()
+                .getActiveWorkbenchWindow().getShell(), wizard);
         wdialog.open();
         this.slo = wizard.getSelectedSLO();
 
