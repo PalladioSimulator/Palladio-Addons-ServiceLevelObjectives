@@ -36,8 +36,7 @@ public class HardThresholdItemProvider extends ThresholdItemProvider {
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
         }
@@ -63,9 +62,8 @@ public class HardThresholdItemProvider extends ThresholdItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((HardThreshold) object).getId();
-        return label == null || label.length() == 0 ?
-                this.getString("_UI_HardThreshold_type") :
-                this.getString("_UI_HardThreshold_type") + " " + label;
+        return label == null || label.length() == 0 ? this.getString("_UI_HardThreshold_type") : this
+                .getString("_UI_HardThreshold_type") + " " + label;
     }
 
     /**

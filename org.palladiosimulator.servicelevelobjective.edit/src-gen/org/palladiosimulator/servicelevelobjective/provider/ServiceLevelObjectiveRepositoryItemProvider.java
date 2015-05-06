@@ -49,8 +49,7 @@ public class ServiceLevelObjectiveRepositoryItemProvider extends ItemProviderAda
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
         }
@@ -68,8 +67,7 @@ public class ServiceLevelObjectiveRepositoryItemProvider extends ItemProviderAda
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null)
-        {
+        if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
             this.childrenFeatures
                     .add(ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES);
@@ -124,8 +122,7 @@ public class ServiceLevelObjectiveRepositoryItemProvider extends ItemProviderAda
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(ServiceLevelObjectiveRepository.class))
-        {
+        switch (notification.getFeatureID(ServiceLevelObjectiveRepository.class)) {
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
@@ -143,11 +140,9 @@ public class ServiceLevelObjectiveRepositoryItemProvider extends ItemProviderAda
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors
-        .add
-                (this.createChildParameter
-                (ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES,
-                        ServicelevelObjectiveFactory.eINSTANCE.createServiceLevelObjective()));
+        newChildDescriptors.add(this.createChildParameter(
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES,
+                ServicelevelObjectiveFactory.eINSTANCE.createServiceLevelObjective()));
     }
 
     /**
