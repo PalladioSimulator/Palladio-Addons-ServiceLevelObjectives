@@ -2,108 +2,116 @@
  */
 package org.palladiosimulator.servicelevelobjective.impl;
 
-import javax.measure.Measure;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.palladiosimulator.servicelevelobjective.NamedElement;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
-import org.palladiosimulator.servicelevelobjective.Threshold;
 
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Threshold</b></em>'. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Named Element</b></em>'.
+ * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.palladiosimulator.servicelevelobjective.impl.ThresholdImpl#getThresholdLimit <em>
- * Threshold Limit</em>}</li>
+ * <li>{@link org.palladiosimulator.servicelevelobjective.impl.NamedElementImpl#getName <em>Name
+ * </em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ThresholdImpl extends IdentifierImpl implements Threshold {
+public class NamedElementImpl extends IdentifierImpl implements NamedElement {
     /**
-     * The cached value of the '{@link #getThresholdLimit() <em>Threshold Limit</em>}' attribute.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @see #getThresholdLimit()
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @see #getName()
      * @generated
      * @ordered
      */
-    protected Measure<?, ?> thresholdLimit;
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    protected ThresholdImpl() {
+    protected NamedElementImpl() {
         super();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     protected EClass eStaticClass() {
-        return ServicelevelObjectivePackage.Literals.THRESHOLD;
+        return ServicelevelObjectivePackage.Literals.NAMED_ELEMENT;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public Measure<?, ?> getThresholdLimit() {
-        return this.thresholdLimit;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void setThresholdLimit(final Measure<?, ?> newThresholdLimit) {
-        final Measure<?, ?> oldThresholdLimit = this.thresholdLimit;
-        this.thresholdLimit = newThresholdLimit;
+    public void setName(final String newName) {
+        final String oldName = this.name;
+        this.name = newName;
         if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT, oldThresholdLimit, this.thresholdLimit));
+                    ServicelevelObjectivePackage.NAMED_ELEMENT__NAME, oldName, this.name));
         }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
-        case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            return this.getThresholdLimit();
+        case ServicelevelObjectivePackage.NAMED_ELEMENT__NAME:
+            return this.getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
-        case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            this.setThresholdLimit((Measure<?, ?>) newValue);
+        case ServicelevelObjectivePackage.NAMED_ELEMENT__NAME:
+            this.setName((String) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -111,14 +119,14 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public void eUnset(final int featureID) {
         switch (featureID) {
-        case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            this.setThresholdLimit((Measure<?, ?>) null);
+        case ServicelevelObjectivePackage.NAMED_ELEMENT__NAME:
+            this.setName(NAME_EDEFAULT);
             return;
         }
         super.eUnset(featureID);
@@ -126,21 +134,21 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
-        case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            return this.thresholdLimit != null;
+        case ServicelevelObjectivePackage.NAMED_ELEMENT__NAME:
+            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
         }
         return super.eIsSet(featureID);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -150,10 +158,10 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
         }
 
         final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (thresholdLimit: ");
-        result.append(this.thresholdLimit);
+        result.append(" (name: ");
+        result.append(this.name);
         result.append(')');
         return result.toString();
     }
 
-} // ThresholdImpl
+} // NamedElementImpl
