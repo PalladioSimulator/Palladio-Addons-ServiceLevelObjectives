@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Edp2
+Bundle-Name: SLOEDP2
 Bundle-SymbolicName: org.palladiosimulator.servicelevelobjective.edp2;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.palladiosimulator.servicelevelobjective.edp2.Activator
+Bundle-Activator: org.palladiosimulator.servicelevelobjective.edp2.SLOEDP2UIPlugin
 Bundle-Vendor: palladiosimulator.org
 Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.navigator,
