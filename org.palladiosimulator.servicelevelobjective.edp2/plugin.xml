@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQualitativePlotInputFactory"
+            id="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQualitativePlotInputFactory">
+      </factory>
+      <factory
+            class="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQuantitativePlotInputFactory"
+            id="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQuantitativePlotInputFactory">
+      </factory>
+   </extension>
+
+   <extension
+         point="org.palladiosimulator.edp2.visualization.datasink">
+      <datasink
+            class="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQuantitativePlotInput"
+            editor="org.palladiosimulator.servicelevelobjective..edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQuantitativePlotInputFactory"
+            id="org.palladiosimulator.servicelevelobjective.edp2.visualization.inputs.SLOQuantitativeInput">
+      </datasink>
+      <datasink
+            class="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQualitativePlotInput"
+            editor="org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor"
+            factory="org.palladiosimulator.servicelevelobjective.edp2.visualization.jfreechart.input.servicelevelobjective.SLOQualitativePlotInputFactory"
+            id="org.palladiosimulator.edp2.visualization.inputs.SLOQualitativeInput">
+      </datasink> 
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="SLOQualitative"
+            name="Service Level Objective Fullfilment Report Qualitative">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.SLOQualitativeInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="SLOQuantitative"
+            name="Service Level Objective Fullfilment Report Quantitative">
+         <datasink
+               sinkID="org.palladiosimulator.servicelevelobjective.edp2.visualization.inputs.SLOQuantitativeInput">
+         </datasink>
+      </chainDescription>
+   </extension>
+   <extension
+         point="org.palladiosimulator.edp2.datastream.chainDescription">
+      <chainDescription
+            id="SLO violations"
+            name="SLO violations over time">
+         <datasink
+               sinkID="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
+         </datasink>
+         <filter
+               filterClass="org.palladiosimulator.servicelevelobjective.edp2.filters.SLOViolationEDP2DatasourceFilter">
+         </filter>
+      </chainDescription>
+   </extension>
+
+</plugin>
