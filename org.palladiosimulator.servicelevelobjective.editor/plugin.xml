@@ -12,11 +12,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveModelWizardID"
-            name="%_UI_ServicelevelObjectiveModelWizard_label"
-            class="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ServicelevelObjectiveModelFile.gif">
+            class="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveModelWizard"
+            descriptionImage="icons/full/obj16/servicelevelobjective_128.png"
+            icon="icons/full/obj16/servicelevelobjective_16.png"
+            id="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveModelWizardID"
+            name="%_UI_ServicelevelObjectiveModelWizard_label">
          <description>%_UI_ServicelevelObjectiveModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -27,7 +28,7 @@
       <editor
             id="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveEditorID"
             name="%_UI_ServicelevelObjectiveEditor_label"
-            icon="icons/full/obj16/ServicelevelObjectiveModelFile.gif"
+            icon="icons/full/obj16/servicelevelobjective_repository_16.png"
             extensions="slo"
             class="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveEditor"
             contributorClass="org.palladiosimulator.servicelevelobjective.presentation.ServicelevelObjectiveActionBarContributor">
