@@ -104,7 +104,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
     private boolean finishable;
 
     /**
-     * The wizard´s pages.
+     * The wizard's pages.
      */
     SLODialogChooseMeasuringPointsPage chooseMeasuringPointsPage;
     SLODialogChooseSLOPage chooseSLOPage;
