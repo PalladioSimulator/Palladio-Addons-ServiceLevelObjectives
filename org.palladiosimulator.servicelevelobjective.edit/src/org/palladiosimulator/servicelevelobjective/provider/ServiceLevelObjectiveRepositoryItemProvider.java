@@ -92,12 +92,12 @@ public class ServiceLevelObjectiveRepositoryItemProvider extends ItemProviderAda
      * This returns ServiceLevelObjectiveRepository.gif. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
      *
-     * @generated
+     * @generated not
      */
     @Override
     public Object getImage(final Object object) {
         return this.overlayImage(object,
-                this.getResourceLocator().getImage("full/obj16/ServiceLevelObjectiveRepository"));
+                this.getResourceLocator().getImage("full/obj16/servicelevelobjective_repository_16.png"));
     }
 
     /**

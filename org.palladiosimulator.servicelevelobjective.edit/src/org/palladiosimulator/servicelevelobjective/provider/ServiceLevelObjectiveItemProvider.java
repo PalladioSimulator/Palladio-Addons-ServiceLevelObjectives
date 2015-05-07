@@ -76,8 +76,8 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     protected void addMeasurementSpecificationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
                 .add(this.createItemPropertyDescriptor(((ComposeableAdapterFactory) this.adapterFactory)
-                .getRootAdapterFactory(), this.getResourceLocator(), this
-                .getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
+                        .getRootAdapterFactory(), this.getResourceLocator(), this
+                        .getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
                         this.getString("_UI_PropertyDescriptor_description",
                                 "_UI_ServiceLevelObjective_measurementSpecification_feature",
                                 "_UI_ServiceLevelObjective_type"),
@@ -120,11 +120,12 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     /**
      * This returns ServiceLevelObjective.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated
+     * @generated not
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/ServiceLevelObjective"));
+        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/servicelevelobjective_16.png"));
+
     }
 
     /**
