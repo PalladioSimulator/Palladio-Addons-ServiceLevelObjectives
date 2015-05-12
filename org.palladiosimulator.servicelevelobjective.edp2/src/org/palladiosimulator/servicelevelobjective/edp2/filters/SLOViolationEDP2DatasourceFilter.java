@@ -17,12 +17,12 @@ public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements 
 
     public SLOViolationEDP2DatasourceFilter() {
         // FIXME: Which metric should really be given here?
-        super(MetricDescriptionConstants.RESPONSE_TIME_METRIC);
+        super(MetricDescriptionConstants.RESPONSE_TIME_METRIC_TUPLE);
     }
 
     public SLOViolationEDP2DatasourceFilter(IDataSource datasource) {
         // FIXME: Which metric should really be given here?
-        super(datasource, MetricDescriptionConstants.RESPONSE_TIME_METRIC);
+        super(datasource, MetricDescriptionConstants.RECONFIGURATION_TIME_METRIC_TUPLE);
     }
 
     public SLOViolationEDP2DatasourceFilter(IDataSource datasource, MetricDescription metricDescription) {
