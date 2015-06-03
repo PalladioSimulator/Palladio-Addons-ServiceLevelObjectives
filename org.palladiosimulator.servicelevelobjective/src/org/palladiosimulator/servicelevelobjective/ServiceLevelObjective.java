@@ -28,6 +28,7 @@ import org.palladiosimulator.monitorrepository.MeasurementSpecification;
  * @generated
  */
 public interface ServiceLevelObjective extends NamedElement {
+
     /**
      * Returns the value of the '<em><b>Description</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

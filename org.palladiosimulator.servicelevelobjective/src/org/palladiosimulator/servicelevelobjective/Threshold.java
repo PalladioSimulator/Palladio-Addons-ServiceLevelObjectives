@@ -4,8 +4,6 @@ package org.palladiosimulator.servicelevelobjective;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
@@ -24,7 +22,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model abstract="true"
  * @generated
  */
-public interface Threshold extends EObject, Identifier {
+public interface Threshold extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Threshold Limit</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

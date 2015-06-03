@@ -25,6 +25,7 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
  * @generated
  */
 public class NamedElementItemProvider extends IdentifierItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
@@ -127,7 +128,7 @@ public class NamedElementItemProvider extends IdentifierItemProvider {
      */
     @Override
     public ResourceLocator getResourceLocator() {
-        return ServicelevelobjectiveEditPlugin.INSTANCE;
+        return ServiceLevelObjectiveEditPlugin.INSTANCE;
     }
 
 }

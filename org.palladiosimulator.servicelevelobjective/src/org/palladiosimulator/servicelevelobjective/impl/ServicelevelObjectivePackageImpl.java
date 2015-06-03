@@ -27,6 +27,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * @generated
  */
 public class ServicelevelObjectivePackageImpl extends EPackageImpl implements ServicelevelObjectivePackage {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -117,7 +118,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
         // Obtain or create and register package
         final ServicelevelObjectivePackageImpl theServicelevelObjectivePackage = (ServicelevelObjectivePackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof ServicelevelObjectivePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                        : new ServicelevelObjectivePackageImpl());
+                : new ServicelevelObjectivePackageImpl());
 
         isInited = true;
 

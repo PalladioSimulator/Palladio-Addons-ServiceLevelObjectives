@@ -21,6 +21,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  * @generated
  */
 public class ServicelevelObjectiveFactoryImpl extends EFactoryImpl implements ServicelevelObjectiveFactory {
+
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
      *

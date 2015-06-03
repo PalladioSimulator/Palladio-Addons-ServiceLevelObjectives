@@ -2,8 +2,6 @@
  */
 package org.palladiosimulator.servicelevelobjective;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
@@ -21,7 +19,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface NamedElement extends EObject, Identifier {
+public interface NamedElement extends Identifier {
+
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

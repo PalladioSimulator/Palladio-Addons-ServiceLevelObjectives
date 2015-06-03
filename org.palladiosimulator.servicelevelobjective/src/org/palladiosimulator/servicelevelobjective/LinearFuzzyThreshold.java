@@ -21,6 +21,7 @@ import javax.measure.Measure;
  * @generated
  */
 public interface LinearFuzzyThreshold extends Threshold {
+
     /**
      * Returns the value of the '<em><b>Soft Limit</b></em>' attribute. <!-- begin-user-doc -->
      * <p>

@@ -32,6 +32,7 @@ import org.palladiosimulator.servicelevelobjective.util.ServicelevelObjectiveAda
  */
 public class ServicelevelObjectiveItemProviderAdapterFactory extends ServicelevelObjectiveAdapterFactory implements
         ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->

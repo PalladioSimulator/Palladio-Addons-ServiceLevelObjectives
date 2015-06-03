@@ -22,6 +22,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  * @generated
  */
 public class LinearFuzzyThresholdItemProvider extends ThresholdItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

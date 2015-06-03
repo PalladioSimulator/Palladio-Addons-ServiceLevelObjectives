@@ -24,6 +24,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public class NamedElementImpl extends IdentifierImpl implements NamedElement {
+
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->

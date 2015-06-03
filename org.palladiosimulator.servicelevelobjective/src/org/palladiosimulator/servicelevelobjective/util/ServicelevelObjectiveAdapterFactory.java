@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 import org.palladiosimulator.servicelevelobjective.HardThreshold;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.NamedElement;
@@ -24,6 +25,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @generated
  */
 public class ServicelevelObjectiveAdapterFactory extends AdapterFactoryImpl {
+
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -68,6 +70,7 @@ public class ServicelevelObjectiveAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     protected ServicelevelObjectiveSwitch<Adapter> modelSwitch = new ServicelevelObjectiveSwitch<Adapter>() {
+
         @Override
         public Adapter caseServiceLevelObjectiveRepository(final ServiceLevelObjectiveRepository object) {
             return ServicelevelObjectiveAdapterFactory.this.createServiceLevelObjectiveRepositoryAdapter();
@@ -96,6 +99,11 @@ public class ServicelevelObjectiveAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseNamedElement(final NamedElement object) {
             return ServicelevelObjectiveAdapterFactory.this.createNamedElementAdapter();
+        }
+
+        @Override
+        public Adapter caseStereotypableElement(final StereotypableElement object) {
+            return ServicelevelObjectiveAdapterFactory.this.createStereotypableElementAdapter();
         }
 
         @Override
@@ -209,6 +217,21 @@ public class ServicelevelObjectiveAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createNamedElementAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * <em>Stereotypable Element</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see org.palladiosimulator.mdsdprofiles.StereotypableElement
+     * @generated
+     */
+    public Adapter createStereotypableElementAdapter() {
         return null;
     }
 

@@ -26,6 +26,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * @generated
  */
 public abstract class ThresholdImpl extends IdentifierImpl implements Threshold {
+
     /**
      * The cached value of the '{@link #getThresholdLimit() <em>Threshold Limit</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->

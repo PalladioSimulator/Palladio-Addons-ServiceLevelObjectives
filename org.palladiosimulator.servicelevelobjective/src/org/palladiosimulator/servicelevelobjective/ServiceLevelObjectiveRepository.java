@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ServiceLevelObjectiveRepository extends EObject {
+
     /**
      * Returns the value of the '<em><b>Servicelevelobjectives</b></em>' containment reference list.
      * The list contents are of type

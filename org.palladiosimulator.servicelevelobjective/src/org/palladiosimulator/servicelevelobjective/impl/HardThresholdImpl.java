@@ -15,6 +15,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  * @generated
  */
 public class HardThresholdImpl extends ThresholdImpl implements HardThreshold {
+
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *

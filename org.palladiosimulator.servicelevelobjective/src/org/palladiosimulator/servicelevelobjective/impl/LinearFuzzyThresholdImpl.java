@@ -25,6 +25,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  * @generated
  */
 public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuzzyThreshold {
+
     /**
      * The cached value of the '{@link #getSoftLimit() <em>Soft Limit</em>}' attribute. <!--
      * begin-user-doc --> <!-- end-user-doc -->

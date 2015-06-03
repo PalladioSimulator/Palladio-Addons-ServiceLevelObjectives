@@ -18,6 +18,7 @@ import org.palladiosimulator.servicelevelobjective.HardThreshold;
  * @generated
  */
 public class HardThresholdItemProvider extends ThresholdItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

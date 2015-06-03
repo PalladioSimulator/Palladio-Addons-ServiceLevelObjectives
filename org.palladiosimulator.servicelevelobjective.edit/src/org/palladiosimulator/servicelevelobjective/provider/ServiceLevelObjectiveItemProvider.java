@@ -24,6 +24,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  * @generated
  */
 public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider {
+
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
@@ -76,8 +77,8 @@ public class ServiceLevelObjectiveItemProvider extends NamedElementItemProvider 
     protected void addMeasurementSpecificationPropertyDescriptor(final Object object) {
         this.itemPropertyDescriptors
                 .add(this.createItemPropertyDescriptor(((ComposeableAdapterFactory) this.adapterFactory)
-                        .getRootAdapterFactory(), this.getResourceLocator(), this
-                        .getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
+                .getRootAdapterFactory(), this.getResourceLocator(), this
+                .getString("_UI_ServiceLevelObjective_measurementSpecification_feature"),
                         this.getString("_UI_PropertyDescriptor_description",
                                 "_UI_ServiceLevelObjective_measurementSpecification_feature",
                                 "_UI_ServiceLevelObjective_type"),
