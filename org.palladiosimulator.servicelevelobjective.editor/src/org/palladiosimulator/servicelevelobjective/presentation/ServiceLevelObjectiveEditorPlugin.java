@@ -5,11 +5,7 @@ package org.palladiosimulator.servicelevelobjective.presentation;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-import org.modelversioning.emfprofile.provider.EMFProfileEditPlugin;
-import org.modelversioning.emfprofileapplication.provider.EMFProfileApplicationEditPlugin;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
-import org.palladiosimulator.mdsdprofiles.provider.MdsdprofilesEditPlugin;
 import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
 import org.palladiosimulator.monitorrepository.provider.MonitorrepositoryEditPlugin;
 
@@ -50,8 +46,7 @@ public final class ServiceLevelObjectiveEditorPlugin extends EMFPlugin {
         super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
                 MetricSpecEditPlugin.INSTANCE, MonitorrepositoryEditPlugin.INSTANCE,
                 PalladioComponentModelEditPlugin.INSTANCE, ProbabilityFunctionEditPlugin.INSTANCE,
-                StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, MdsdprofilesEditPlugin.INSTANCE,
-                EMFProfileEditPlugin.INSTANCE, EMFProfileApplicationEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, });
+                StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
     }
 
     /**

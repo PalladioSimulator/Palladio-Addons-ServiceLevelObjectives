@@ -106,8 +106,6 @@ import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.modelversioning.emfprofile.provider.EMFProfileItemProviderAdapterFactory;
-import org.modelversioning.emfprofileapplication.provider.EMFProfileApplicationItemProviderAdapterFactory;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
@@ -121,7 +119,6 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
-import org.palladiosimulator.mdsdprofiles.provider.MdsdprofilesItemProviderAdapterFactory;
 import org.palladiosimulator.metricspec.provider.MetricSpecItemProviderAdapterFactory;
 import org.palladiosimulator.monitorrepository.provider.MonitorRepositoryItemProviderAdapterFactory;
 import org.palladiosimulator.servicelevelobjective.provider.ServicelevelObjectiveItemProviderAdapterFactory;
@@ -149,65 +146,64 @@ import de.uka.ipd.sdq.pcm.usagemodel.provider.UsagemodelItemProviderAdapterFacto
 import de.uka.ipd.sdq.probfunction.provider.ProbfunctionItemProviderAdapterFactory;
 import de.uka.ipd.sdq.stoex.provider.StoexItemProviderAdapterFactory;
 import de.uka.ipd.sdq.units.provider.UnitsItemProviderAdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
 /**
- * This is an example of a ServicelevelObjective model editor.
- * <!-- begin-user-doc --> <!--
+ * This is an example of a ServicelevelObjective model editor. <!-- begin-user-doc --> <!--
  * end-user-doc -->
+ * 
  * @generated
  */
 public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements IEditingDomainProvider,
-        ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
+ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 
     /**
      * This keeps track of the editing domain that is used to track all changes to the model. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected AdapterFactoryEditingDomain editingDomain;
 
     /**
-     * This is the one adapter factory used for providing views of the model.
-     * <!-- begin-user-doc
+     * This is the one adapter factory used for providing views of the model. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected ComposedAdapterFactory adapterFactory;
 
     /**
-     * This is the content outline page.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the content outline page. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected IContentOutlinePage contentOutlinePage;
 
     /**
-     * This is a kludge...
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is a kludge... <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected IStatusLineManager contentOutlineStatusLineManager;
 
     /**
-     * This is the content outline page's viewer.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the content outline page's viewer. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected TreeViewer contentOutlineViewer;
 
     /**
-     * This is the property sheet page.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the property sheet page. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected List<PropertySheetPage> propertySheetPages = new ArrayList<PropertySheetPage>();
 
     /**
-     * This is the viewer that shadows the selection in the content outline.
-     * The parent relation must be correctly defined for this to work.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the viewer that shadows the selection in the content outline. The parent relation
+     * must be correctly defined for this to work. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected TreeViewer selectionViewer;
@@ -215,22 +211,22 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     /**
      * This inverts the roll of parent and child in the content provider and show parents as a tree.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected TreeViewer parentViewer;
 
     /**
-     * This shows how a tree view works.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This shows how a tree view works. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected TreeViewer treeViewer;
 
     /**
-     * This shows how a list view works.
-     * A list viewer doesn't support icons.
-     * <!-- begin-user-doc
+     * This shows how a list view works. A list viewer doesn't support icons. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected ListViewer listViewer;
@@ -238,59 +234,61 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     /**
      * This shows how a table view works. A table can be used as a list with icons. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected TableViewer tableViewer;
 
     /**
-     * This shows how a tree view with columns works.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This shows how a tree view with columns works. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected TreeViewer treeViewerWithColumns;
 
     /**
-     * This keeps track of the active viewer pane, in the book.
-     * <!-- begin-user-doc --> <!--
+     * This keeps track of the active viewer pane, in the book. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected ViewerPane currentViewerPane;
 
     /**
-     * This keeps track of the active content viewer, which may be either one of the viewers in the pages or the content outline viewer.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This keeps track of the active content viewer, which may be either one of the viewers in the
+     * pages or the content outline viewer. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected Viewer currentViewer;
 
     /**
-     * This listens to which ever viewer is active.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This listens to which ever viewer is active. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected ISelectionChangedListener selectionChangedListener;
 
     /**
-     * This keeps track of all the {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that are listening to this editor.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This keeps track of all the {@link org.eclipse.jface.viewers.ISelectionChangedListener}s that
+     * are listening to this editor. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected Collection<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
 
     /**
-     * This keeps track of the selection of the editor as a whole.
-     * <!-- begin-user-doc --> <!--
+     * This keeps track of the selection of the editor as a whole. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected ISelection editorSelection = StructuredSelection.EMPTY;
 
     /**
-     * The MarkerHelper is responsible for creating workspace resource markers presented
-     * in Eclipse's Problems View.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The MarkerHelper is responsible for creating workspace resource markers presented in
+     * Eclipse's Problems View. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected MarkerHelper markerHelper = new EditUIMarkerHelper();
@@ -298,80 +296,88 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     /**
      * This listens for when the outline becomes active <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @generated
      */
     protected IPartListener partListener = new IPartListener() {
 
-        public void partActivated(IWorkbenchPart p) {
+        @Override
+        public void partActivated(final IWorkbenchPart p) {
             if (p instanceof ContentOutline) {
-                if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
-                    getActionBarContributor().setActiveEditor(ServicelevelObjectiveEditor.this);
+                if (((ContentOutline) p).getCurrentPage() == ServicelevelObjectiveEditor.this.contentOutlinePage) {
+                    ServicelevelObjectiveEditor.this.getActionBarContributor().setActiveEditor(
+                            ServicelevelObjectiveEditor.this);
 
-                    setCurrentViewer(contentOutlineViewer);
+                    ServicelevelObjectiveEditor.this
+                            .setCurrentViewer(ServicelevelObjectiveEditor.this.contentOutlineViewer);
                 }
             } else if (p instanceof PropertySheet) {
-                if (propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
-                    getActionBarContributor().setActiveEditor(ServicelevelObjectiveEditor.this);
-                    handleActivate();
+                if (ServicelevelObjectiveEditor.this.propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
+                    ServicelevelObjectiveEditor.this.getActionBarContributor().setActiveEditor(
+                            ServicelevelObjectiveEditor.this);
+                    ServicelevelObjectiveEditor.this.handleActivate();
                 }
             } else if (p == ServicelevelObjectiveEditor.this) {
-                handleActivate();
+                ServicelevelObjectiveEditor.this.handleActivate();
             }
         }
 
-        public void partBroughtToTop(IWorkbenchPart p) {
+        @Override
+        public void partBroughtToTop(final IWorkbenchPart p) {
             // Ignore.
         }
 
-        public void partClosed(IWorkbenchPart p) {
+        @Override
+        public void partClosed(final IWorkbenchPart p) {
             // Ignore.
         }
 
-        public void partDeactivated(IWorkbenchPart p) {
+        @Override
+        public void partDeactivated(final IWorkbenchPart p) {
             // Ignore.
         }
 
-        public void partOpened(IWorkbenchPart p) {
+        @Override
+        public void partOpened(final IWorkbenchPart p) {
             // Ignore.
         }
     };
 
     /**
-     * Resources that have been removed since last activation.
-     * <!-- begin-user-doc --> <!--
+     * Resources that have been removed since last activation. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
     /**
-     * Resources that have been changed since last activation.
-     * <!-- begin-user-doc --> <!--
+     * Resources that have been changed since last activation. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected Collection<Resource> changedResources = new ArrayList<Resource>();
 
     /**
-     * Resources that have been saved.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Resources that have been saved. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected Collection<Resource> savedResources = new ArrayList<Resource>();
 
     /**
-     * Map to store the diagnostic associated with a resource.
-     * <!-- begin-user-doc --> <!--
+     * Map to store the diagnostic associated with a resource. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected Map<Resource, Diagnostic> resourceToDiagnosticMap = new LinkedHashMap<Resource, Diagnostic>();
 
     /**
-     * Controls whether the problem indication should be updated.
-     * <!-- begin-user-doc --> <!--
+     * Controls whether the problem indication should be updated. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected boolean updateProblemIndication = true;
@@ -379,31 +385,33 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     /**
      * Adapter used to update the problem indication when resources are demanded loaded. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected EContentAdapter problemIndicationAdapter = new EContentAdapter() {
 
         @Override
-        public void notifyChanged(Notification notification) {
+        public void notifyChanged(final Notification notification) {
             if (notification.getNotifier() instanceof Resource) {
                 switch (notification.getFeatureID(Resource.class)) {
                 case Resource.RESOURCE__IS_LOADED:
                 case Resource.RESOURCE__ERRORS:
                 case Resource.RESOURCE__WARNINGS: {
-                    Resource resource = (Resource) notification.getNotifier();
-                    Diagnostic diagnostic = analyzeResourceProblems(resource, null);
+                    final Resource resource = (Resource) notification.getNotifier();
+                    final Diagnostic diagnostic = ServicelevelObjectiveEditor.this.analyzeResourceProblems(resource,
+                            null);
                     if (diagnostic.getSeverity() != Diagnostic.OK) {
-                        resourceToDiagnosticMap.put(resource, diagnostic);
+                        ServicelevelObjectiveEditor.this.resourceToDiagnosticMap.put(resource, diagnostic);
                     } else {
-                        resourceToDiagnosticMap.remove(resource);
+                        ServicelevelObjectiveEditor.this.resourceToDiagnosticMap.remove(resource);
                     }
 
-                    if (updateProblemIndication) {
-                        getSite().getShell().getDisplay().asyncExec(new Runnable() {
+                    if (ServicelevelObjectiveEditor.this.updateProblemIndication) {
+                        ServicelevelObjectiveEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+                            @Override
                             public void run() {
-                                updateProblemIndication();
+                                ServicelevelObjectiveEditor.this.updateProblemIndication();
                             }
                         });
                     }
@@ -416,19 +424,20 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
         }
 
         @Override
-        protected void setTarget(Resource target) {
-            basicSetTarget(target);
+        protected void setTarget(final Resource target) {
+            this.basicSetTarget(target);
         }
 
         @Override
-        protected void unsetTarget(Resource target) {
-            basicUnsetTarget(target);
-            resourceToDiagnosticMap.remove(target);
-            if (updateProblemIndication) {
-                getSite().getShell().getDisplay().asyncExec(new Runnable() {
+        protected void unsetTarget(final Resource target) {
+            this.basicUnsetTarget(target);
+            ServicelevelObjectiveEditor.this.resourceToDiagnosticMap.remove(target);
+            if (ServicelevelObjectiveEditor.this.updateProblemIndication) {
+                ServicelevelObjectiveEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+                    @Override
                     public void run() {
-                        updateProblemIndication();
+                        ServicelevelObjectiveEditor.this.updateProblemIndication();
                     }
                 });
             }
@@ -436,32 +445,34 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     };
 
     /**
-     * This listens for workspace changes.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This listens for workspace changes. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
 
-        public void resourceChanged(IResourceChangeEvent event) {
-            IResourceDelta delta = event.getDelta();
+        @Override
+        public void resourceChanged(final IResourceChangeEvent event) {
+            final IResourceDelta delta = event.getDelta();
             try {
                 class ResourceDeltaVisitor implements IResourceDeltaVisitor {
 
-                    protected ResourceSet resourceSet = editingDomain.getResourceSet();
+                    protected ResourceSet resourceSet = ServicelevelObjectiveEditor.this.editingDomain.getResourceSet();
                     protected Collection<Resource> changedResources = new ArrayList<Resource>();
                     protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
-                    public boolean visit(IResourceDelta delta) {
+                    @Override
+                    public boolean visit(final IResourceDelta delta) {
                         if (delta.getResource().getType() == IResource.FILE) {
                             if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED
                                     && delta.getFlags() != IResourceDelta.MARKERS) {
-                                Resource resource = resourceSet.getResource(
+                                final Resource resource = this.resourceSet.getResource(
                                         URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
                                 if (resource != null) {
                                     if (delta.getKind() == IResourceDelta.REMOVED) {
-                                        removedResources.add(resource);
-                                    } else if (!savedResources.remove(resource)) {
-                                        changedResources.add(resource);
+                                        this.removedResources.add(resource);
+                                    } else if (!ServicelevelObjectiveEditor.this.savedResources.remove(resource)) {
+                                        this.changedResources.add(resource);
                                     }
                                 }
                             }
@@ -472,11 +483,11 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
                     }
 
                     public Collection<Resource> getChangedResources() {
-                        return changedResources;
+                        return this.changedResources;
                     }
 
                     public Collection<Resource> getRemovedResources() {
-                        return removedResources;
+                        return this.removedResources;
                     }
                 }
 
@@ -484,145 +495,150 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
                 delta.accept(visitor);
 
                 if (!visitor.getRemovedResources().isEmpty()) {
-                    getSite().getShell().getDisplay().asyncExec(new Runnable() {
+                    ServicelevelObjectiveEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+                        @Override
                         public void run() {
-                            removedResources.addAll(visitor.getRemovedResources());
-                            if (!isDirty()) {
-                                getSite().getPage().closeEditor(ServicelevelObjectiveEditor.this, false);
+                            ServicelevelObjectiveEditor.this.removedResources.addAll(visitor.getRemovedResources());
+                            if (!ServicelevelObjectiveEditor.this.isDirty()) {
+                                ServicelevelObjectiveEditor.this.getSite().getPage()
+                                        .closeEditor(ServicelevelObjectiveEditor.this, false);
                             }
                         }
                     });
                 }
 
                 if (!visitor.getChangedResources().isEmpty()) {
-                    getSite().getShell().getDisplay().asyncExec(new Runnable() {
+                    ServicelevelObjectiveEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+                        @Override
                         public void run() {
-                            changedResources.addAll(visitor.getChangedResources());
-                            if (getSite().getPage().getActiveEditor() == ServicelevelObjectiveEditor.this) {
-                                handleActivate();
+                            ServicelevelObjectiveEditor.this.changedResources.addAll(visitor.getChangedResources());
+                            if (ServicelevelObjectiveEditor.this.getSite().getPage().getActiveEditor() == ServicelevelObjectiveEditor.this) {
+                                ServicelevelObjectiveEditor.this.handleActivate();
                             }
                         }
                     });
                 }
-            } catch (CoreException exception) {
+            } catch (final CoreException exception) {
                 ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
             }
         }
     };
 
     /**
-     * Handles activation of the editor or it's associated views.
-     * <!-- begin-user-doc --> <!--
+     * Handles activation of the editor or it's associated views. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected void handleActivate() {
         // Recompute the read only state.
         //
-        if (editingDomain.getResourceToReadOnlyMap() != null) {
-            editingDomain.getResourceToReadOnlyMap().clear();
+        if (this.editingDomain.getResourceToReadOnlyMap() != null) {
+            this.editingDomain.getResourceToReadOnlyMap().clear();
 
             // Refresh any actions that may become enabled or disabled.
             //
-            setSelection(getSelection());
+            this.setSelection(this.getSelection());
         }
 
-        if (!removedResources.isEmpty()) {
-            if (handleDirtyConflict()) {
-                getSite().getPage().closeEditor(ServicelevelObjectiveEditor.this, false);
+        if (!this.removedResources.isEmpty()) {
+            if (this.handleDirtyConflict()) {
+                this.getSite().getPage().closeEditor(ServicelevelObjectiveEditor.this, false);
             } else {
-                removedResources.clear();
-                changedResources.clear();
-                savedResources.clear();
+                this.removedResources.clear();
+                this.changedResources.clear();
+                this.savedResources.clear();
             }
-        } else if (!changedResources.isEmpty()) {
-            changedResources.removeAll(savedResources);
-            handleChangedResources();
-            changedResources.clear();
-            savedResources.clear();
+        } else if (!this.changedResources.isEmpty()) {
+            this.changedResources.removeAll(this.savedResources);
+            this.handleChangedResources();
+            this.changedResources.clear();
+            this.savedResources.clear();
         }
     }
 
     /**
-     * Handles what to do with changed resources on activation.
-     * <!-- begin-user-doc --> <!--
+     * Handles what to do with changed resources on activation. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected void handleChangedResources() {
-        if (!changedResources.isEmpty() && (!isDirty() || handleDirtyConflict())) {
-            if (isDirty()) {
-                changedResources.addAll(editingDomain.getResourceSet().getResources());
+        if (!this.changedResources.isEmpty() && (!this.isDirty() || this.handleDirtyConflict())) {
+            if (this.isDirty()) {
+                this.changedResources.addAll(this.editingDomain.getResourceSet().getResources());
             }
-            editingDomain.getCommandStack().flush();
+            this.editingDomain.getCommandStack().flush();
 
-            updateProblemIndication = false;
-            for (Resource resource : changedResources) {
+            this.updateProblemIndication = false;
+            for (final Resource resource : this.changedResources) {
                 if (resource.isLoaded()) {
                     resource.unload();
                     try {
                         resource.load(Collections.EMPTY_MAP);
-                    } catch (IOException exception) {
-                        if (!resourceToDiagnosticMap.containsKey(resource)) {
-                            resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
+                    } catch (final IOException exception) {
+                        if (!this.resourceToDiagnosticMap.containsKey(resource)) {
+                            this.resourceToDiagnosticMap.put(resource,
+                                    this.analyzeResourceProblems(resource, exception));
                         }
                     }
                 }
             }
 
-            if (AdapterFactoryEditingDomain.isStale(editorSelection)) {
-                setSelection(StructuredSelection.EMPTY);
+            if (AdapterFactoryEditingDomain.isStale(this.editorSelection)) {
+                this.setSelection(StructuredSelection.EMPTY);
             }
 
-            updateProblemIndication = true;
-            updateProblemIndication();
+            this.updateProblemIndication = true;
+            this.updateProblemIndication();
         }
     }
 
     /**
      * Updates the problems indication with the information described in the specified diagnostic.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected void updateProblemIndication() {
-        if (updateProblemIndication) {
-            BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
+        if (this.updateProblemIndication) {
+            final BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
                     "org.palladiosimulator.servicelevelobjective.editor", 0, null,
-                    new Object[] { editingDomain.getResourceSet() });
-            for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
+                    new Object[] { this.editingDomain.getResourceSet() });
+            for (final Diagnostic childDiagnostic : this.resourceToDiagnosticMap.values()) {
                 if (childDiagnostic.getSeverity() != Diagnostic.OK) {
                     diagnostic.add(childDiagnostic);
                 }
             }
 
-            int lastEditorPage = getPageCount() - 1;
-            if (lastEditorPage >= 0 && getEditor(lastEditorPage) instanceof ProblemEditorPart) {
-                ((ProblemEditorPart) getEditor(lastEditorPage)).setDiagnostic(diagnostic);
+            int lastEditorPage = this.getPageCount() - 1;
+            if (lastEditorPage >= 0 && this.getEditor(lastEditorPage) instanceof ProblemEditorPart) {
+                ((ProblemEditorPart) this.getEditor(lastEditorPage)).setDiagnostic(diagnostic);
                 if (diagnostic.getSeverity() != Diagnostic.OK) {
-                    setActivePage(lastEditorPage);
+                    this.setActivePage(lastEditorPage);
                 }
             } else if (diagnostic.getSeverity() != Diagnostic.OK) {
-                ProblemEditorPart problemEditorPart = new ProblemEditorPart();
+                final ProblemEditorPart problemEditorPart = new ProblemEditorPart();
                 problemEditorPart.setDiagnostic(diagnostic);
-                problemEditorPart.setMarkerHelper(markerHelper);
+                problemEditorPart.setMarkerHelper(this.markerHelper);
                 try {
-                    addPage(++lastEditorPage, problemEditorPart, getEditorInput());
-                    setPageText(lastEditorPage, problemEditorPart.getPartName());
-                    setActivePage(lastEditorPage);
-                    showTabs();
-                } catch (PartInitException exception) {
+                    this.addPage(++lastEditorPage, problemEditorPart, this.getEditorInput());
+                    this.setPageText(lastEditorPage, problemEditorPart.getPartName());
+                    this.setActivePage(lastEditorPage);
+                    this.showTabs();
+                } catch (final PartInitException exception) {
                     ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
                 }
             }
 
-            if (markerHelper.hasMarkers(editingDomain.getResourceSet())) {
-                markerHelper.deleteMarkers(editingDomain.getResourceSet());
+            if (this.markerHelper.hasMarkers(this.editingDomain.getResourceSet())) {
+                this.markerHelper.deleteMarkers(this.editingDomain.getResourceSet());
                 if (diagnostic.getSeverity() != Diagnostic.OK) {
                     try {
-                        markerHelper.createMarkers(diagnostic);
-                    } catch (CoreException exception) {
+                        this.markerHelper.createMarkers(diagnostic);
+                    } catch (final CoreException exception) {
                         ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
                     }
                 }
@@ -631,97 +647,98 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     }
 
     /**
-     * Shows a dialog that asks if conflicting changes should be discarded.
-     * <!-- begin-user-doc -->
+     * Shows a dialog that asks if conflicting changes should be discarded. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected boolean handleDirtyConflict() {
-        return MessageDialog.openQuestion(getSite().getShell(), getString("_UI_FileConflict_label"),
+        return MessageDialog.openQuestion(this.getSite().getShell(), getString("_UI_FileConflict_label"),
                 getString("_WARN_FileConflict"));
     }
 
     /**
-     * This creates a model editor.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This creates a model editor. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public ServicelevelObjectiveEditor() {
         super();
-        initializeEditingDomain();
+        this.initializeEditingDomain();
     }
 
     /**
-     * This sets up the editing domain for the model editor.
-     * <!-- begin-user-doc --> <!--
+     * This sets up the editing domain for the model editor. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     protected void initializeEditingDomain() {
         // Create an adapter factory that yields item providers.
         //
-        adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+        this.adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
-        adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ServicelevelObjectiveItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new MonitorRepositoryItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new PcmItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new EntityItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new CompositionItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new UsagemodelItemProviderAdapterFactory());
-        adapterFactory
-                .addAdapterFactory(new de.uka.ipd.sdq.pcm.repository.provider.RepositoryItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ResourcetypeItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ParameterItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ReliabilityItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new SeffItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new SeffPerformanceItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new SeffReliabilityItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new QosannotationsItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new QosPerformanceItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new QosReliabilityItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new SystemItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ResourceenvironmentItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new AllocationItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new SubsystemItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ProbfunctionItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new StoexItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new UnitsItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new MdsdprofilesItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new EMFProfileItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new EMFProfileApplicationItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
-        adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ServicelevelObjectiveItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new MonitorRepositoryItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new PcmItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new EntityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new CompositionItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new UsagemodelItemProviderAdapterFactory());
+        this.adapterFactory
+        .addAdapterFactory(new de.uka.ipd.sdq.pcm.repository.provider.RepositoryItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ResourcetypeItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ParameterItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ReliabilityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SeffItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SeffPerformanceItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SeffReliabilityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new QosannotationsItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new QosPerformanceItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new QosReliabilityItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SystemItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ResourceenvironmentItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new AllocationItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new SubsystemItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ProbfunctionItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new StoexItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new UnitsItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
         // Create the command stack that will notify this editor as commands are executed.
         //
-        BasicCommandStack commandStack = new BasicCommandStack();
+        final BasicCommandStack commandStack = new BasicCommandStack();
 
-        // Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
+        // Add a listener to set the most recent command's affected objects to be the selection of
+        // the viewer with focus.
         //
         commandStack.addCommandStackListener(new CommandStackListener() {
 
+            @Override
             public void commandStackChanged(final EventObject event) {
-                getContainer().getDisplay().asyncExec(new Runnable() {
+                ServicelevelObjectiveEditor.this.getContainer().getDisplay().asyncExec(new Runnable() {
 
+                    @Override
                     public void run() {
-                        firePropertyChange(IEditorPart.PROP_DIRTY);
+                        ServicelevelObjectiveEditor.this.firePropertyChange(IEditorPart.PROP_DIRTY);
 
                         // Try to select the affected objects.
                         //
-                        Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+                        final Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
                         if (mostRecentCommand != null) {
-                            setSelectionToViewer(mostRecentCommand.getAffectedObjects());
+                            ServicelevelObjectiveEditor.this.setSelectionToViewer(mostRecentCommand
+                                    .getAffectedObjects());
                         }
-                        for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
-                            PropertySheetPage propertySheetPage = i.next();
+                        for (final Iterator<PropertySheetPage> i = ServicelevelObjectiveEditor.this.propertySheetPages
+                                .iterator(); i.hasNext();) {
+                            final PropertySheetPage propertySheetPage = i.next();
                             if (propertySheetPage.getControl().isDisposed()) {
                                 i.remove();
                             } else {
@@ -735,237 +752,251 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
 
         // Create the editing domain with a special command stack.
         //
-        editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
+        this.editingDomain = new AdapterFactoryEditingDomain(this.adapterFactory, commandStack,
+                new HashMap<Resource, Boolean>());
     }
 
     /**
-     * This is here for the listener to be able to call it.
-     * <!-- begin-user-doc --> <!--
+     * This is here for the listener to be able to call it. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    protected void firePropertyChange(int action) {
+    protected void firePropertyChange(final int action) {
         super.firePropertyChange(action);
     }
 
     /**
-     * This sets the selection into whichever viewer is active.
-     * <!-- begin-user-doc --> <!--
+     * This sets the selection into whichever viewer is active. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
-    public void setSelectionToViewer(Collection<?> collection) {
+    public void setSelectionToViewer(final Collection<?> collection) {
         final Collection<?> theSelection = collection;
         // Make sure it's okay.
         //
         if (theSelection != null && !theSelection.isEmpty()) {
-            Runnable runnable = new Runnable() {
+            final Runnable runnable = new Runnable() {
 
+                @Override
                 public void run() {
                     // Try to select the items in the current content viewer of the editor.
                     //
-                    if (currentViewer != null) {
-                        currentViewer.setSelection(new StructuredSelection(theSelection.toArray()), true);
+                    if (ServicelevelObjectiveEditor.this.currentViewer != null) {
+                        ServicelevelObjectiveEditor.this.currentViewer.setSelection(new StructuredSelection(
+                                theSelection.toArray()), true);
                     }
                 }
             };
-            getSite().getShell().getDisplay().asyncExec(runnable);
+            this.getSite().getShell().getDisplay().asyncExec(runnable);
         }
     }
 
     /**
      * This returns the editing domain as required by the {@link IEditingDomainProvider} interface.
      * This is important for implementing the static methods of {@link AdapterFactoryEditingDomain}
-     * and for supporting {@link org.eclipse.emf.edit.ui.action.CommandAction}.
-     * <!-- begin-user-doc
+     * and for supporting {@link org.eclipse.emf.edit.ui.action.CommandAction}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EditingDomain getEditingDomain() {
-        return editingDomain;
+        return this.editingDomain;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public class ReverseAdapterFactoryContentProvider extends AdapterFactoryContentProvider {
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
-        public ReverseAdapterFactoryContentProvider(AdapterFactory adapterFactory) {
+        public ReverseAdapterFactoryContentProvider(final AdapterFactory adapterFactory) {
             super(adapterFactory);
         }
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
         @Override
-        public Object[] getElements(Object object) {
-            Object parent = super.getParent(object);
+        public Object[] getElements(final Object object) {
+            final Object parent = super.getParent(object);
             return (parent == null ? Collections.EMPTY_SET : Collections.singleton(parent)).toArray();
         }
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
         @Override
-        public Object[] getChildren(Object object) {
-            Object parent = super.getParent(object);
+        public Object[] getChildren(final Object object) {
+            final Object parent = super.getParent(object);
             return (parent == null ? Collections.EMPTY_SET : Collections.singleton(parent)).toArray();
         }
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
         @Override
-        public boolean hasChildren(Object object) {
-            Object parent = super.getParent(object);
+        public boolean hasChildren(final Object object) {
+            final Object parent = super.getParent(object);
             return parent != null;
         }
 
         /**
          * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
          * @generated
          */
         @Override
-        public Object getParent(Object object) {
+        public Object getParent(final Object object) {
             return null;
         }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public void setCurrentViewerPane(ViewerPane viewerPane) {
-        if (currentViewerPane != viewerPane) {
-            if (currentViewerPane != null) {
-                currentViewerPane.showFocus(false);
+    public void setCurrentViewerPane(final ViewerPane viewerPane) {
+        if (this.currentViewerPane != viewerPane) {
+            if (this.currentViewerPane != null) {
+                this.currentViewerPane.showFocus(false);
             }
-            currentViewerPane = viewerPane;
+            this.currentViewerPane = viewerPane;
         }
-        setCurrentViewer(currentViewerPane.getViewer());
+        this.setCurrentViewer(this.currentViewerPane.getViewer());
     }
 
     /**
-     * This makes sure that one content viewer, either for the current page or the outline view, if it has focus,
-     * is the current one.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This makes sure that one content viewer, either for the current page or the outline view, if
+     * it has focus, is the current one. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public void setCurrentViewer(Viewer viewer) {
+    public void setCurrentViewer(final Viewer viewer) {
         // If it is changing...
         //
-        if (currentViewer != viewer) {
-            if (selectionChangedListener == null) {
+        if (this.currentViewer != viewer) {
+            if (this.selectionChangedListener == null) {
                 // Create the listener on demand.
                 //
-                selectionChangedListener = new ISelectionChangedListener() {
+                this.selectionChangedListener = new ISelectionChangedListener() {
 
                     // This just notifies those things that are affected by the section.
                     //
-                    public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
-                        setSelection(selectionChangedEvent.getSelection());
+                    @Override
+                    public void selectionChanged(final SelectionChangedEvent selectionChangedEvent) {
+                        ServicelevelObjectiveEditor.this.setSelection(selectionChangedEvent.getSelection());
                     }
                 };
             }
 
             // Stop listening to the old one.
             //
-            if (currentViewer != null) {
-                currentViewer.removeSelectionChangedListener(selectionChangedListener);
+            if (this.currentViewer != null) {
+                this.currentViewer.removeSelectionChangedListener(this.selectionChangedListener);
             }
 
             // Start listening to the new one.
             //
             if (viewer != null) {
-                viewer.addSelectionChangedListener(selectionChangedListener);
+                viewer.addSelectionChangedListener(this.selectionChangedListener);
             }
 
             // Remember it.
             //
-            currentViewer = viewer;
+            this.currentViewer = viewer;
 
             // Set the editors selection based on the current viewer's selection.
             //
-            setSelection(currentViewer == null ? StructuredSelection.EMPTY : currentViewer.getSelection());
+            this.setSelection(this.currentViewer == null ? StructuredSelection.EMPTY : this.currentViewer
+                    .getSelection());
         }
     }
 
     /**
      * This returns the viewer as required by the {@link IViewerProvider} interface. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Viewer getViewer() {
-        return currentViewer;
+        return this.currentViewer;
     }
 
     /**
-     * This creates a context menu for the viewer and adds a listener as well registering the menu for extension.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This creates a context menu for the viewer and adds a listener as well registering the menu
+     * for extension. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    protected void createContextMenuFor(StructuredViewer viewer) {
-        MenuManager contextMenu = new MenuManager("#PopUp");
+    protected void createContextMenuFor(final StructuredViewer viewer) {
+        final MenuManager contextMenu = new MenuManager("#PopUp");
         contextMenu.add(new Separator("additions"));
         contextMenu.setRemoveAllWhenShown(true);
         contextMenu.addMenuListener(this);
-        Menu menu = contextMenu.createContextMenu(viewer.getControl());
+        final Menu menu = contextMenu.createContextMenu(viewer.getControl());
         viewer.getControl().setMenu(menu);
-        getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
+        this.getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
-        int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-        Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(), LocalSelectionTransfer.getTransfer(),
-                FileTransfer.getInstance() };
+        final int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
+        final Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(),
+                LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance() };
         viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
-        viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
+        viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(this.editingDomain, viewer));
     }
 
     /**
-     * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is the method called to load a resource into the editing domain's resource set based on
+     * the editor's input. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public void createModel() {
-        URI resourceURI = EditUIUtil.getURI(getEditorInput());
+        final URI resourceURI = EditUIUtil.getURI(this.getEditorInput());
         Exception exception = null;
         Resource resource = null;
         try {
             // Load the resource through the editing domain.
             //
-            resource = editingDomain.getResourceSet().getResource(resourceURI, true);
-        } catch (Exception e) {
+            resource = this.editingDomain.getResourceSet().getResource(resourceURI, true);
+        } catch (final Exception e) {
             exception = e;
-            resource = editingDomain.getResourceSet().getResource(resourceURI, false);
+            resource = this.editingDomain.getResourceSet().getResource(resourceURI, false);
         }
 
-        Diagnostic diagnostic = analyzeResourceProblems(resource, exception);
+        final Diagnostic diagnostic = this.analyzeResourceProblems(resource, exception);
         if (diagnostic.getSeverity() != Diagnostic.OK) {
-            resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
+            this.resourceToDiagnosticMap.put(resource, this.analyzeResourceProblems(resource, exception));
         }
-        editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
+        this.editingDomain.getResourceSet().eAdapters().add(this.problemIndicationAdapter);
     }
 
     /**
-     * Returns a diagnostic describing the errors and warnings listed in the resource
-     * and the specified exception (if any).
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns a diagnostic describing the errors and warnings listed in the resource and the
+     * specified exception (if any). <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
+    public Diagnostic analyzeResourceProblems(final Resource resource, final Exception exception) {
         if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
-            BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
+            final BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
                     "org.palladiosimulator.servicelevelobjective.editor", 0, getString("_UI_CreateModelError_message",
                             resource.getURI()), new Object[] { exception == null ? (Object) resource : exception });
             basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
@@ -979,232 +1010,233 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     }
 
     /**
-     * This is the method used by the framework to install your own controls.
-     * <!-- begin-user-doc
+     * This is the method used by the framework to install your own controls. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public void createPages() {
         // Creates the model from the editor input
         //
-        createModel();
+        this.createModel();
 
         // Only creates the other pages if there is something that can be edited
         //
-        if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+        if (!this.getEditingDomain().getResourceSet().getResources().isEmpty()) {
             // Create a page for the selection tree view.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ServicelevelObjectiveEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), ServicelevelObjectiveEditor.this) {
 
                     @Override
-                    public Viewer createViewer(Composite composite) {
-                        Tree tree = new Tree(composite, SWT.MULTI);
-                        TreeViewer newTreeViewer = new TreeViewer(tree);
+                    public Viewer createViewer(final Composite composite) {
+                        final Tree tree = new Tree(composite, SWT.MULTI);
+                        final TreeViewer newTreeViewer = new TreeViewer(tree);
                         return newTreeViewer;
                     }
 
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        setCurrentViewerPane(this);
+                        ServicelevelObjectiveEditor.this.setCurrentViewerPane(this);
                     }
                 };
-                viewerPane.createControl(getContainer());
+                viewerPane.createControl(this.getContainer());
 
-                selectionViewer = (TreeViewer) viewerPane.getViewer();
-                selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+                this.selectionViewer = (TreeViewer) viewerPane.getViewer();
+                this.selectionViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
 
-                selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-                selectionViewer.setInput(editingDomain.getResourceSet());
-                selectionViewer.setSelection(
-                        new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
-                viewerPane.setTitle(editingDomain.getResourceSet());
+                this.selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
+                this.selectionViewer.setInput(this.editingDomain.getResourceSet());
+                this.selectionViewer.setSelection(new StructuredSelection(this.editingDomain.getResourceSet()
+                        .getResources().get(0)), true);
+                viewerPane.setTitle(this.editingDomain.getResourceSet());
 
-                new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
+                new AdapterFactoryTreeEditor(this.selectionViewer.getTree(), this.adapterFactory);
 
-                createContextMenuFor(selectionViewer);
-                int pageIndex = addPage(viewerPane.getControl());
-                setPageText(pageIndex, getString("_UI_SelectionPage_label"));
+                this.createContextMenuFor(this.selectionViewer);
+                final int pageIndex = this.addPage(viewerPane.getControl());
+                this.setPageText(pageIndex, getString("_UI_SelectionPage_label"));
             }
 
             // Create a page for the parent tree view.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ServicelevelObjectiveEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), ServicelevelObjectiveEditor.this) {
 
                     @Override
-                    public Viewer createViewer(Composite composite) {
-                        Tree tree = new Tree(composite, SWT.MULTI);
-                        TreeViewer newTreeViewer = new TreeViewer(tree);
+                    public Viewer createViewer(final Composite composite) {
+                        final Tree tree = new Tree(composite, SWT.MULTI);
+                        final TreeViewer newTreeViewer = new TreeViewer(tree);
                         return newTreeViewer;
                     }
 
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        setCurrentViewerPane(this);
+                        ServicelevelObjectiveEditor.this.setCurrentViewerPane(this);
                     }
                 };
-                viewerPane.createControl(getContainer());
+                viewerPane.createControl(this.getContainer());
 
-                parentViewer = (TreeViewer) viewerPane.getViewer();
-                parentViewer.setAutoExpandLevel(30);
-                parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
-                parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+                this.parentViewer = (TreeViewer) viewerPane.getViewer();
+                this.parentViewer.setAutoExpandLevel(30);
+                this.parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(this.adapterFactory));
+                this.parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
-                createContextMenuFor(parentViewer);
-                int pageIndex = addPage(viewerPane.getControl());
-                setPageText(pageIndex, getString("_UI_ParentPage_label"));
+                this.createContextMenuFor(this.parentViewer);
+                final int pageIndex = this.addPage(viewerPane.getControl());
+                this.setPageText(pageIndex, getString("_UI_ParentPage_label"));
             }
 
             // This is the page for the list viewer
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ServicelevelObjectiveEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), ServicelevelObjectiveEditor.this) {
 
                     @Override
-                    public Viewer createViewer(Composite composite) {
+                    public Viewer createViewer(final Composite composite) {
                         return new ListViewer(composite);
                     }
 
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        setCurrentViewerPane(this);
+                        ServicelevelObjectiveEditor.this.setCurrentViewerPane(this);
                     }
                 };
-                viewerPane.createControl(getContainer());
-                listViewer = (ListViewer) viewerPane.getViewer();
-                listViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-                listViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+                viewerPane.createControl(this.getContainer());
+                this.listViewer = (ListViewer) viewerPane.getViewer();
+                this.listViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+                this.listViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
-                createContextMenuFor(listViewer);
-                int pageIndex = addPage(viewerPane.getControl());
-                setPageText(pageIndex, getString("_UI_ListPage_label"));
+                this.createContextMenuFor(this.listViewer);
+                final int pageIndex = this.addPage(viewerPane.getControl());
+                this.setPageText(pageIndex, getString("_UI_ListPage_label"));
             }
 
             // This is the page for the tree viewer
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ServicelevelObjectiveEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), ServicelevelObjectiveEditor.this) {
 
                     @Override
-                    public Viewer createViewer(Composite composite) {
+                    public Viewer createViewer(final Composite composite) {
                         return new TreeViewer(composite);
                     }
 
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        setCurrentViewerPane(this);
+                        ServicelevelObjectiveEditor.this.setCurrentViewerPane(this);
                     }
                 };
-                viewerPane.createControl(getContainer());
-                treeViewer = (TreeViewer) viewerPane.getViewer();
-                treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-                treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+                viewerPane.createControl(this.getContainer());
+                this.treeViewer = (TreeViewer) viewerPane.getViewer();
+                this.treeViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+                this.treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
-                new AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);
+                new AdapterFactoryTreeEditor(this.treeViewer.getTree(), this.adapterFactory);
 
-                createContextMenuFor(treeViewer);
-                int pageIndex = addPage(viewerPane.getControl());
-                setPageText(pageIndex, getString("_UI_TreePage_label"));
+                this.createContextMenuFor(this.treeViewer);
+                final int pageIndex = this.addPage(viewerPane.getControl());
+                this.setPageText(pageIndex, getString("_UI_TreePage_label"));
             }
 
             // This is the page for the table viewer.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ServicelevelObjectiveEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), ServicelevelObjectiveEditor.this) {
 
                     @Override
-                    public Viewer createViewer(Composite composite) {
+                    public Viewer createViewer(final Composite composite) {
                         return new TableViewer(composite);
                     }
 
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        setCurrentViewerPane(this);
+                        ServicelevelObjectiveEditor.this.setCurrentViewerPane(this);
                     }
                 };
-                viewerPane.createControl(getContainer());
-                tableViewer = (TableViewer) viewerPane.getViewer();
+                viewerPane.createControl(this.getContainer());
+                this.tableViewer = (TableViewer) viewerPane.getViewer();
 
-                Table table = tableViewer.getTable();
-                TableLayout layout = new TableLayout();
+                final Table table = this.tableViewer.getTable();
+                final TableLayout layout = new TableLayout();
                 table.setLayout(layout);
                 table.setHeaderVisible(true);
                 table.setLinesVisible(true);
 
-                TableColumn objectColumn = new TableColumn(table, SWT.NONE);
+                final TableColumn objectColumn = new TableColumn(table, SWT.NONE);
                 layout.addColumnData(new ColumnWeightData(3, 100, true));
                 objectColumn.setText(getString("_UI_ObjectColumn_label"));
                 objectColumn.setResizable(true);
 
-                TableColumn selfColumn = new TableColumn(table, SWT.NONE);
+                final TableColumn selfColumn = new TableColumn(table, SWT.NONE);
                 layout.addColumnData(new ColumnWeightData(2, 100, true));
                 selfColumn.setText(getString("_UI_SelfColumn_label"));
                 selfColumn.setResizable(true);
 
-                tableViewer.setColumnProperties(new String[] { "a", "b" });
-                tableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-                tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+                this.tableViewer.setColumnProperties(new String[] { "a", "b" });
+                this.tableViewer.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+                this.tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
-                createContextMenuFor(tableViewer);
-                int pageIndex = addPage(viewerPane.getControl());
-                setPageText(pageIndex, getString("_UI_TablePage_label"));
+                this.createContextMenuFor(this.tableViewer);
+                final int pageIndex = this.addPage(viewerPane.getControl());
+                this.setPageText(pageIndex, getString("_UI_TablePage_label"));
             }
 
             // This is the page for the table tree viewer.
             //
             {
-                ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ServicelevelObjectiveEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), ServicelevelObjectiveEditor.this) {
 
                     @Override
-                    public Viewer createViewer(Composite composite) {
+                    public Viewer createViewer(final Composite composite) {
                         return new TreeViewer(composite);
                     }
 
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        setCurrentViewerPane(this);
+                        ServicelevelObjectiveEditor.this.setCurrentViewerPane(this);
                     }
                 };
-                viewerPane.createControl(getContainer());
+                viewerPane.createControl(this.getContainer());
 
-                treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
+                this.treeViewerWithColumns = (TreeViewer) viewerPane.getViewer();
 
-                Tree tree = treeViewerWithColumns.getTree();
+                final Tree tree = this.treeViewerWithColumns.getTree();
                 tree.setLayoutData(new FillLayout());
                 tree.setHeaderVisible(true);
                 tree.setLinesVisible(true);
 
-                TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
+                final TreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);
                 objectColumn.setText(getString("_UI_ObjectColumn_label"));
                 objectColumn.setResizable(true);
                 objectColumn.setWidth(250);
 
-                TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
+                final TreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);
                 selfColumn.setText(getString("_UI_SelfColumn_label"));
                 selfColumn.setResizable(true);
                 selfColumn.setWidth(200);
 
-                treeViewerWithColumns.setColumnProperties(new String[] { "a", "b" });
-                treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-                treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+                this.treeViewerWithColumns.setColumnProperties(new String[] { "a", "b" });
+                this.treeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+                this.treeViewerWithColumns.setLabelProvider(new AdapterFactoryLabelProvider(this.adapterFactory));
 
-                createContextMenuFor(treeViewerWithColumns);
-                int pageIndex = addPage(viewerPane.getControl());
-                setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
+                this.createContextMenuFor(this.treeViewerWithColumns);
+                final int pageIndex = this.addPage(viewerPane.getControl());
+                this.setPageText(pageIndex, getString("_UI_TreeWithColumnsPage_label"));
             }
 
-            getSite().getShell().getDisplay().asyncExec(new Runnable() {
+            this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+                @Override
                 public void run() {
-                    setActivePage(0);
+                    ServicelevelObjectiveEditor.this.setActivePage(0);
                 }
             });
         }
@@ -1212,89 +1244,90 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
         // Ensures that this editor will only display the page's tab
         // area if there are more than one page
         //
-        getContainer().addControlListener(new ControlAdapter() {
+        this.getContainer().addControlListener(new ControlAdapter() {
 
             boolean guard = false;
 
             @Override
-            public void controlResized(ControlEvent event) {
-                if (!guard) {
-                    guard = true;
-                    hideTabs();
-                    guard = false;
+            public void controlResized(final ControlEvent event) {
+                if (!this.guard) {
+                    this.guard = true;
+                    ServicelevelObjectiveEditor.this.hideTabs();
+                    this.guard = false;
                 }
             }
         });
 
-        getSite().getShell().getDisplay().asyncExec(new Runnable() {
+        this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
 
+            @Override
             public void run() {
-                updateProblemIndication();
+                ServicelevelObjectiveEditor.this.updateProblemIndication();
             }
         });
     }
 
     /**
-     * If there is just one page in the multi-page editor part,
-     * this hides the single tab at the bottom.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * If there is just one page in the multi-page editor part, this hides the single tab at the
+     * bottom. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected void hideTabs() {
-        if (getPageCount() <= 1) {
-            setPageText(0, "");
-            if (getContainer() instanceof CTabFolder) {
-                ((CTabFolder) getContainer()).setTabHeight(1);
-                Point point = getContainer().getSize();
-                getContainer().setSize(point.x, point.y + 6);
+        if (this.getPageCount() <= 1) {
+            this.setPageText(0, "");
+            if (this.getContainer() instanceof CTabFolder) {
+                ((CTabFolder) this.getContainer()).setTabHeight(1);
+                final Point point = this.getContainer().getSize();
+                this.getContainer().setSize(point.x, point.y + 6);
             }
         }
     }
 
     /**
-     * If there is more than one page in the multi-page editor part,
-     * this shows the tabs at the bottom.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * If there is more than one page in the multi-page editor part, this shows the tabs at the
+     * bottom. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected void showTabs() {
-        if (getPageCount() > 1) {
-            setPageText(0, getString("_UI_SelectionPage_label"));
-            if (getContainer() instanceof CTabFolder) {
-                ((CTabFolder) getContainer()).setTabHeight(SWT.DEFAULT);
-                Point point = getContainer().getSize();
-                getContainer().setSize(point.x, point.y - 6);
+        if (this.getPageCount() > 1) {
+            this.setPageText(0, getString("_UI_SelectionPage_label"));
+            if (this.getContainer() instanceof CTabFolder) {
+                ((CTabFolder) this.getContainer()).setTabHeight(SWT.DEFAULT);
+                final Point point = this.getContainer().getSize();
+                this.getContainer().setSize(point.x, point.y - 6);
             }
         }
     }
 
     /**
-     * This is used to track the active viewer.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is used to track the active viewer. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    protected void pageChange(int pageIndex) {
+    protected void pageChange(final int pageIndex) {
         super.pageChange(pageIndex);
 
-        if (contentOutlinePage != null) {
-            handleContentOutlineSelection(contentOutlinePage.getSelection());
+        if (this.contentOutlinePage != null) {
+            this.handleContentOutlineSelection(this.contentOutlinePage.getSelection());
         }
     }
 
     /**
-     * This is how the framework determines which interfaces we implement.
-     * <!-- begin-user-doc -->
+     * This is how the framework determines which interfaces we implement. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     @SuppressWarnings("rawtypes")
     @Override
-    public Object getAdapter(Class key) {
+    public Object getAdapter(final Class key) {
         if (key.equals(IContentOutlinePage.class)) {
-            return showOutlineView() ? getContentOutlinePage() : null;
+            return this.showOutlineView() ? this.getContentOutlinePage() : null;
         } else if (key.equals(IPropertySheetPage.class)) {
-            return getPropertySheetPage();
+            return this.getPropertySheetPage();
         } else if (key.equals(IGotoMarker.class)) {
             return this;
         } else {
@@ -1303,95 +1336,103 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     }
 
     /**
-     * This accesses a cached version of the content outliner.
-     * <!-- begin-user-doc --> <!--
+     * This accesses a cached version of the content outliner. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     public IContentOutlinePage getContentOutlinePage() {
-        if (contentOutlinePage == null) {
+        if (this.contentOutlinePage == null) {
             // The content outline is just a tree.
             //
             class MyContentOutlinePage extends ContentOutlinePage {
 
                 @Override
-                public void createControl(Composite parent) {
+                public void createControl(final Composite parent) {
                     super.createControl(parent);
-                    contentOutlineViewer = getTreeViewer();
-                    contentOutlineViewer.addSelectionChangedListener(this);
+                    ServicelevelObjectiveEditor.this.contentOutlineViewer = this.getTreeViewer();
+                    ServicelevelObjectiveEditor.this.contentOutlineViewer.addSelectionChangedListener(this);
 
                     // Set up the tree viewer.
                     //
-                    contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-                    contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
-                    contentOutlineViewer.setInput(editingDomain.getResourceSet());
+                    ServicelevelObjectiveEditor.this.contentOutlineViewer
+                            .setContentProvider(new AdapterFactoryContentProvider(
+                                    ServicelevelObjectiveEditor.this.adapterFactory));
+                    ServicelevelObjectiveEditor.this.contentOutlineViewer
+                            .setLabelProvider(new AdapterFactoryLabelProvider(
+                                    ServicelevelObjectiveEditor.this.adapterFactory));
+                    ServicelevelObjectiveEditor.this.contentOutlineViewer
+                            .setInput(ServicelevelObjectiveEditor.this.editingDomain.getResourceSet());
 
                     // Make sure our popups work.
                     //
-                    createContextMenuFor(contentOutlineViewer);
+                    ServicelevelObjectiveEditor.this
+                            .createContextMenuFor(ServicelevelObjectiveEditor.this.contentOutlineViewer);
 
-                    if (!editingDomain.getResourceSet().getResources().isEmpty()) {
+                    if (!ServicelevelObjectiveEditor.this.editingDomain.getResourceSet().getResources().isEmpty()) {
                         // Select the root object in the view.
                         //
-                        contentOutlineViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet()
-                                .getResources().get(0)), true);
+                        ServicelevelObjectiveEditor.this.contentOutlineViewer.setSelection(new StructuredSelection(
+                                ServicelevelObjectiveEditor.this.editingDomain.getResourceSet().getResources().get(0)),
+                                true);
                     }
                 }
 
                 @Override
-                public void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager,
-                        IStatusLineManager statusLineManager) {
+                public void makeContributions(final IMenuManager menuManager, final IToolBarManager toolBarManager,
+                        final IStatusLineManager statusLineManager) {
                     super.makeContributions(menuManager, toolBarManager, statusLineManager);
-                    contentOutlineStatusLineManager = statusLineManager;
+                    ServicelevelObjectiveEditor.this.contentOutlineStatusLineManager = statusLineManager;
                 }
 
                 @Override
-                public void setActionBars(IActionBars actionBars) {
+                public void setActionBars(final IActionBars actionBars) {
                     super.setActionBars(actionBars);
-                    getActionBarContributor().shareGlobalActions(this, actionBars);
+                    ServicelevelObjectiveEditor.this.getActionBarContributor().shareGlobalActions(this, actionBars);
                 }
             }
 
-            contentOutlinePage = new MyContentOutlinePage();
+            this.contentOutlinePage = new MyContentOutlinePage();
 
             // Listen to selection so that we can handle it is a special way.
             //
-            contentOutlinePage.addSelectionChangedListener(new ISelectionChangedListener() {
+            this.contentOutlinePage.addSelectionChangedListener(new ISelectionChangedListener() {
 
                 // This ensures that we handle selections correctly.
                 //
-                public void selectionChanged(SelectionChangedEvent event) {
-                    handleContentOutlineSelection(event.getSelection());
+                @Override
+                public void selectionChanged(final SelectionChangedEvent event) {
+                    ServicelevelObjectiveEditor.this.handleContentOutlineSelection(event.getSelection());
                 }
             });
         }
 
-        return contentOutlinePage;
+        return this.contentOutlinePage;
     }
 
     /**
-     * This accesses a cached version of the property sheet.
-     * <!-- begin-user-doc --> <!--
+     * This accesses a cached version of the property sheet. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     public IPropertySheetPage getPropertySheetPage() {
-        PropertySheetPage propertySheetPage = new ExtendedPropertySheetPage(editingDomain) {
+        final PropertySheetPage propertySheetPage = new ExtendedPropertySheetPage(this.editingDomain) {
 
             @Override
-            public void setSelectionToViewer(List<?> selection) {
+            public void setSelectionToViewer(final List<?> selection) {
                 ServicelevelObjectiveEditor.this.setSelectionToViewer(selection);
                 ServicelevelObjectiveEditor.this.setFocus();
             }
 
             @Override
-            public void setActionBars(IActionBars actionBars) {
+            public void setActionBars(final IActionBars actionBars) {
                 super.setActionBars(actionBars);
-                getActionBarContributor().shareGlobalActions(this, actionBars);
+                ServicelevelObjectiveEditor.this.getActionBarContributor().shareGlobalActions(this, actionBars);
             }
         };
-        propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
-        propertySheetPages.add(propertySheetPage);
+        propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(this.adapterFactory));
+        this.propertySheetPages.add(propertySheetPage);
 
         return propertySheetPage;
     }
@@ -1399,21 +1440,22 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     /**
      * This deals with how we want selection in the outliner to affect the other views. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public void handleContentOutlineSelection(ISelection selection) {
-        if (currentViewerPane != null && !selection.isEmpty() && selection instanceof IStructuredSelection) {
-            Iterator<?> selectedElements = ((IStructuredSelection) selection).iterator();
+    public void handleContentOutlineSelection(final ISelection selection) {
+        if (this.currentViewerPane != null && !selection.isEmpty() && selection instanceof IStructuredSelection) {
+            final Iterator<?> selectedElements = ((IStructuredSelection) selection).iterator();
             if (selectedElements.hasNext()) {
                 // Get the first selected element.
                 //
-                Object selectedElement = selectedElements.next();
+                final Object selectedElement = selectedElements.next();
 
-                // If it's the selection viewer, then we want it to select the same selection as this selection.
+                // If it's the selection viewer, then we want it to select the same selection as
+                // this selection.
                 //
-                if (currentViewerPane.getViewer() == selectionViewer) {
-                    ArrayList<Object> selectionList = new ArrayList<Object>();
+                if (this.currentViewerPane.getViewer() == this.selectionViewer) {
+                    final ArrayList<Object> selectionList = new ArrayList<Object>();
                     selectionList.add(selectedElement);
                     while (selectedElements.hasNext()) {
                         selectionList.add(selectedElements.next());
@@ -1421,13 +1463,13 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
 
                     // Set the selection to the widget.
                     //
-                    selectionViewer.setSelection(new StructuredSelection(selectionList));
+                    this.selectionViewer.setSelection(new StructuredSelection(selectionList));
                 } else {
                     // Set the input to the widget.
                     //
-                    if (currentViewerPane.getViewer().getInput() != selectedElement) {
-                        currentViewerPane.getViewer().setInput(selectedElement);
-                        currentViewerPane.setTitle(selectedElement);
+                    if (this.currentViewerPane.getViewer().getInput() != selectedElement) {
+                        this.currentViewerPane.getViewer().setInput(selectedElement);
+                        this.currentViewerPane.setTitle(selectedElement);
                     }
                 }
             }
@@ -1437,50 +1479,54 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     /**
      * This is for implementing {@link IEditorPart} and simply tests the command stack. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public boolean isDirty() {
-        return ((BasicCommandStack) editingDomain.getCommandStack()).isSaveNeeded();
+        return ((BasicCommandStack) this.editingDomain.getCommandStack()).isSaveNeeded();
     }
 
     /**
      * This is for implementing {@link IEditorPart} and simply saves the model file. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void doSave(IProgressMonitor progressMonitor) {
+    public void doSave(final IProgressMonitor progressMonitor) {
         // Save only resources that have actually changed.
         //
         final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
         saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
         saveOptions.put(Resource.OPTION_LINE_DELIMITER, Resource.OPTION_LINE_DELIMITER_UNSPECIFIED);
 
-        // Do the work within an operation because this is a long running activity that modifies the workbench.
+        // Do the work within an operation because this is a long running activity that modifies the
+        // workbench.
         //
-        WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+        final WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
 
             // This is the method that gets invoked when the operation runs.
             //
             @Override
-            public void execute(IProgressMonitor monitor) {
+            public void execute(final IProgressMonitor monitor) {
                 // Save the resources to the file system.
                 //
                 boolean first = true;
-                for (Resource resource : editingDomain.getResourceSet().getResources()) {
-                    if ((first || !resource.getContents().isEmpty() || isPersisted(resource))
-                            && !editingDomain.isReadOnly(resource)) {
+                for (final Resource resource : ServicelevelObjectiveEditor.this.editingDomain.getResourceSet()
+                        .getResources()) {
+                    if ((first || !resource.getContents().isEmpty() || ServicelevelObjectiveEditor.this
+                            .isPersisted(resource))
+                            && !ServicelevelObjectiveEditor.this.editingDomain.isReadOnly(resource)) {
                         try {
-                            long timeStamp = resource.getTimeStamp();
+                            final long timeStamp = resource.getTimeStamp();
                             resource.save(saveOptions);
                             if (resource.getTimeStamp() != timeStamp) {
-                                savedResources.add(resource);
+                                ServicelevelObjectiveEditor.this.savedResources.add(resource);
                             }
-                        } catch (Exception exception) {
-                            resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
+                        } catch (final Exception exception) {
+                            ServicelevelObjectiveEditor.this.resourceToDiagnosticMap.put(resource,
+                                    ServicelevelObjectiveEditor.this.analyzeResourceProblems(resource, exception));
                         }
                         first = false;
                     }
@@ -1488,49 +1534,51 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
             }
         };
 
-        updateProblemIndication = false;
+        this.updateProblemIndication = false;
         try {
             // This runs the options, and shows progress.
             //
-            new ProgressMonitorDialog(getSite().getShell()).run(true, false, operation);
+            new ProgressMonitorDialog(this.getSite().getShell()).run(true, false, operation);
 
             // Refresh the necessary state.
             //
-            ((BasicCommandStack) editingDomain.getCommandStack()).saveIsDone();
-            firePropertyChange(IEditorPart.PROP_DIRTY);
-        } catch (Exception exception) {
+            ((BasicCommandStack) this.editingDomain.getCommandStack()).saveIsDone();
+            this.firePropertyChange(IEditorPart.PROP_DIRTY);
+        } catch (final Exception exception) {
             // Something went wrong that shouldn't.
             //
             ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
         }
-        updateProblemIndication = true;
-        updateProblemIndication();
+        this.updateProblemIndication = true;
+        this.updateProblemIndication();
     }
 
     /**
-     * This returns whether something has been persisted to the URI of the specified resource.
-     * The implementation uses the URI converter from the editor's resource set to try to open an input stream.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This returns whether something has been persisted to the URI of the specified resource. The
+     * implementation uses the URI converter from the editor's resource set to try to open an input
+     * stream. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    protected boolean isPersisted(Resource resource) {
+    protected boolean isPersisted(final Resource resource) {
         boolean result = false;
         try {
-            InputStream stream = editingDomain.getResourceSet().getURIConverter().createInputStream(resource.getURI());
+            final InputStream stream = this.editingDomain.getResourceSet().getURIConverter()
+                    .createInputStream(resource.getURI());
             if (stream != null) {
                 result = true;
                 stream.close();
             }
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Ignore
         }
         return result;
     }
 
     /**
-     * This always returns true because it is not currently supported.
-     * <!-- begin-user-doc --> <!--
+     * This always returns true because it is not currently supported. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -1539,144 +1587,152 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     }
 
     /**
-     * This also changes the editor's input.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This also changes the editor's input. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public void doSaveAs() {
-        SaveAsDialog saveAsDialog = new SaveAsDialog(getSite().getShell());
+        final SaveAsDialog saveAsDialog = new SaveAsDialog(this.getSite().getShell());
         saveAsDialog.open();
-        IPath path = saveAsDialog.getResult();
+        final IPath path = saveAsDialog.getResult();
         if (path != null) {
-            IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+            final IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
             if (file != null) {
-                doSaveAs(URI.createPlatformResourceURI(file.getFullPath().toString(), true), new FileEditorInput(file));
+                this.doSaveAs(URI.createPlatformResourceURI(file.getFullPath().toString(), true), new FileEditorInput(
+                        file));
             }
         }
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    protected void doSaveAs(URI uri, IEditorInput editorInput) {
-        (editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
-        setInputWithNotify(editorInput);
-        setPartName(editorInput.getName());
-        IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null ? getActionBars()
-                .getStatusLineManager().getProgressMonitor() : new NullProgressMonitor();
-        doSave(progressMonitor);
+    protected void doSaveAs(final URI uri, final IEditorInput editorInput) {
+        (this.editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
+        this.setInputWithNotify(editorInput);
+        this.setPartName(editorInput.getName());
+        final IProgressMonitor progressMonitor = this.getActionBars().getStatusLineManager() != null ? this
+                .getActionBars().getStatusLineManager().getProgressMonitor() : new NullProgressMonitor();
+                this.doSave(progressMonitor);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void gotoMarker(IMarker marker) {
-        List<?> targetObjects = markerHelper.getTargetObjects(editingDomain, marker);
+    public void gotoMarker(final IMarker marker) {
+        final List<?> targetObjects = this.markerHelper.getTargetObjects(this.editingDomain, marker);
         if (!targetObjects.isEmpty()) {
-            setSelectionToViewer(targetObjects);
+            this.setSelectionToViewer(targetObjects);
         }
     }
 
     /**
-     * This is called during startup.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This is called during startup. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void init(IEditorSite site, IEditorInput editorInput) {
-        setSite(site);
-        setInputWithNotify(editorInput);
-        setPartName(editorInput.getName());
+    public void init(final IEditorSite site, final IEditorInput editorInput) {
+        this.setSite(site);
+        this.setInputWithNotify(editorInput);
+        this.setPartName(editorInput.getName());
         site.setSelectionProvider(this);
-        site.getPage().addPartListener(partListener);
-        ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener,
+        site.getPage().addPartListener(this.partListener);
+        ResourcesPlugin.getWorkspace().addResourceChangeListener(this.resourceChangeListener,
                 IResourceChangeEvent.POST_CHANGE);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public void setFocus() {
-        if (currentViewerPane != null) {
-            currentViewerPane.setFocus();
+        if (this.currentViewerPane != null) {
+            this.currentViewerPane.setFocus();
         } else {
-            getControl(getActivePage()).setFocus();
+            this.getControl(this.getActivePage()).setFocus();
         }
     }
 
     /**
-     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
-     * <!-- begin-user-doc -->
+     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void addSelectionChangedListener(ISelectionChangedListener listener) {
-        selectionChangedListeners.add(listener);
+    public void addSelectionChangedListener(final ISelectionChangedListener listener) {
+        this.selectionChangedListeners.add(listener);
     }
 
     /**
-     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}.
-     * <!-- begin-user-doc -->
+     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void removeSelectionChangedListener(ISelectionChangedListener listener) {
-        selectionChangedListeners.remove(listener);
+    public void removeSelectionChangedListener(final ISelectionChangedListener listener) {
+        this.selectionChangedListeners.remove(listener);
     }
 
     /**
-     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to return this editor's overall selection.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to return this editor's
+     * overall selection. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ISelection getSelection() {
-        return editorSelection;
+        return this.editorSelection;
     }
 
     /**
-     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to set this editor's overall selection.
-     * Calling this result will notify the listeners.
-     * <!-- begin-user-doc -->
+     * This implements {@link org.eclipse.jface.viewers.ISelectionProvider} to set this editor's
+     * overall selection. Calling this result will notify the listeners. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setSelection(ISelection selection) {
-        editorSelection = selection;
+    public void setSelection(final ISelection selection) {
+        this.editorSelection = selection;
 
-        for (ISelectionChangedListener listener : selectionChangedListeners) {
+        for (final ISelectionChangedListener listener : this.selectionChangedListeners) {
             listener.selectionChanged(new SelectionChangedEvent(this, selection));
         }
-        setStatusLineManager(selection);
+        this.setStatusLineManager(selection);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public void setStatusLineManager(ISelection selection) {
-        IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer ? contentOutlineStatusLineManager
-                : getActionBars().getStatusLineManager();
+    public void setStatusLineManager(final ISelection selection) {
+        final IStatusLineManager statusLineManager = this.currentViewer != null
+                && this.currentViewer == this.contentOutlineViewer ? this.contentOutlineStatusLineManager : this
+                .getActionBars().getStatusLineManager();
 
         if (statusLineManager != null) {
             if (selection instanceof IStructuredSelection) {
-                Collection<?> collection = ((IStructuredSelection) selection).toList();
+                final Collection<?> collection = ((IStructuredSelection) selection).toList();
                 switch (collection.size()) {
                 case 0: {
                     statusLineManager.setMessage(getString("_UI_NoObjectSelected"));
                     break;
                 }
                 case 1: {
-                    String text = new AdapterFactoryItemDelegator(adapterFactory).getText(collection.iterator().next());
+                    final String text = new AdapterFactoryItemDelegator(this.adapterFactory).getText(collection
+                            .iterator().next());
                     statusLineManager.setMessage(getString("_UI_SingleObjectSelected", text));
                     break;
                 }
@@ -1693,92 +1749,97 @@ public class ServicelevelObjectiveEditor extends MultiPageEditorPart implements 
     }
 
     /**
-     * This looks up a string in the plugin's plugin.properties file.
-     * <!-- begin-user-doc --> <!--
+     * This looks up a string in the plugin's plugin.properties file. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     * 
      * @generated
      */
-    private static String getString(String key) {
+    private static String getString(final String key) {
         return ServiceLevelObjectiveEditorPlugin.INSTANCE.getString(key);
     }
 
     /**
-     * This looks up a string in plugin.properties, making a substitution.
-     * <!-- begin-user-doc -->
+     * This looks up a string in plugin.properties, making a substitution. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
-    private static String getString(String key, Object s1) {
+    private static String getString(final String key, final Object s1) {
         return ServiceLevelObjectiveEditorPlugin.INSTANCE.getString(key, new Object[] { s1 });
     }
 
     /**
-     * This implements {@link org.eclipse.jface.action.IMenuListener} to help fill the context menus with contributions from the Edit menu.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This implements {@link org.eclipse.jface.action.IMenuListener} to help fill the context menus
+     * with contributions from the Edit menu. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void menuAboutToShow(IMenuManager menuManager) {
-        ((IMenuListener) getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
+    public void menuAboutToShow(final IMenuManager menuManager) {
+        ((IMenuListener) this.getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public EditingDomainActionBarContributor getActionBarContributor() {
-        return (EditingDomainActionBarContributor) getEditorSite().getActionBarContributor();
+        return (EditingDomainActionBarContributor) this.getEditorSite().getActionBarContributor();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public IActionBars getActionBars() {
-        return getActionBarContributor().getActionBars();
+        return this.getActionBarContributor().getActionBars();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public AdapterFactory getAdapterFactory() {
-        return adapterFactory;
+        return this.adapterFactory;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public void dispose() {
-        updateProblemIndication = false;
+        this.updateProblemIndication = false;
 
-        ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
+        ResourcesPlugin.getWorkspace().removeResourceChangeListener(this.resourceChangeListener);
 
-        getSite().getPage().removePartListener(partListener);
+        this.getSite().getPage().removePartListener(this.partListener);
 
-        adapterFactory.dispose();
+        this.adapterFactory.dispose();
 
-        if (getActionBarContributor().getActiveEditor() == this) {
-            getActionBarContributor().setActiveEditor(null);
+        if (this.getActionBarContributor().getActiveEditor() == this) {
+            this.getActionBarContributor().setActiveEditor(null);
         }
 
-        for (PropertySheetPage propertySheetPage : propertySheetPages) {
+        for (final PropertySheetPage propertySheetPage : this.propertySheetPages) {
             propertySheetPage.dispose();
         }
 
-        if (contentOutlinePage != null) {
-            contentOutlinePage.dispose();
+        if (this.contentOutlinePage != null) {
+            this.contentOutlinePage.dispose();
         }
 
         super.dispose();
     }
 
     /**
-     * Returns whether the outline view should be presented to the user.
-     * <!-- begin-user-doc -->
+     * Returns whether the outline view should be presented to the user. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected boolean showOutlineView() {

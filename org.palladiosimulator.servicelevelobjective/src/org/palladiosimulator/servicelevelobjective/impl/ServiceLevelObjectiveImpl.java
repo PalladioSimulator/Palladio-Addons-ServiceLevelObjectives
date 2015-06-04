@@ -393,7 +393,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
         switch (featureID) {
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION:
             return DESCRIPTION_EDEFAULT == null ? this.description != null : !DESCRIPTION_EDEFAULT
-            .equals(this.description);
+                    .equals(this.description);
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD:
             return this.lowerThreshold != null;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:

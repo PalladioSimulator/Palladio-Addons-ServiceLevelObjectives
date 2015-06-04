@@ -5,7 +5,6 @@ package org.palladiosimulator.servicelevelobjective.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.palladiosimulator.mdsdprofiles.StereotypableElement;
 import org.palladiosimulator.servicelevelobjective.HardThreshold;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.NamedElement;
@@ -87,9 +86,6 @@ public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(serviceLevelObjective);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(serviceLevelObjective);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -99,9 +95,6 @@ public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
             T result = this.caseThreshold(threshold);
             if (result == null) {
                 result = this.caseIdentifier(threshold);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(threshold);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -118,9 +111,6 @@ public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(hardThreshold);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(hardThreshold);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -135,9 +125,6 @@ public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
                 result = this.caseIdentifier(linearFuzzyThreshold);
             }
             if (result == null) {
-                result = this.caseStereotypableElement(linearFuzzyThreshold);
-            }
-            if (result == null) {
                 result = this.defaultCase(theEObject);
             }
             return result;
@@ -147,9 +134,6 @@ public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
             T result = this.caseNamedElement(namedElement);
             if (result == null) {
                 result = this.caseIdentifier(namedElement);
-            }
-            if (result == null) {
-                result = this.caseStereotypableElement(namedElement);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -251,22 +235,6 @@ public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseNamedElement(final NamedElement object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Stereotypable Element</em>'. <!-- begin-user-doc --> This implementation returns null;
-     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Stereotypable Element</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseStereotypableElement(final StereotypableElement object) {
         return null;
     }
 

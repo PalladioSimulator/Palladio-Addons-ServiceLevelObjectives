@@ -30,7 +30,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  * @generated
  */
 public class ServiceLevelObjectiveRepositoryImpl extends MinimalEObjectImpl.Container implements
-        ServiceLevelObjectiveRepository {
+ServiceLevelObjectiveRepository {
 
     /**
      * The cached value of the '{@link #getServicelevelobjectives() <em>Servicelevelobjectives</em>}

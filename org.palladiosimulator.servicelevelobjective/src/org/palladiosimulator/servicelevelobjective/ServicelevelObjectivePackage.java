@@ -97,15 +97,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
     int NAMED_ELEMENT = 5;
 
     /**
-     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int NAMED_ELEMENT__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
-
-    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -142,15 +133,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * @generated
      */
     int SERVICE_LEVEL_OBJECTIVE = 1;
-
-    /**
-     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int SERVICE_LEVEL_OBJECTIVE__PROFILEABLE_ELEMENT = NAMED_ELEMENT__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -227,15 +209,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
     int THRESHOLD = 2;
 
     /**
-     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int THRESHOLD__PROFILEABLE_ELEMENT = IdentifierPackage.IDENTIFIER__PROFILEABLE_ELEMENT;
-
-    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -274,15 +247,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
     int HARD_THRESHOLD = 3;
 
     /**
-     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int HARD_THRESHOLD__PROFILEABLE_ELEMENT = THRESHOLD__PROFILEABLE_ELEMENT;
-
-    /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -319,15 +283,6 @@ public interface ServicelevelObjectivePackage extends EPackage {
      * @generated
      */
     int LINEAR_FUZZY_THRESHOLD = 4;
-
-    /**
-     * The feature id for the '<em><b>Profileable Element</b></em>' reference. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int LINEAR_FUZZY_THRESHOLD__PROFILEABLE_ELEMENT = THRESHOLD__PROFILEABLE_ELEMENT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
