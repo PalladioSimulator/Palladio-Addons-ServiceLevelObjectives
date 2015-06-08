@@ -5,6 +5,7 @@ package org.palladiosimulator.servicelevelobjective.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.monitorrepository.MeasurementSpecification;
@@ -256,7 +257,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
      */
     @Override
     public MeasurementSpecification getMeasurementSpecification() {
-        if (this.measurementSpecification != null && this.measurementSpecification.eIsProxy()) {
+        if (this.measurementSpecification != null && ((EObject) this.measurementSpecification).eIsProxy()) {
             final InternalEObject oldMeasurementSpecification = (InternalEObject) this.measurementSpecification;
             this.measurementSpecification = (MeasurementSpecification) this.eResolveProxy(oldMeasurementSpecification);
             if (this.measurementSpecification != oldMeasurementSpecification) {

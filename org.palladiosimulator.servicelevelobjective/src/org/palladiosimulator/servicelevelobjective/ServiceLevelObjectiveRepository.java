@@ -2,8 +2,8 @@
  */
 package org.palladiosimulator.servicelevelobjective;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -20,9 +20,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjectiveRepository()
  * @model
+ * @extends CDOObject
  * @generated
  */
-public interface ServiceLevelObjectiveRepository extends EObject {
+public interface ServiceLevelObjectiveRepository extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Servicelevelobjectives</b></em>' containment reference list.

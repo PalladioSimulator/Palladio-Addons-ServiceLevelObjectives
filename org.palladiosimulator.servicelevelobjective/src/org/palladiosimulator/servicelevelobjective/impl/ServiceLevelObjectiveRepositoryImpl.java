@@ -8,9 +8,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
@@ -29,8 +29,7 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
  *
  * @generated
  */
-public class ServiceLevelObjectiveRepositoryImpl extends MinimalEObjectImpl.Container implements
-ServiceLevelObjectiveRepository {
+public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implements ServiceLevelObjectiveRepository {
 
     /**
      * The cached value of the '{@link #getServicelevelobjectives() <em>Servicelevelobjectives</em>}
