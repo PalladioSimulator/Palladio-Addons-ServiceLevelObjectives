@@ -2,9 +2,7 @@
  */
 package org.palladiosimulator.servicelevelobjective.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.servicelevelobjective.NamedElement;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 
@@ -28,7 +26,7 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getName()
      * @generated
      * @ordered
@@ -36,18 +34,8 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected String name = NAME_EDEFAULT;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NamedElementImpl() {
@@ -56,7 +44,7 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -66,32 +54,29 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getName() {
-        return this.name;
+        return (String) this.eDynamicGet(ServicelevelObjectivePackage.NAMED_ELEMENT__NAME,
+                ServicelevelObjectivePackage.Literals.NAMED_ELEMENT__NAME, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setName(final String newName) {
-        final String oldName = this.name;
-        this.name = newName;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.NAMED_ELEMENT__NAME, oldName, this.name));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.NAMED_ELEMENT__NAME,
+                ServicelevelObjectivePackage.Literals.NAMED_ELEMENT__NAME, newName);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +90,7 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -120,7 +105,7 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,34 +120,16 @@ public class NamedElementImpl extends IdentifierImpl implements NamedElement {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.NAMED_ELEMENT__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? this.getName() != null : !NAME_EDEFAULT.equals(this.getName());
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(this.name);
-        result.append(')');
-        return result.toString();
     }
 
 } // NamedElementImpl

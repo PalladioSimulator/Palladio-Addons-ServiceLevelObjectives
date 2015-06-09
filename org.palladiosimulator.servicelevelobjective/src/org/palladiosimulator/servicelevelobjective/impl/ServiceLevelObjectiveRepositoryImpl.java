@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
@@ -32,18 +31,8 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implements ServiceLevelObjectiveRepository {
 
     /**
-     * The cached value of the '{@link #getServicelevelobjectives() <em>Servicelevelobjectives</em>}
-     * ' containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getServicelevelobjectives()
-     * @generated
-     * @ordered
-     */
-    protected EList<ServiceLevelObjective> servicelevelobjectives;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ServiceLevelObjectiveRepositoryImpl() {
@@ -52,7 +41,7 @@ public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -62,22 +51,31 @@ public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
-    public EList<ServiceLevelObjective> getServicelevelobjectives() {
-        if (this.servicelevelobjectives == null) {
-            this.servicelevelobjectives = new EObjectContainmentEList<ServiceLevelObjective>(
-                    ServiceLevelObjective.class, this,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES);
-        }
-        return this.servicelevelobjectives;
+    protected int eStaticFeatureCount() {
+        return 0;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public EList<ServiceLevelObjective> getServicelevelobjectives() {
+        return (EList<ServiceLevelObjective>) this.eDynamicGet(
+                ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES, true,
+                true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -92,7 +90,7 @@ public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -106,7 +104,7 @@ public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -123,7 +121,7 @@ public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -138,14 +136,14 @@ public class ServiceLevelObjectiveRepositoryImpl extends CDOObjectImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE_REPOSITORY__SERVICELEVELOBJECTIVES:
-            return this.servicelevelobjectives != null && !this.servicelevelobjectives.isEmpty();
+            return !this.getServicelevelobjectives().isEmpty();
         }
         return super.eIsSet(featureID);
     }

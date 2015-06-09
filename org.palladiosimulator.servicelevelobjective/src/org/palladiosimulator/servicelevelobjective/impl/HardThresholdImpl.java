@@ -18,7 +18,7 @@ public class HardThresholdImpl extends ThresholdImpl implements HardThreshold {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected HardThresholdImpl() {
@@ -27,7 +27,7 @@ public class HardThresholdImpl extends ThresholdImpl implements HardThreshold {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

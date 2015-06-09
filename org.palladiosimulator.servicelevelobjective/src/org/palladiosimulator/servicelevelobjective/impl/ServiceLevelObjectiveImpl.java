@@ -2,12 +2,9 @@
  */
 package org.palladiosimulator.servicelevelobjective.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.monitorrepository.MeasurementSpecification;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
@@ -49,48 +46,8 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
     protected static final String DESCRIPTION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getDescription()
-     * @generated
-     * @ordered
-     */
-    protected String description = DESCRIPTION_EDEFAULT;
-
-    /**
-     * The cached value of the '{@link #getLowerThreshold() <em>Lower Threshold</em>}' containment
-     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getLowerThreshold()
-     * @generated
-     * @ordered
-     */
-    protected Threshold lowerThreshold;
-
-    /**
-     * The cached value of the '{@link #getUpperThreshold() <em>Upper Threshold</em>}' containment
-     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getUpperThreshold()
-     * @generated
-     * @ordered
-     */
-    protected Threshold upperThreshold;
-
-    /**
-     * The cached value of the '{@link #getMeasurementSpecification()
-     * <em>Measurement Specification</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasurementSpecification()
-     * @generated
-     * @ordered
-     */
-    protected MeasurementSpecification measurementSpecification;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ServiceLevelObjectiveImpl() {
@@ -99,7 +56,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -109,196 +66,130 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getDescription() {
-        return this.description;
+        return (String) this.eDynamicGet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setDescription(final String newDescription) {
-        final String oldDescription = this.description;
-        this.description = newDescription;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION, oldDescription, this.description));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION, newDescription);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Threshold getLowerThreshold() {
-        return this.lowerThreshold;
+        return (Threshold) this.eDynamicGet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetLowerThreshold(final Threshold newLowerThreshold, NotificationChain msgs) {
-        final Threshold oldLowerThreshold = this.lowerThreshold;
-        this.lowerThreshold = newLowerThreshold;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, oldLowerThreshold,
-                    newLowerThreshold);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
+        msgs = this.eDynamicInverseAdd((InternalEObject) newLowerThreshold,
+                ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setLowerThreshold(final Threshold newLowerThreshold) {
-        if (newLowerThreshold != this.lowerThreshold) {
-            NotificationChain msgs = null;
-            if (this.lowerThreshold != null) {
-                msgs = ((InternalEObject) this.lowerThreshold).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-                        - ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, null, msgs);
-            }
-            if (newLowerThreshold != null) {
-                msgs = ((InternalEObject) newLowerThreshold).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-                        - ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, null, msgs);
-            }
-            msgs = this.basicSetLowerThreshold(newLowerThreshold, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, newLowerThreshold,
-                    newLowerThreshold));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD, newLowerThreshold);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Threshold getUpperThreshold() {
-        return this.upperThreshold;
+        return (Threshold) this.eDynamicGet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public NotificationChain basicSetUpperThreshold(final Threshold newUpperThreshold, NotificationChain msgs) {
-        final Threshold oldUpperThreshold = this.upperThreshold;
-        this.upperThreshold = newUpperThreshold;
-        if (this.eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, oldUpperThreshold,
-                    newUpperThreshold);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
+        msgs = this.eDynamicInverseAdd((InternalEObject) newUpperThreshold,
+                ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setUpperThreshold(final Threshold newUpperThreshold) {
-        if (newUpperThreshold != this.upperThreshold) {
-            NotificationChain msgs = null;
-            if (this.upperThreshold != null) {
-                msgs = ((InternalEObject) this.upperThreshold).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-                        - ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, null, msgs);
-            }
-            if (newUpperThreshold != null) {
-                msgs = ((InternalEObject) newUpperThreshold).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-                        - ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, null, msgs);
-            }
-            msgs = this.basicSetUpperThreshold(newUpperThreshold, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        } else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, newUpperThreshold,
-                    newUpperThreshold));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD, newUpperThreshold);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public MeasurementSpecification getMeasurementSpecification() {
-        if (this.measurementSpecification != null && ((EObject) this.measurementSpecification).eIsProxy()) {
-            final InternalEObject oldMeasurementSpecification = (InternalEObject) this.measurementSpecification;
-            this.measurementSpecification = (MeasurementSpecification) this.eResolveProxy(oldMeasurementSpecification);
-            if (this.measurementSpecification != oldMeasurementSpecification) {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
-                            oldMeasurementSpecification, this.measurementSpecification));
-                }
-            }
-        }
-        return this.measurementSpecification;
+        return (MeasurementSpecification) this.eDynamicGet(
+                ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MeasurementSpecification basicGetMeasurementSpecification() {
-        return this.measurementSpecification;
+        return (MeasurementSpecification) this.eDynamicGet(
+                ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setMeasurementSpecification(final MeasurementSpecification newMeasurementSpecification) {
-        final MeasurementSpecification oldMeasurementSpecification = this.measurementSpecification;
-        this.measurementSpecification = newMeasurementSpecification;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
-                    oldMeasurementSpecification, this.measurementSpecification));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
+                ServicelevelObjectivePackage.Literals.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION,
+                newMeasurementSpecification);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -315,7 +206,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -338,7 +229,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -362,7 +253,7 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -386,41 +277,23 @@ public class ServiceLevelObjectiveImpl extends NamedElementImpl implements Servi
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__DESCRIPTION:
-            return DESCRIPTION_EDEFAULT == null ? this.description != null : !DESCRIPTION_EDEFAULT
-                    .equals(this.description);
+            return DESCRIPTION_EDEFAULT == null ? this.getDescription() != null : !DESCRIPTION_EDEFAULT.equals(this
+                    .getDescription());
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__LOWER_THRESHOLD:
-            return this.lowerThreshold != null;
+            return this.getLowerThreshold() != null;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__UPPER_THRESHOLD:
-            return this.upperThreshold != null;
+            return this.getUpperThreshold() != null;
         case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE__MEASUREMENT_SPECIFICATION:
-            return this.measurementSpecification != null;
+            return this.basicGetMeasurementSpecification() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (description: ");
-        result.append(this.description);
-        result.append(')');
-        return result.toString();
     }
 
 } // ServiceLevelObjectiveImpl

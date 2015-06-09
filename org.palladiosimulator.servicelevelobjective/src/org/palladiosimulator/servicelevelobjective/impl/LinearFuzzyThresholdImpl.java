@@ -4,9 +4,7 @@ package org.palladiosimulator.servicelevelobjective.impl;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 
@@ -27,18 +25,8 @@ import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuzzyThreshold {
 
     /**
-     * The cached value of the '{@link #getSoftLimit() <em>Soft Limit</em>}' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getSoftLimit()
-     * @generated
-     * @ordered
-     */
-    protected Measure<?, ?> softLimit;
-
-    /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected LinearFuzzyThresholdImpl() {
@@ -47,7 +35,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -57,32 +45,29 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure<?, ?> getSoftLimit() {
-        return this.softLimit;
+        return (Measure<?, ?>) this.eDynamicGet(ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT,
+                ServicelevelObjectivePackage.Literals.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setSoftLimit(final Measure<?, ?> newSoftLimit) {
-        final Measure<?, ?> oldSoftLimit = this.softLimit;
-        this.softLimit = newSoftLimit;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT, oldSoftLimit, this.softLimit));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT,
+                ServicelevelObjectivePackage.Literals.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT, newSoftLimit);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -96,7 +81,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -111,7 +96,7 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -126,34 +111,16 @@ public class LinearFuzzyThresholdImpl extends ThresholdImpl implements LinearFuz
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD__SOFT_LIMIT:
-            return this.softLimit != null;
+            return this.getSoftLimit() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (softLimit: ");
-        result.append(this.softLimit);
-        result.append(')');
-        return result.toString();
     }
 
 } // LinearFuzzyThresholdImpl

@@ -31,7 +31,7 @@ public interface Threshold extends Identifier {
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Threshold Limit</em>' attribute.
      * @see #setThresholdLimit(Measure)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getThreshold_ThresholdLimit()
@@ -44,7 +44,7 @@ public interface Threshold extends Identifier {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.Threshold#getThresholdLimit
      * <em>Threshold Limit</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Threshold Limit</em>' attribute.
      * @see #getThresholdLimit()

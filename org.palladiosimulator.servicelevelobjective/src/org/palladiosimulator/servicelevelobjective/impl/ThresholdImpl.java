@@ -4,9 +4,7 @@ package org.palladiosimulator.servicelevelobjective.impl;
 
 import javax.measure.Measure;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
 import org.palladiosimulator.servicelevelobjective.Threshold;
 
@@ -28,18 +26,8 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public abstract class ThresholdImpl extends IdentifierImpl implements Threshold {
 
     /**
-     * The cached value of the '{@link #getThresholdLimit() <em>Threshold Limit</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getThresholdLimit()
-     * @generated
-     * @ordered
-     */
-    protected Measure<?, ?> thresholdLimit;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ThresholdImpl() {
@@ -48,7 +36,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -58,32 +46,29 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Measure<?, ?> getThresholdLimit() {
-        return this.thresholdLimit;
+        return (Measure<?, ?>) this.eDynamicGet(ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT,
+                ServicelevelObjectivePackage.Literals.THRESHOLD__THRESHOLD_LIMIT, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void setThresholdLimit(final Measure<?, ?> newThresholdLimit) {
-        final Measure<?, ?> oldThresholdLimit = this.thresholdLimit;
-        this.thresholdLimit = newThresholdLimit;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT, oldThresholdLimit, this.thresholdLimit));
-        }
+        this.eDynamicSet(ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT,
+                ServicelevelObjectivePackage.Literals.THRESHOLD__THRESHOLD_LIMIT, newThresholdLimit);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -97,7 +82,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -112,7 +97,7 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -127,34 +112,16 @@ public abstract class ThresholdImpl extends IdentifierImpl implements Threshold 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
         case ServicelevelObjectivePackage.THRESHOLD__THRESHOLD_LIMIT:
-            return this.thresholdLimit != null;
+            return this.getThresholdLimit() != null;
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (thresholdLimit: ");
-        result.append(this.thresholdLimit);
-        result.append(')');
-        return result.toString();
     }
 
 } // ThresholdImpl

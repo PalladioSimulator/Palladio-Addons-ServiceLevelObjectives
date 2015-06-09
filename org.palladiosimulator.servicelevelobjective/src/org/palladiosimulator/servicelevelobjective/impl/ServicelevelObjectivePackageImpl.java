@@ -23,49 +23,49 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class ServicelevelObjectivePackageImpl extends EPackageImpl implements ServicelevelObjectivePackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass serviceLevelObjectiveRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass serviceLevelObjectiveEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass thresholdEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass hardThresholdEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass linearFuzzyThresholdEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass namedElementEClass = null;
@@ -78,7 +78,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#eNS_URI
      * @see #init()
@@ -90,7 +90,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private static boolean isInited = false;
@@ -103,7 +103,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
      * This method is used to initialize {@link ServicelevelObjectivePackage#eINSTANCE} when that
      * field is accessed. Clients should not invoke it directly. Instead, they should simply access
      * that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -141,7 +141,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -161,7 +161,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -171,7 +171,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -191,7 +191,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -201,7 +201,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -211,7 +211,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -221,7 +221,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -231,7 +231,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -241,7 +241,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -251,7 +251,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -261,7 +261,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -271,7 +271,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -281,7 +281,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -291,7 +291,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isCreated = false;
@@ -299,7 +299,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void createPackageContents() {
@@ -333,7 +333,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isInitialized = false;
@@ -341,7 +341,7 @@ public class ServicelevelObjectivePackageImpl extends EPackageImpl implements Se
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void initializePackageContents() {

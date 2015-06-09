@@ -36,7 +36,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Description</em>' attribute.
      * @see #setDescription(String)
      * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage#getServiceLevelObjective_Description()
@@ -49,7 +49,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getDescription
      * <em>Description</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Description</em>' attribute.
      * @see #getDescription()
@@ -138,7 +138,7 @@ public interface ServiceLevelObjective extends NamedElement {
      * Sets the value of the '
      * {@link org.palladiosimulator.servicelevelobjective.ServiceLevelObjective#getMeasurementSpecification
      * <em>Measurement Specification</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '<em>Measurement Specification</em>' reference.
      * @see #getMeasurementSpecification()
