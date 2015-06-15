@@ -20,6 +20,7 @@
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.cdo"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="de.uka.ipd.sdq.identifier"/>
       <import plugin="org.palladiosimulator.metricspec"/>
@@ -55,7 +56,6 @@
       <import plugin="org.palladiosimulator.measurementframework"/>
       <import plugin="org.palladiosimulator.recorderframework" version="2.0.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.emfstore.common"/>
-      <import plugin="org.palladiosimulator.servicelevelobjective" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.databinding"/>
       <import plugin="org.apache.commons.math"/>
       <import plugin="org.palladiosimulator.edp2.visualization"/>
