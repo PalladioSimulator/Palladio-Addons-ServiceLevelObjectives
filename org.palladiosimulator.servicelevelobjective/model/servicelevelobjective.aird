@@ -11,7 +11,7 @@
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.monitorrepository/model/monitorrepository.ecore#/"/>
-  <models xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.edp2/model/EDP2.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.ecore#/"/>
@@ -23,13 +23,13 @@
   <models xmi:type="genmodel_1:GenModel" href="platform:/resource/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.stoex/model/stoex.ecore#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.ecore#/"/>
-  <models xmi:type="genmodel_1:GenModel" href="platform:/resource/de.uka.ipd.sdq.pcm/model/pcm.genmodel#/"/>
+  <models xmi:type="genmodel_1:GenModel" href="platform:/resource/org.palladiosimulator.pcm/model/pcm.genmodel#/"/>
   <models xmi:type="genmodel_1:GenModel" href="platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#/"/>
   <models xmi:type="genmodel_1:GenModel" href="platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#/"/>
   <models xmi:type="genmodel_1:GenModel" href="platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#/"/>
-  <models xmi:type="ecore:EPackage" href="platform:/resource/de.uka.ipd.sdq.pcm/model/pcm.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.palladiosimulator.pcm/model/pcm.ecore#/"/>
   <models xmi:type="genmodel:GenModel" href="platform:/resource/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel#/"/>
-  <models xmi:type="genmodel_1:GenModel" href="platform:/plugin/de.uka.ipd.sdq.pcm/model/pcm.genmodel#/"/>
+  <models xmi:type="genmodel_1:GenModel" href="platform:/plugin/org.palladiosimulator.pcm/model/pcm.genmodel#/"/>
   <models xmi:type="genmodel_1:GenModel" href="platform:/plugin/org.eclipse.uml2.types/model/Types.genmodel#/"/>
   <models xmi:type="ecore:EPackage" href="platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#/"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_wGiIoBdWEeSoUsjueZK-JA" initialized="true">
