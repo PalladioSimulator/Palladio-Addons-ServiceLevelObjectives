@@ -42,7 +42,7 @@ import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveReposito
  * A {@link WizardPage} prompting the user to import a file containing a
  * {@link ServiceLevelObjectiveRepository}. The chosen {@link ServiceLevelObjectiveRepository} is
  * forwarded to the {@link SLOViewsWizard} controlling this page.
- * 
+ *
  * @author Andreas Flohre
  *
  */
@@ -65,10 +65,6 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
      */
     private final List<ServiceLevelObjective> availableSLOs = new ArrayList<ServiceLevelObjective>();
 
-    /**
-     * Selected {@link Measurements} from the {@link SLODialogChooseMeasuringPointsPage}.
-     */
-    private List<Measurement> selectedMeasurements;
     private final MetricDescription metricDescription;
 
     /**
@@ -83,10 +79,10 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
 
     /**
      * Constructor.
-     * 
+     *
      * @param name
      */
-    public SLODialogChooseRepositoryPage(String name, MetricDescription metricDescription) {
+    public SLODialogChooseRepositoryPage(final String name, final MetricDescription metricDescription) {
         super(name);
         setDescription("Please select a file containing a service level objective repository.");
         selectionStatus = new Status(IStatus.INFO, "not_used", 0,
@@ -97,14 +93,14 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets .Composite)
      */
     @Override
     public void createControl(final Composite parent) {
         // create the composite to hold the widgets
-        Composite composite = new Composite(parent, SWT.NONE);
-        GridLayout gl = new GridLayout();
+        final Composite composite = new Composite(parent, SWT.NONE);
+        final GridLayout gl = new GridLayout();
         composite.setLayout(gl);
 
         final Group fileInputGroup = new Group(composite, SWT.NONE);
@@ -112,13 +108,13 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         // textFileNameToLoad.setEditable(false);
         textFileNameToLoad.addModifyListener(this);
         final GridLayout glFileInputGroup = new GridLayout();
-        int numColumns = 3;
+        final int numColumns = 3;
 
         glFileInputGroup.numColumns = numColumns;
         fileInputGroup.setLayout(glFileInputGroup);
         fileInputGroup.setText("Import Service Level Objective Repository"); // The
-                                                                             // group
-                                                                             // name
+        // group
+        // name
         fileInputGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 
         textFileNameToLoad.setParent(fileInputGroup);
@@ -157,34 +153,34 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         /** Title/message of the dialog. */
         private final String dialogTitle;
 
-        public WorkspaceButtonSelectionListener(Text field, String[] fileExtension, String dialogTitle, Shell shell) {
+        public WorkspaceButtonSelectionListener(final Text field, final String[] fileExtension, final String dialogTitle, final Shell shell) {
             this.field = field;
             this.extensions = fileExtension;
             this.dialogTitle = dialogTitle;
         }
 
-        public String openFileDialog(String[] fileExtension) {
+        public String openFileDialog(final String[] fileExtension) {
 
             /** Filter from the redundant files. */
-            List<ViewerFilter> filters = new ArrayList<ViewerFilter>();
+            final List<ViewerFilter> filters = new ArrayList<ViewerFilter>();
             if (fileExtension != null) {
-                ExtensionsFilter filter = new ExtensionsFilter(fileExtension);
+                final ExtensionsFilter filter = new ExtensionsFilter(fileExtension);
                 filters.add(filter);
             }
 
-            IFile[] files = WorkspaceResourceDialog.openFileSelection(getShell(), null, dialogTitle, false, null,
+            final IFile[] files = WorkspaceResourceDialog.openFileSelection(getShell(), null, dialogTitle, false, null,
                     filters);
 
             if (files.length != 0 && files[0] != null) {
                 System.out.println(files[0].getFullPath());
-                String portableString = files[0].getFullPath().toPortableString();
+                final String portableString = files[0].getFullPath().toPortableString();
 
                 // get object which represents the workspace
-                IWorkspace workspace = ResourcesPlugin.getWorkspace();
+                final IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
                 // get location of workspace
-                String workspaceDirectory = workspace.getRoot().getLocation().toFile().getPath().replace('\\', '/');
-                String target = workspaceDirectory + portableString;
+                final String workspaceDirectory = workspace.getRoot().getLocation().toFile().getPath().replace('\\', '/');
+                final String target = workspaceDirectory + portableString;
                 return target;
             } else {
                 return null;
@@ -192,7 +188,7 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         }
 
         @Override
-        public void widgetSelected(SelectionEvent e) {
+        public void widgetSelected(final SelectionEvent e) {
             String selectedFile = null;
             selectedFile = openFileDialog(extensions);
             if (selectedFile != null) {
@@ -201,7 +197,7 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         }
 
         @Override
-        public void widgetDefaultSelected(SelectionEvent e) {
+        public void widgetDefaultSelected(final SelectionEvent e) {
             // do nothing
         }
 
@@ -220,21 +216,21 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         /** Title/message of the dialog. */
         private final String dialogTitle;
 
-        public LocalFileSystemButtonSelectionAdapter(Text field, String[] allowedExtensions, String dialogTitle) {
+        public LocalFileSystemButtonSelectionAdapter(final Text field, final String[] allowedExtensions, final String dialogTitle) {
             this.dialogTitle = dialogTitle;
             this.field = field;
             this.extensions = allowedExtensions;
         }
 
-        public String openFileDialog(String[] fileExtension) {
-            FileDialog dialog = new FileDialog(getShell(), SWT.OPEN);
+        public String openFileDialog(final String[] fileExtension) {
+            final FileDialog dialog = new FileDialog(getShell(), SWT.OPEN);
             dialog.setFilterExtensions(fileExtension);
             dialog.setText(dialogTitle);
             String filename = null;
             dialog.setFileName(field.getText());
 
             if (dialog.open() != null) {
-                String root = dialog.getFilterPath() + File.separatorChar;
+                final String root = dialog.getFilterPath() + File.separatorChar;
                 filename = root + dialog.getFileName();
             }
 
@@ -242,7 +238,7 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         }
 
         @Override
-        public void widgetSelected(SelectionEvent e) {
+        public void widgetSelected(final SelectionEvent e) {
             String selectedFile = null;
             selectedFile = openFileDialog(extensions);
             if (selectedFile != null) {
@@ -251,7 +247,7 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         }
 
         @Override
-        public void widgetDefaultSelected(SelectionEvent e) {
+        public void widgetDefaultSelected(final SelectionEvent e) {
             // do nothing
         }
 
@@ -261,17 +257,17 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
      * Loads a {@link ServiceLevelObjectiveRepository} from a resource set by the uri and forwards
      * the {@link ServiceLevelObjectiveRepository} to the {@link SLOViewsWizard} controlling this
      * page.
-     * 
+     *
      * @param uri
      *            Uri defining the location of the resource to load.
      */
-    private void loadSLORepository(String uri) {
+    private void loadSLORepository(final String uri) {
         org.palladiosimulator.metricspec.MetricSpecPackage.eINSTANCE.eClass();
         org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage.eINSTANCE.eClass();
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION,
                 new XMIResourceFactoryImpl());
-        ResourceSet rs = new ResourceSetImpl();
-        Resource resource = rs.createResource(URI.createFileURI(uri));
+        final ResourceSet rs = new ResourceSetImpl();
+        final Resource resource = rs.createResource(URI.createFileURI(uri));
         try {
             resource.load(null);
             EcoreUtil.resolveAll(rs);
@@ -279,10 +275,10 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
             selectionStatus = statusOK;
             this.loadSLOs(this.metricDescription);
             updatePageStatus();
-        } catch (IOException e) {
+        } catch (final IOException e) {
             selectionStatus = new Status(IStatus.ERROR, "not_used", 0, "File not found.", null);
             updatePageStatus();
-        } catch (ClassCastException e) {
+        } catch (final ClassCastException e) {
             selectionStatus = new Status(IStatus.ERROR, "not_used", 0,
                     "Model does not contain service level repository, please select another repository.", null);
             updatePageStatus();
@@ -295,17 +291,17 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
      * {@link ServiceLevelObjectiveRepository} and forwards them to the wizard controlling this
      * page. Available {@link ServiceLevelObjective}s are {@link ServiceLevelObjective} which are
      * applicable to the metric description parameter.
-     * 
+     *
      * @param metricDescription
      *            The metric description the {@link ServiceLevelObjective}s need to be applicable
      *            to.
      */
-    private void loadSLOs(MetricDescription metricDescription) {
-        List<ServiceLevelObjective> allSLOs = selectedSLORepo.getServicelevelobjectives();
+    private void loadSLOs(final MetricDescription metricDescription) {
+        final List<ServiceLevelObjective> allSLOs = selectedSLORepo.getServicelevelobjectives();
         // FIXME: commonMetrics.metricspec and metric spec names used in
         // measurements are not in sync
         availableSLOs.clear();
-        for (ServiceLevelObjective element : allSLOs) {
+        for (final ServiceLevelObjective element : allSLOs) {
             if ((metricDescription.getName().contains(element.getMeasurementSpecification().getMetricDescription()
                     .getName()))
                     || (element.getMeasurementSpecification().getMetricDescription().getName()
@@ -397,13 +393,12 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
     // // do nothing
     // }
 
-    public void setSelectedMeasurements(List<Measurement> selectedMeasurements) {
-        this.selectedMeasurements = selectedMeasurements;
+    public void setSelectedMeasurements(final List<Measurement> selectedMeasurements) {
     }
 
     @Override
-    public void modifyText(ModifyEvent e) {
-        String uri = textFileNameToLoad.getText();
+    public void modifyText(final ModifyEvent e) {
+        final String uri = textFileNameToLoad.getText();
         uri.trim();
         if (uri.length() > 0) {
             loadSLORepository(uri);

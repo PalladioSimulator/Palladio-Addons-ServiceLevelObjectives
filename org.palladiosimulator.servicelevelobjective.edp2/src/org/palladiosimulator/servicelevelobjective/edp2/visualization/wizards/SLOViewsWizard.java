@@ -3,41 +3,32 @@ package org.palladiosimulator.servicelevelobjective.edp2.visualization.wizards;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
-import javax.measure.unit.Unit;
-
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.palladiosimulator.edp2.datastream.IDataSource;
-import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.edp2.datastream.chaindescription.ChainDescription;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
-import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.edp2.visualization.jfreechart.input.JFreeChartVisualizationSingleDatastreamInput;
-import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
-import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
-import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
 
 /**
  * A wizard which is opened upon double clicking an experiment run or a measurement.
- * 
+ *
  * If the wizard is started by double clicking a measurement, the user is prompted to select either
  * a visualization for the raw data or a corresponding service level objective (SLO) fulfillment
  * report visualization. If the user selects a SLO visualization, a repository containing available
  * SLO has to be imported and an SLO applicable to the metric description of the selected
  * measurements has to be chosen. Next the thresholds of the SLO need to be specified. Then the
  * chosen SLO fulfillment report is generated.
- * 
+ *
  * If the wizard is started by double clicking an experiment run, the user can select an arbitrary
  * number of measurements, though all selected measurements need to have the same metric type. Next
  * a repository containing available SLO has to be imported and an SLO applicable to the metric
@@ -45,16 +36,11 @@ import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveReposito
  * selected, the user needs to specify how the data are to be aggregated. After the thresholds of
  * the selected SLO are set the user can chose between available SLO fulfillment report
  * visualizations. The chosen report is then generated.
- * 
+ *
  * @author Andreas Flohre
  *
  */
 public class SLOViewsWizard extends Wizard implements INewWizard {
-
-    /**
-     * List holding all measuring points within the experiment run used to start the wizard.
-     */
-    private List<Measurement> measurementsList;
 
     /**
      * List holding all measuring points selected by the user on the
@@ -119,7 +105,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
 
     /**
      * Constructor. Used if the wizard is started from double clicking on an experiment run.
-     * 
+     *
      * @param experimentRun
      *            The double clicked experiment run containing the measuring points.
      */
@@ -128,35 +114,17 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
         this.finishable = false;
     }
 
-    public SLOViewsWizard(List<JFreeChartVisualizationSingleDatastreamInput> inputs) {
-        for (JFreeChartVisualizationSingleDatastreamInput stream : inputs) {
+    public SLOViewsWizard(final List<JFreeChartVisualizationSingleDatastreamInput> inputs) {
+        for (final JFreeChartVisualizationSingleDatastreamInput stream : inputs) {
             this.datasource = stream.getDataSource();
             this.metricDescription = stream.getDataSource().getMetricDesciption();
         }
     }
 
-    /**
-     * Returns the {@link RawMeasurements} from a measurement as a {@link IDataSource}.
-     * 
-     * @param source
-     *            The measurement.
-     * @return a {@link IDataSource}.
-     */
-    private IDataSource returnDataTupleFromMeasurement() {
-
-        final IDataSource edp2Source = this.datasource;
-        final int dataStreamSize = edp2Source.getDataStream().size();
-        edp2Source.getDataStream().close();
-
-        if (dataStreamSize > 0) {
-            return edp2Source;
-        }
-        return null;
-    }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench,
      * org.eclipse.jface.viewers.IStructuredSelection)
      */
@@ -166,7 +134,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.wizard.Wizard#performFinish()
      */
     @Override
@@ -179,7 +147,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.wizard.Wizard#addPages()
      */
     @Override
@@ -199,12 +167,12 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.wizard.Wizard#getNextPage(org.eclipse.jface.wizard. IWizardPage)
      */
 
     @Override
-    public IWizardPage getNextPage(IWizardPage currentPage) {
+    public IWizardPage getNextPage(final IWizardPage currentPage) {
         if (currentPage == chooseRepoPage && availableSLOs != null) {
             chooseSLOPage.setAvailableSLOs(availableSLOs);
             return chooseSLOPage;
@@ -236,11 +204,11 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
 
     /**
      * Calculates maximum simulation time of a set of measurements.
-     * 
+     *
      * @param measurements
      * @return
      */
-    private double calculateMaxSimulationTime(List<Measurement> measurements) {
+    private double calculateMaxSimulationTime(final List<Measurement> measurements) {
         /*
          * List<double[][]> xyDataList = new ArrayList<double[][]>(); DescriptiveStatistics stats =
          * new DescriptiveStatistics(); // inputList for descriptiveStatistics List<Double>
@@ -256,50 +224,6 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
     }
 
     /**
-     * Returns the data contained in a {@link IDataSource} as a double[][] array. Checks for
-     * appropriate positioning of domain and range data. If the data is not two dimensional and has
-     * a metric using integer or real values, a {@link IllegalArgumentException} is thrown.
-     * 
-     * @param dataSource
-     *            The data.
-     * @return a double[][] array containing the resulting data.
-     */
-    private double[][] getXYData(final IDataSource dataSource) {
-        int xPos;
-        int yPos;
-        if (!canAccept(dataSource)) {
-            throw new IllegalArgumentException("XYData has to be a two-dimensional metric set description.");
-        }
-        IDataStream<TupleMeasurement> inputStream = dataSource.getDataStream();
-        List<MetricDescription> subsumedMetrics = ((MetricSetDescription) inputStream.getMetricDesciption())
-                .getSubsumedMetrics();
-        xPos = 0;
-        // check position of domain data
-        if (subsumedMetrics.get(1).getId().equals(MetricDescriptionConstants.POINT_IN_TIME_METRIC.getId())) {
-            xPos = 1;
-        }
-        yPos = 1 - xPos;
-        Unit<Quantity> domainUnit = ((NumericalBaseMetricDescription) subsumedMetrics.get(xPos)).getDefaultUnit();
-        Unit<Quantity> rangeUnit = ((NumericalBaseMetricDescription) subsumedMetrics.get(yPos)).getDefaultUnit();
-        try {
-            double[][] result = new double[2][inputStream.size()];
-            int i = 0;
-            for (TupleMeasurement tuple : inputStream) {
-                @SuppressWarnings("unchecked")
-                Measure<?, Quantity>[] measurement = (Measure<?, Quantity>[]) tuple.asArray();
-                result[0][i] = measurement[xPos].doubleValue(domainUnit); // x
-                                                                          // (domain)
-                result[1][i] = measurement[yPos].doubleValue(rangeUnit); // y
-                                                                         // (range)
-                i++;
-            }
-            return result;
-        } finally {
-            inputStream.close();
-        }
-    }
-
-    /**
      * Method checking whether a source is a two dimensional data source with a metric using real or
      * integer values. If not, false is returned.
      *
@@ -307,15 +231,15 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
      *            The source to check.
      * @return
      */
-    public boolean canAccept(IDataSource source) {
-        BaseMetricDescription[] mds = MetricDescriptionUtility.toBaseMetricDescriptions(source.getMetricDesciption());
+    public boolean canAccept(final IDataSource source) {
+        final BaseMetricDescription[] mds = MetricDescriptionUtility.toBaseMetricDescriptions(source.getMetricDesciption());
         if (mds.length != 2) {
             return false; // two-dimensional data needed
         }
-        for (BaseMetricDescription md : mds) {
+        for (final BaseMetricDescription md : mds) {
             if (!(md instanceof NumericalBaseMetricDescription)) {
                 return false; // only metrics that use real or integer values
-                              // can be computed
+                // can be computed
             }
         }
         return true;
@@ -323,7 +247,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.eclipse.jface.wizard.Wizard#canFinish()
      */
     @Override
@@ -331,7 +255,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
         return finishable;
     }
 
-    public void setFinishable(boolean finishable) {
+    public void setFinishable(final boolean finishable) {
         this.finishable = finishable;
     }
 
@@ -352,7 +276,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
         return selectedSLO;
     }
 
-    public void setSelectedSLO(ServiceLevelObjective selectedSLO) {
+    public void setSelectedSLO(final ServiceLevelObjective selectedSLO) {
         this.selectedSLO = selectedSLO;
     }
 
@@ -360,7 +284,7 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
         return selectedDefault;
     }
 
-    public void setSelectedDefault(ChainDescription selectedDefault) {
+    public void setSelectedDefault(final ChainDescription selectedDefault) {
         this.selectedDefault = selectedDefault;
     }
 
@@ -368,11 +292,11 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
         return availableSLOs;
     }
 
-    public void setAvailableSLOs(List<ServiceLevelObjective> availableSLOs) {
+    public void setAvailableSLOs(final List<ServiceLevelObjective> availableSLOs) {
         this.availableSLOs = availableSLOs;
     }
 
-    public void setAggregatedData(double[][] aggregatedData) {
+    public void setAggregatedData(final double[][] aggregatedData) {
         this.aggregatedData = aggregatedData;
     }
 
@@ -387,11 +311,11 @@ public class SLOViewsWizard extends Wizard implements INewWizard {
         return selectedTimestepIntervalForVisualization;
     }
 
-    public void setSelectedTimestepInterval(double selectedTimestepInterval) {
+    public void setSelectedTimestepInterval(final double selectedTimestepInterval) {
         this.selectedTimestepIntervalForVisualization = selectedTimestepInterval;
     }
 
-    public void setMeasuringPointLabel(String label) {
+    public void setMeasuringPointLabel(final String label) {
         this.measuringPointLabel = label;
     }
 
