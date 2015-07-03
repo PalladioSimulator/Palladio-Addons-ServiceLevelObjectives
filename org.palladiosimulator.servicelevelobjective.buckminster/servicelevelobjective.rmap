@@ -12,7 +12,7 @@
       <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/servicelevelobjectives/nightly/"/>
     </rm:provider>
     <rm:provider resolutionFilter="(resolveFrom=release)" componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/servicelevelobjectives/latest/"/>
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/servicelevelobjectives/releases/latest/"/>
     </rm:provider>
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" source="true" mutable="true">
       <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Incubation/ServiceLevelObjectives/trunk/{0}">
