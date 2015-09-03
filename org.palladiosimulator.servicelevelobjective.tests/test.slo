@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="ASCII"?>
-<slo:HardThreshold xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:slo="http://palladiosimulator.org/ServiceLevelObjective/1.0" id="_ogIQEBiXEeSKwerqQNZ7jA" thresholdLimit="rO0ABXNyABxqYXZheC5tZWFzdXJlLk1lYXN1cmUkRG91YmxlAAAAAAAAAAECAAJEAAZfdmFsdWVMAAVfdW5pdHQAGUxqYXZheC9tZWFzdXJlL3VuaXQvVW5pdDt4cgAVamF2YXgubWVhc3VyZS5NZWFzdXJlEuEfkoalqZoCAAB4cEAIAAAAAAAAc3IAG2phdmF4Lm1lYXN1cmUudW5pdC5CYXNlVW5pdAAAAAAAAAABAgABTAAHX3N5bWJvbHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hyABdqYXZheC5tZWFzdXJlLnVuaXQuVW5pdM3I3hZ4zVJnAgAAeHB0AAFz"/>
+<slo:HardThreshold xmlns:slo="http://palladiosimulator.org/ServiceLevelObjective/1.0" id="_tgue0FJZEeWyuvs-uswBgw" thresholdLimit="3 s"/>
