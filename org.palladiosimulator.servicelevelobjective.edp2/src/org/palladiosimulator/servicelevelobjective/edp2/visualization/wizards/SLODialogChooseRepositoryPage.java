@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
@@ -172,16 +170,17 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
                     filters);
 
             if (files.length != 0 && files[0] != null) {
-                System.out.println(files[0].getFullPath());
-                final String portableString = files[0].getFullPath().toPortableString();
+                // System.out.println(files[0].getFullPath());
+                System.out.println(files[0].getLocationURI().toASCIIString());
+                // final String portableString = files[0].getFullPath().toPortableString();
 
                 // get object which represents the workspace
-                final IWorkspace workspace = ResourcesPlugin.getWorkspace();
+                // final IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
                 // get location of workspace
-                final String workspaceDirectory = workspace.getRoot().getLocation().toFile().getPath().replace('\\', '/');
-                final String target = workspaceDirectory + portableString;
-                return target;
+                // final String workspaceDirectory = workspace.getRoot().getLocation().toFile().getPath().replace('\\', '/');
+                // final String target = workspaceDirectory + portableString;
+                return files[0].getLocationURI().toASCIIString();
             } else {
                 return null;
             }
@@ -234,7 +233,7 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
                 filename = root + dialog.getFileName();
             }
 
-            return filename;
+            return "file:" + filename;
         }
 
         @Override
@@ -267,7 +266,7 @@ public class SLODialogChooseRepositoryPage extends WizardPage implements ModifyL
         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION,
                 new XMIResourceFactoryImpl());
         final ResourceSet rs = new ResourceSetImpl();
-        final Resource resource = rs.createResource(URI.createFileURI(uri));
+        final Resource resource = rs.createResource(URI.createURI(uri));
         try {
             resource.load(null);
             EcoreUtil.resolveAll(rs);
