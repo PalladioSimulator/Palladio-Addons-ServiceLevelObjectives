@@ -20,12 +20,12 @@ public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements 
         super(MetricDescriptionConstants.RESPONSE_TIME_METRIC_TUPLE);
     }
 
-    public SLOViolationEDP2DatasourceFilter(IDataSource datasource) {
+    public SLOViolationEDP2DatasourceFilter(final IDataSource datasource) {
         // FIXME: Which metric should really be given here?
         super(datasource, MetricDescriptionConstants.RESPONSE_TIME_METRIC_TUPLE);
     }
 
-    public SLOViolationEDP2DatasourceFilter(IDataSource datasource, MetricDescription metricDescription) {
+    public SLOViolationEDP2DatasourceFilter(final IDataSource datasource, final MetricDescription metricDescription) {
         super(datasource, metricDescription);
     }
 
@@ -42,14 +42,16 @@ public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements 
     @Override
     protected boolean shouldSkip(final MeasuringValue measurement) {
         if (this.getConfiguration().isPropertyNotSet(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY)) {
-            throw new RuntimeException("Filter Configuration requires a Service Level Object.");
+            //    throw new RuntimeException("Filter Configuration requires a Service Level Object.");
+            return false;
         }
 
         final Object propertyObject = this.getConfiguration().getProperties()
                 .get(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
         if (!(propertyObject instanceof ServiceLevelObjective)) {
-            throw new RuntimeException("Expected a ServiceLevelObjective for the property "
-                    + SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
+            //    throw new RuntimeException("Expected a ServiceLevelObjective for the property "
+            //            + SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
+            return false;
         }
 
         final ServiceLevelObjective serviceLevelObjective = (ServiceLevelObjective) propertyObject;
@@ -80,14 +82,14 @@ public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements 
     }
 
     @Override
-    public void saveState(IMemento memento) {
+    public void saveState(final IMemento memento) {
         // TODO Auto-generated method stub
 
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.palladiosimulator.edp2.datastream.filter.AbstractAdapter#createProperties()
      */
     @Override
