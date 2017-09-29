@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.servicelevelobjective.feature"
       label="Service Level Objectives Model Feature"
-      version="1.0.0.qualifier"
+      version="1.1.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
