@@ -48,6 +48,7 @@
       <import plugin="org.palladiosimulator.edp2.visualization.jfreechart" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.measurementframework" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.servicelevelobjective" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.branding"/>
    </requires>
 
    <plugin
@@ -73,13 +74,6 @@
 
    <plugin
          id="org.palladiosimulator.servicelevelobjective.edp2"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.palladiosimulator.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"
