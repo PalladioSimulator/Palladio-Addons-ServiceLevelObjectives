@@ -24,15 +24,13 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HardThreshold" eSuperTypes="#//Threshold"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LinearFuzzyThreshold" eSuperTypes="#//Threshold">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softLimit">
-      <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
-        <eTypeArguments/>
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearFuzzyThreshold" eSuperTypes="#//SoftThreshold"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftThreshold" eSuperTypes="#//Threshold">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softLimit" eType="ecore:EDataType platform:/plugin/org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuadraticFuzzyThreshold" eSuperTypes="#//SoftThreshold"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegativeQuadraticFuzzyThreshold" eSuperTypes="#//SoftThreshold"/>
 </ecore:EPackage>

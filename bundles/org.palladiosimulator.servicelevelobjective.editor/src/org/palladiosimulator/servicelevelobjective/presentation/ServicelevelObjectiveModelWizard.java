@@ -65,525 +65,523 @@ import org.palladiosimulator.servicelevelobjective.provider.ServiceLevelObjectiv
  */
 public class ServicelevelObjectiveModelWizard extends Wizard implements INewWizard {
 
-    /**
-     * The supported extensions for created files.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
-            .asList(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString(
-                    "_UI_ServicelevelObjectiveEditorFilenameExtensions").split("\\s*,\\s*")));
+	/**
+	 * The supported extensions for created files.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final List<String> FILE_EXTENSIONS = Collections
+			.unmodifiableList(Arrays.asList(ServiceLevelObjectiveEditorPlugin.INSTANCE
+					.getString("_UI_ServicelevelObjectiveEditorFilenameExtensions").split("\\s*,\\s*")));
 
-    /**
-     * A formatted list of supported file extensions, suitable for display.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public static final String FORMATTED_FILE_EXTENSIONS = ServiceLevelObjectiveEditorPlugin.INSTANCE.getString(
-            "_UI_ServicelevelObjectiveEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+	/**
+	 * A formatted list of supported file extensions, suitable for display.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String FORMATTED_FILE_EXTENSIONS = ServiceLevelObjectiveEditorPlugin.INSTANCE
+			.getString("_UI_ServicelevelObjectiveEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
-    /**
-     * This caches an instance of the model package.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected ServicelevelObjectivePackage servicelevelObjectivePackage = ServicelevelObjectivePackage.eINSTANCE;
+	/**
+	 * This caches an instance of the model package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServicelevelObjectivePackage servicelevelObjectivePackage = ServicelevelObjectivePackage.eINSTANCE;
 
-    /**
-     * This caches an instance of the model factory.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected ServicelevelObjectiveFactory servicelevelObjectiveFactory = servicelevelObjectivePackage
-            .getServicelevelObjectiveFactory();
+	/**
+	 * This caches an instance of the model factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServicelevelObjectiveFactory servicelevelObjectiveFactory = servicelevelObjectivePackage
+			.getServicelevelObjectiveFactory();
 
-    /**
-     * This is the file creation page.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected ServicelevelObjectiveModelWizardNewFileCreationPage newFileCreationPage;
+	/**
+	 * This is the file creation page.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServicelevelObjectiveModelWizardNewFileCreationPage newFileCreationPage;
 
-    /**
-     * This is the initial object creation page.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected ServicelevelObjectiveModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	/**
+	 * This is the initial object creation page.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServicelevelObjectiveModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
-    /**
-     * Remember the selection during initialization for populating the default container. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected IStructuredSelection selection;
+	/**
+	 * Remember the selection during initialization for populating the default container. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected IStructuredSelection selection;
 
-    /**
-     * Remember the workbench during initialization.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected IWorkbench workbench;
+	/**
+	 * Remember the workbench during initialization.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IWorkbench workbench;
 
-    /**
-     * Caches the names of the types that can be created as the root object.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected List<String> initialObjectNames;
+	/**
+	 * Caches the names of the types that can be created as the root object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected List<String> initialObjectNames;
 
-    /**
-     * This just records the information.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void init(IWorkbench workbench, IStructuredSelection selection) {
-        this.workbench = workbench;
-        this.selection = selection;
-        setWindowTitle(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-        setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
-                .getImageDescriptor(ServiceLevelObjectiveEditorPlugin.INSTANCE
-                        .getImage("full/wizban/NewServicelevelObjective")));
-    }
+	/**
+	 * This just records the information.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		this.workbench = workbench;
+		this.selection = selection;
+		setWindowTitle(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(
+				ServiceLevelObjectiveEditorPlugin.INSTANCE.getImage("full/wizban/NewServicelevelObjective")));
+	}
 
-    /**
-     * Returns the names of the types that can be created as the root object.
-     * <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected Collection<String> getInitialObjectNames() {
-        if (initialObjectNames == null) {
-            initialObjectNames = new ArrayList<String>();
-            for (EClassifier eClassifier : servicelevelObjectivePackage.getEClassifiers()) {
-                if (eClassifier instanceof EClass) {
-                    EClass eClass = (EClass) eClassifier;
-                    if (!eClass.isAbstract()) {
-                        initialObjectNames.add(eClass.getName());
-                    }
-                }
-            }
-            Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
-        }
-        return initialObjectNames;
-    }
+	/**
+	 * Returns the names of the types that can be created as the root object.
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Collection<String> getInitialObjectNames() {
+		if (initialObjectNames == null) {
+			initialObjectNames = new ArrayList<String>();
+			for (EClassifier eClassifier : servicelevelObjectivePackage.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
+					EClass eClass = (EClass) eClassifier;
+					if (!eClass.isAbstract()) {
+						initialObjectNames.add(eClass.getName());
+					}
+				}
+			}
+			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
+		}
+		return initialObjectNames;
+	}
 
-    /**
-     * Create a new model.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected EObject createInitialModel() {
-        EClass eClass = (EClass) servicelevelObjectivePackage.getEClassifier(initialObjectCreationPage
-                .getInitialObjectName());
-        EObject rootObject = servicelevelObjectiveFactory.create(eClass);
-        return rootObject;
-    }
+	/**
+	 * Create a new model.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EObject createInitialModel() {
+		EClass eClass = (EClass) servicelevelObjectivePackage
+				.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = servicelevelObjectiveFactory.create(eClass);
+		return rootObject;
+	}
 
-    /**
-     * Do the work after everything is specified.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean performFinish() {
-        try {
-            // Remember the file.
-            //
-            final IFile modelFile = getModelFile();
+	/**
+	 * Do the work after everything is specified.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean performFinish() {
+		try {
+			// Remember the file.
+			//
+			final IFile modelFile = getModelFile();
 
-            // Do the work within an operation.
-            //
-            WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+			// Do the work within an operation.
+			//
+			WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
+				@Override
+				protected void execute(IProgressMonitor progressMonitor) {
+					try {
+						// Create a resource set
+						//
+						ResourceSet resourceSet = new ResourceSetImpl();
 
-                @Override
-                protected void execute(IProgressMonitor progressMonitor) {
-                    try {
-                        // Create a resource set
-                        //
-                        ResourceSet resourceSet = new ResourceSetImpl();
+						// Get the URI of the model file.
+						//
+						URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-                        // Get the URI of the model file.
-                        //
-                        URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+						// Create a resource for this file.
+						//
+						Resource resource = resourceSet.createResource(fileURI);
 
-                        // Create a resource for this file.
-                        //
-                        Resource resource = resourceSet.createResource(fileURI);
+						// Add the initial model object to the contents.
+						//
+						EObject rootObject = createInitialModel();
+						if (rootObject != null) {
+							resource.getContents().add(rootObject);
+						}
 
-                        // Add the initial model object to the contents.
-                        //
-                        EObject rootObject = createInitialModel();
-                        if (rootObject != null) {
-                            resource.getContents().add(rootObject);
-                        }
+						// Save the contents of the resource to the file system.
+						//
+						Map<Object, Object> options = new HashMap<Object, Object>();
+						options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+						resource.save(options);
+					} catch (Exception exception) {
+						ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
+					} finally {
+						progressMonitor.done();
+					}
+				}
+			};
 
-                        // Save the contents of the resource to the file system.
-                        //
-                        Map<Object, Object> options = new HashMap<Object, Object>();
-                        options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-                        resource.save(options);
-                    } catch (Exception exception) {
-                        ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
-                    } finally {
-                        progressMonitor.done();
-                    }
-                }
-            };
+			getContainer().run(false, false, operation);
 
-            getContainer().run(false, false, operation);
+			// Select the new file resource in the current view.
+			//
+			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
+			IWorkbenchPage page = workbenchWindow.getActivePage();
+			final IWorkbenchPart activePart = page.getActivePart();
+			if (activePart instanceof ISetSelectionTarget) {
+				final ISelection targetSelection = new StructuredSelection(modelFile);
+				getShell().getDisplay().asyncExec(new Runnable() {
+					@Override
+					public void run() {
+						((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+					}
+				});
+			}
 
-            // Select the new file resource in the current view.
-            //
-            IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-            IWorkbenchPage page = workbenchWindow.getActivePage();
-            final IWorkbenchPart activePart = page.getActivePart();
-            if (activePart instanceof ISetSelectionTarget) {
-                final ISelection targetSelection = new StructuredSelection(modelFile);
-                getShell().getDisplay().asyncExec(new Runnable() {
+			// Open an editor on the new file.
+			//
+			try {
+				page.openEditor(new FileEditorInput(modelFile),
+						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+			} catch (PartInitException exception) {
+				MessageDialog.openError(workbenchWindow.getShell(),
+						ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"),
+						exception.getMessage());
+				return false;
+			}
 
-                    public void run() {
-                        ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
-                    }
-                });
-            }
+			return true;
+		} catch (Exception exception) {
+			ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
+			return false;
+		}
+	}
 
-            // Open an editor on the new file.
-            //
-            try {
-                page.openEditor(new FileEditorInput(modelFile),
-                        workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
-            } catch (PartInitException exception) {
-                MessageDialog.openError(workbenchWindow.getShell(),
-                        ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"),
-                        exception.getMessage());
-                return false;
-            }
+	/**
+	 * This is the one page of the wizard.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public class ServicelevelObjectiveModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 
-            return true;
-        } catch (Exception exception) {
-            ServiceLevelObjectiveEditorPlugin.INSTANCE.log(exception);
-            return false;
-        }
-    }
+		/**
+		 * Pass in the selection.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ServicelevelObjectiveModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+			super(pageId, selection);
+		}
 
-    /**
-     * This is the one page of the wizard.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    public class ServicelevelObjectiveModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+		/**
+		 * The framework calls this to see if the file is correct.
+		 * <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * @generated
+		 */
+		@Override
+		protected boolean validatePage() {
+			if (super.validatePage()) {
+				String extension = new Path(getFileName()).getFileExtension();
+				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+					setErrorMessage(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString(key,
+							new Object[] { FORMATTED_FILE_EXTENSIONS }));
+					return false;
+				}
+				return true;
+			}
+			return false;
+		}
 
-        /**
-         * Pass in the selection.
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        public ServicelevelObjectiveModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
-            super(pageId, selection);
-        }
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		public IFile getModelFile() {
+			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
+		}
+	}
 
-        /**
-         * The framework calls this to see if the file is correct.
-         * <!-- begin-user-doc --> <!--
-         * end-user-doc -->
-         * @generated
-         */
-        @Override
-        protected boolean validatePage() {
-            if (super.validatePage()) {
-                String extension = new Path(getFileName()).getFileExtension();
-                if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
-                    String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-                    setErrorMessage(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString(key,
-                            new Object[] { FORMATTED_FILE_EXTENSIONS }));
-                    return false;
-                }
-                return true;
-            }
-            return false;
-        }
+	/**
+	 * This is the page where the type of object to create is selected.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 */
+	public class ServicelevelObjectiveModelWizardInitialObjectCreationPage extends WizardPage {
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        public IFile getModelFile() {
-            return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
-        }
-    }
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Combo initialObjectField;
 
-    /**
-     * This is the page where the type of object to create is selected.
-     * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * @generated
-     */
-    public class ServicelevelObjectiveModelWizardInitialObjectCreationPage extends WizardPage {
+		/**
+		 * @generated <!-- begin-user-doc --> <!-- end-user-doc -->
+		 */
+		protected List<String> encodings;
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        protected Combo initialObjectField;
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Combo encodingField;
 
-        /**
-         * @generated <!-- begin-user-doc --> <!-- end-user-doc -->
-         */
-        protected List<String> encodings;
+		/**
+		 * Pass in the selection.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ServicelevelObjectiveModelWizardInitialObjectCreationPage(String pageId) {
+			super(pageId);
+		}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        protected Combo encodingField;
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		@Override
+		public void createControl(Composite parent) {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
+				GridLayout layout = new GridLayout();
+				layout.numColumns = 1;
+				layout.verticalSpacing = 12;
+				composite.setLayout(layout);
 
-        /**
-         * Pass in the selection.
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        public ServicelevelObjectiveModelWizardInitialObjectCreationPage(String pageId) {
-            super(pageId);
-        }
+				GridData data = new GridData();
+				data.verticalAlignment = GridData.FILL;
+				data.grabExcessVerticalSpace = true;
+				data.horizontalAlignment = GridData.FILL;
+				composite.setLayoutData(data);
+			}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        @Override
-        public void createControl(Composite parent) {
-            Composite composite = new Composite(parent, SWT.NONE);
-            {
-                GridLayout layout = new GridLayout();
-                layout.numColumns = 1;
-                layout.verticalSpacing = 12;
-                composite.setLayout(layout);
+			Label containerLabel = new Label(composite, SWT.LEFT);
+			{
+				containerLabel.setText(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
-                GridData data = new GridData();
-                data.verticalAlignment = GridData.FILL;
-                data.grabExcessVerticalSpace = true;
-                data.horizontalAlignment = GridData.FILL;
-                composite.setLayoutData(data);
-            }
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				containerLabel.setLayoutData(data);
+			}
 
-            Label containerLabel = new Label(composite, SWT.LEFT);
-            {
-                containerLabel.setText(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+			initialObjectField = new Combo(composite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				initialObjectField.setLayoutData(data);
+			}
 
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                containerLabel.setLayoutData(data);
-            }
+			for (String objectName : getInitialObjectNames()) {
+				initialObjectField.add(getLabel(objectName));
+			}
 
-            initialObjectField = new Combo(composite, SWT.BORDER);
-            {
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                data.grabExcessHorizontalSpace = true;
-                initialObjectField.setLayoutData(data);
-            }
+			if (initialObjectField.getItemCount() == 1) {
+				initialObjectField.select(0);
+			}
+			initialObjectField.addModifyListener(validator);
 
-            for (String objectName : getInitialObjectNames()) {
-                initialObjectField.add(getLabel(objectName));
-            }
+			Label encodingLabel = new Label(composite, SWT.LEFT);
+			{
+				encodingLabel.setText(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
-            if (initialObjectField.getItemCount() == 1) {
-                initialObjectField.select(0);
-            }
-            initialObjectField.addModifyListener(validator);
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				encodingLabel.setLayoutData(data);
+			}
+			encodingField = new Combo(composite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				encodingField.setLayoutData(data);
+			}
 
-            Label encodingLabel = new Label(composite, SWT.LEFT);
-            {
-                encodingLabel.setText(ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+			for (String encoding : getEncodings()) {
+				encodingField.add(encoding);
+			}
 
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                encodingLabel.setLayoutData(data);
-            }
-            encodingField = new Combo(composite, SWT.BORDER);
-            {
-                GridData data = new GridData();
-                data.horizontalAlignment = GridData.FILL;
-                data.grabExcessHorizontalSpace = true;
-                encodingField.setLayoutData(data);
-            }
+			encodingField.select(0);
+			encodingField.addModifyListener(validator);
 
-            for (String encoding : getEncodings()) {
-                encodingField.add(encoding);
-            }
+			setPageComplete(validatePage());
+			setControl(composite);
+		}
 
-            encodingField.select(0);
-            encodingField.addModifyListener(validator);
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected ModifyListener validator = new ModifyListener() {
+			@Override
+			public void modifyText(ModifyEvent e) {
+				setPageComplete(validatePage());
+			}
+		};
 
-            setPageComplete(validatePage());
-            setControl(composite);
-        }
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected boolean validatePage() {
+			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
+		}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        protected ModifyListener validator = new ModifyListener() {
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		@Override
+		public void setVisible(boolean visible) {
+			super.setVisible(visible);
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
+					initialObjectField.clearSelection();
+					encodingField.setFocus();
+				} else {
+					encodingField.clearSelection();
+					initialObjectField.setFocus();
+				}
+			}
+		}
 
-            public void modifyText(ModifyEvent e) {
-                setPageComplete(validatePage());
-            }
-        };
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		public String getInitialObjectName() {
+			String label = initialObjectField.getText();
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        protected boolean validatePage() {
-            return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
-        }
+			for (String name : getInitialObjectNames()) {
+				if (getLabel(name).equals(label)) {
+					return name;
+				}
+			}
+			return null;
+		}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        @Override
-        public void setVisible(boolean visible) {
-            super.setVisible(visible);
-            if (visible) {
-                if (initialObjectField.getItemCount() == 1) {
-                    initialObjectField.clearSelection();
-                    encodingField.setFocus();
-                } else {
-                    encodingField.clearSelection();
-                    initialObjectField.setFocus();
-                }
-            }
-        }
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		public String getEncoding() {
+			return encodingField.getText();
+		}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        public String getInitialObjectName() {
-            String label = initialObjectField.getText();
+		/**
+		 * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc
+		 * -->
+		 * 
+		 * @generated
+		 */
+		protected String getLabel(String typeName) {
+			try {
+				return ServiceLevelObjectiveEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+			} catch (MissingResourceException mre) {
+				ServiceLevelObjectiveEditorPlugin.INSTANCE.log(mre);
+			}
+			return typeName;
+		}
 
-            for (String name : getInitialObjectNames()) {
-                if (getLabel(name).equals(label)) {
-                    return name;
-                }
-            }
-            return null;
-        }
+		/**
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Collection<String> getEncodings() {
+			if (encodings == null) {
+				encodings = new ArrayList<String>();
+				for (StringTokenizer stringTokenizer = new StringTokenizer(
+						ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer
+								.hasMoreTokens();) {
+					encodings.add(stringTokenizer.nextToken());
+				}
+			}
+			return encodings;
+		}
+	}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        public String getEncoding() {
-            return encodingField.getText();
-        }
+	/**
+	 * The framework calls this to create the contents of the wizard.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void addPages() {
+		// Create a page, set the title, and the initial model file name.
+		//
+		newFileCreationPage = new ServicelevelObjectiveModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(
+				ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_ServicelevelObjectiveModelWizard_label"));
+		newFileCreationPage.setDescription(ServiceLevelObjectiveEditorPlugin.INSTANCE
+				.getString("_UI_ServicelevelObjectiveModelWizard_description"));
+		newFileCreationPage.setFileName(ServiceLevelObjectiveEditorPlugin.INSTANCE
+				.getString("_UI_ServicelevelObjectiveEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		addPage(newFileCreationPage);
 
-        /**
-         * Returns the label for the specified type name. <!-- begin-user-doc --> <!-- end-user-doc
-         * -->
-         * 
-         * @generated
-         */
-        protected String getLabel(String typeName) {
-            try {
-                return ServiceLevelObjectiveEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-            } catch (MissingResourceException mre) {
-                ServiceLevelObjectiveEditorPlugin.INSTANCE.log(mre);
-            }
-            return typeName;
-        }
+		// Try and get the resource selection to determine a current directory for the file dialog.
+		//
+		if (selection != null && !selection.isEmpty()) {
+			// Get the resource...
+			//
+			Object selectedElement = selection.iterator().next();
+			if (selectedElement instanceof IResource) {
+				// Get the resource parent, if its a file.
+				//
+				IResource selectedResource = (IResource) selectedElement;
+				if (selectedResource.getType() == IResource.FILE) {
+					selectedResource = selectedResource.getParent();
+				}
 
-        /**
-         * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * @generated
-         */
-        protected Collection<String> getEncodings() {
-            if (encodings == null) {
-                encodings = new ArrayList<String>();
-                for (StringTokenizer stringTokenizer = new StringTokenizer(
-                        ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer
-                        .hasMoreTokens();) {
-                    encodings.add(stringTokenizer.nextToken());
-                }
-            }
-            return encodings;
-        }
-    }
+				// This gives us a directory...
+				//
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+					// Set this for the container.
+					//
+					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
 
-    /**
-     * The framework calls this to create the contents of the wizard.
-     * <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void addPages() {
-        // Create a page, set the title, and the initial model file name.
-        //
-        newFileCreationPage = new ServicelevelObjectiveModelWizardNewFileCreationPage("Whatever", selection);
-        newFileCreationPage.setTitle(ServiceLevelObjectiveEditorPlugin.INSTANCE
-                .getString("_UI_ServicelevelObjectiveModelWizard_label"));
-        newFileCreationPage.setDescription(ServiceLevelObjectiveEditorPlugin.INSTANCE
-                .getString("_UI_ServicelevelObjectiveModelWizard_description"));
-        newFileCreationPage.setFileName(ServiceLevelObjectiveEditorPlugin.INSTANCE
-                .getString("_UI_ServicelevelObjectiveEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
-        addPage(newFileCreationPage);
+					// Make up a unique new name here.
+					//
+					String defaultModelBaseFilename = ServiceLevelObjectiveEditorPlugin.INSTANCE
+							.getString("_UI_ServicelevelObjectiveEditorFilenameDefaultBase");
+					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
+					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
+					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
+						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
+					}
+					newFileCreationPage.setFileName(modelFilename);
+				}
+			}
+		}
+		initialObjectCreationPage = new ServicelevelObjectiveModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(
+				ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_ServicelevelObjectiveModelWizard_label"));
+		initialObjectCreationPage.setDescription(
+				ServiceLevelObjectiveEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		addPage(initialObjectCreationPage);
+	}
 
-        // Try and get the resource selection to determine a current directory for the file dialog.
-        //
-        if (selection != null && !selection.isEmpty()) {
-            // Get the resource...
-            //
-            Object selectedElement = selection.iterator().next();
-            if (selectedElement instanceof IResource) {
-                // Get the resource parent, if its a file.
-                //
-                IResource selectedResource = (IResource) selectedElement;
-                if (selectedResource.getType() == IResource.FILE) {
-                    selectedResource = selectedResource.getParent();
-                }
-
-                // This gives us a directory...
-                //
-                if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
-                    // Set this for the container.
-                    //
-                    newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
-
-                    // Make up a unique new name here.
-                    //
-                    String defaultModelBaseFilename = ServiceLevelObjectiveEditorPlugin.INSTANCE
-                            .getString("_UI_ServicelevelObjectiveEditorFilenameDefaultBase");
-                    String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
-                    String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
-                        modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
-                    }
-                    newFileCreationPage.setFileName(modelFilename);
-                }
-            }
-        }
-        initialObjectCreationPage = new ServicelevelObjectiveModelWizardInitialObjectCreationPage("Whatever2");
-        initialObjectCreationPage.setTitle(ServiceLevelObjectiveEditorPlugin.INSTANCE
-                .getString("_UI_ServicelevelObjectiveModelWizard_label"));
-        initialObjectCreationPage.setDescription(ServiceLevelObjectiveEditorPlugin.INSTANCE
-                .getString("_UI_Wizard_initial_object_description"));
-        addPage(initialObjectCreationPage);
-    }
-
-    /**
-     * Get the file from the page.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    public IFile getModelFile() {
-        return newFileCreationPage.getModelFile();
-    }
+	/**
+	 * Get the file from the page.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IFile getModelFile() {
+		return newFileCreationPage.getModelFile();
+	}
 
 }

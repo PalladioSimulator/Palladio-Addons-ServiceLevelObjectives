@@ -5,6 +5,7 @@ package org.palladiosimulator.servicelevelobjective.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.palladiosimulator.servicelevelobjective.*;
 import org.palladiosimulator.servicelevelobjective.HardThreshold;
 import org.palladiosimulator.servicelevelobjective.LinearFuzzyThreshold;
 import org.palladiosimulator.servicelevelobjective.NamedElement;
@@ -21,252 +22,307 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- * 
  * @see org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage
  * @generated
  */
 public class ServicelevelObjectiveSwitch<T> extends Switch<T> {
 
-    /**
-     * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected static ServicelevelObjectivePackage modelPackage;
+	/**
+	 * The cached model package
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static ServicelevelObjectivePackage modelPackage;
 
-    /**
-     * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public ServicelevelObjectiveSwitch() {
-        if (modelPackage == null) {
-            modelPackage = ServicelevelObjectivePackage.eINSTANCE;
-        }
-    }
+	/**
+	 * Creates an instance of the switch.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServicelevelObjectiveSwitch() {
+		if (modelPackage == null) {
+			modelPackage = ServicelevelObjectivePackage.eINSTANCE;
+		}
+	}
 
-    /**
-     * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @parameter ePackage the package in question.
-     * @return whether this is a switch for the given package.
-     * @generated
-     */
-    @Override
-    protected boolean isSwitchFor(final EPackage ePackage) {
-        return ePackage == modelPackage;
-    }
+	/**
+	 * Checks whether this is a switch for the given package.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
+	 * @generated
+	 */
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
+	}
 
-    /**
-     * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
-     * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @return the first non-null result returned by a <code>caseXXX</code> call.
-     * @generated
-     */
-    @Override
-    protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID) {
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE_REPOSITORY: {
-            final ServiceLevelObjectiveRepository serviceLevelObjectiveRepository = (ServiceLevelObjectiveRepository) theEObject;
-            T result = this.caseServiceLevelObjectiveRepository(serviceLevelObjectiveRepository);
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE: {
-            final ServiceLevelObjective serviceLevelObjective = (ServiceLevelObjective) theEObject;
-            T result = this.caseServiceLevelObjective(serviceLevelObjective);
-            if (result == null) {
-                result = this.caseNamedElement(serviceLevelObjective);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(serviceLevelObjective);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        case ServicelevelObjectivePackage.THRESHOLD: {
-            final Threshold threshold = (Threshold) theEObject;
-            T result = this.caseThreshold(threshold);
-            if (result == null) {
-                result = this.caseIdentifier(threshold);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        case ServicelevelObjectivePackage.HARD_THRESHOLD: {
-            final HardThreshold hardThreshold = (HardThreshold) theEObject;
-            T result = this.caseHardThreshold(hardThreshold);
-            if (result == null) {
-                result = this.caseThreshold(hardThreshold);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(hardThreshold);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        case ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD: {
-            final LinearFuzzyThreshold linearFuzzyThreshold = (LinearFuzzyThreshold) theEObject;
-            T result = this.caseLinearFuzzyThreshold(linearFuzzyThreshold);
-            if (result == null) {
-                result = this.caseThreshold(linearFuzzyThreshold);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(linearFuzzyThreshold);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        case ServicelevelObjectivePackage.NAMED_ELEMENT: {
-            final NamedElement namedElement = (NamedElement) theEObject;
-            T result = this.caseNamedElement(namedElement);
-            if (result == null) {
-                result = this.caseIdentifier(namedElement);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
-            return result;
-        }
-        default:
-            return this.defaultCase(theEObject);
-        }
-    }
+	/**
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @generated
+	 */
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
+		switch (classifierID) {
+		case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE_REPOSITORY: {
+			ServiceLevelObjectiveRepository serviceLevelObjectiveRepository = (ServiceLevelObjectiveRepository) theEObject;
+			T result = caseServiceLevelObjectiveRepository(serviceLevelObjectiveRepository);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.SERVICE_LEVEL_OBJECTIVE: {
+			ServiceLevelObjective serviceLevelObjective = (ServiceLevelObjective) theEObject;
+			T result = caseServiceLevelObjective(serviceLevelObjective);
+			if (result == null)
+				result = caseNamedElement(serviceLevelObjective);
+			if (result == null)
+				result = caseIdentifier(serviceLevelObjective);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.THRESHOLD: {
+			Threshold threshold = (Threshold) theEObject;
+			T result = caseThreshold(threshold);
+			if (result == null)
+				result = caseIdentifier(threshold);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.HARD_THRESHOLD: {
+			HardThreshold hardThreshold = (HardThreshold) theEObject;
+			T result = caseHardThreshold(hardThreshold);
+			if (result == null)
+				result = caseThreshold(hardThreshold);
+			if (result == null)
+				result = caseIdentifier(hardThreshold);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.LINEAR_FUZZY_THRESHOLD: {
+			LinearFuzzyThreshold linearFuzzyThreshold = (LinearFuzzyThreshold) theEObject;
+			T result = caseLinearFuzzyThreshold(linearFuzzyThreshold);
+			if (result == null)
+				result = caseSoftThreshold(linearFuzzyThreshold);
+			if (result == null)
+				result = caseThreshold(linearFuzzyThreshold);
+			if (result == null)
+				result = caseIdentifier(linearFuzzyThreshold);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.NAMED_ELEMENT: {
+			NamedElement namedElement = (NamedElement) theEObject;
+			T result = caseNamedElement(namedElement);
+			if (result == null)
+				result = caseIdentifier(namedElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.SOFT_THRESHOLD: {
+			SoftThreshold softThreshold = (SoftThreshold) theEObject;
+			T result = caseSoftThreshold(softThreshold);
+			if (result == null)
+				result = caseThreshold(softThreshold);
+			if (result == null)
+				result = caseIdentifier(softThreshold);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.QUADRATIC_FUZZY_THRESHOLD: {
+			QuadraticFuzzyThreshold quadraticFuzzyThreshold = (QuadraticFuzzyThreshold) theEObject;
+			T result = caseQuadraticFuzzyThreshold(quadraticFuzzyThreshold);
+			if (result == null)
+				result = caseSoftThreshold(quadraticFuzzyThreshold);
+			if (result == null)
+				result = caseThreshold(quadraticFuzzyThreshold);
+			if (result == null)
+				result = caseIdentifier(quadraticFuzzyThreshold);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ServicelevelObjectivePackage.NEGATIVE_QUADRATIC_FUZZY_THRESHOLD: {
+			NegativeQuadraticFuzzyThreshold negativeQuadraticFuzzyThreshold = (NegativeQuadraticFuzzyThreshold) theEObject;
+			T result = caseNegativeQuadraticFuzzyThreshold(negativeQuadraticFuzzyThreshold);
+			if (result == null)
+				result = caseSoftThreshold(negativeQuadraticFuzzyThreshold);
+			if (result == null)
+				result = caseThreshold(negativeQuadraticFuzzyThreshold);
+			if (result == null)
+				result = caseIdentifier(negativeQuadraticFuzzyThreshold);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
+		}
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Service Level Objective Repository</em>'. <!-- begin-user-doc --> This implementation
-     * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Service Level Objective Repository</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseServiceLevelObjectiveRepository(final ServiceLevelObjectiveRepository object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Level Objective Repository</em>'.
+	 * <!-- begin-user-doc --> This implementation
+	 * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Level Objective Repository</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceLevelObjectiveRepository(ServiceLevelObjectiveRepository object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Service Level Objective</em>'. <!-- begin-user-doc --> This implementation returns null;
-     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Service Level Objective</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseServiceLevelObjective(final ServiceLevelObjective object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Level Objective</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Level Objective</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceLevelObjective(ServiceLevelObjective object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Threshold</em>'. <!--
-     * begin-user-doc --> This implementation returns null; returning a non-null result will
-     * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Threshold</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseThreshold(final Threshold object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Threshold</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Threshold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreshold(Threshold object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Hard Threshold</em>'.
-     * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
-     * terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Hard Threshold</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseHardThreshold(final HardThreshold object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hard Threshold</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hard Threshold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHardThreshold(HardThreshold object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Linear Fuzzy Threshold</em>'. <!-- begin-user-doc --> This implementation returns null;
-     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Linear Fuzzy Threshold</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseLinearFuzzyThreshold(final LinearFuzzyThreshold object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Linear Fuzzy Threshold</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Linear Fuzzy Threshold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinearFuzzyThreshold(LinearFuzzyThreshold object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-     * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
-     * terminate the switch. <!-- end-user-doc -->
-     * 
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseNamedElement(final NamedElement object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'. <!--
-     * begin-user-doc --> This implementation returns null; returning a non-null result will
-     * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseIdentifier(final Identifier object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Soft Threshold</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Soft Threshold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSoftThreshold(SoftThreshold object) {
+		return null;
+	}
 
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
-     * begin-user-doc --> This implementation returns null; returning a non-null result will
-     * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-     * @generated
-     */
-    @Override
-    public T defaultCase(final EObject object) {
-        return null;
-    }
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Quadratic Fuzzy Threshold</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Quadratic Fuzzy Threshold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuadraticFuzzyThreshold(QuadraticFuzzyThreshold object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negative Quadratic Fuzzy Threshold</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negative Quadratic Fuzzy Threshold</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegativeQuadraticFuzzyThreshold(NegativeQuadraticFuzzyThreshold object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIdentifier(Identifier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch, but this is the last case anyway. <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	@Override
+	public T defaultCase(EObject object) {
+		return null;
+	}
 
 } // ServicelevelObjectiveSwitch

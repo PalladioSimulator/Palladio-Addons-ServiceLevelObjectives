@@ -5,7 +5,7 @@
     modelPluginID="org.palladiosimulator.servicelevelobjective" modelName="ServiceLevelObjective"
     rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     codeFormatting="true" testsDirectory="/org.palladiosimulator.servicelevelobjective.tests/src"
-    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="7.0"
+    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="8.0"
     copyrightFields="false" usedGenPackages="platform:/plugin/org.palladiosimulator.edp2/model/EDP2.genmodel#//models platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec ../../org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel#//monitorrepository ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm ../../de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction ../../de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex ../../de.uka.ipd.sdq.units/model/Units.genmodel#//units"
     importOrganizing="true" cleanup="true">
   <foreignModel>servicelevelobjective.ecore</foreignModel>
@@ -25,11 +25,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute servicelevelobjective.ecore#//Threshold/thresholdLimit"/>
     </genClasses>
     <genClasses ecoreClass="servicelevelobjective.ecore#//HardThreshold"/>
-    <genClasses ecoreClass="servicelevelobjective.ecore#//LinearFuzzyThreshold">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute servicelevelobjective.ecore#//LinearFuzzyThreshold/softLimit"/>
-    </genClasses>
+    <genClasses ecoreClass="servicelevelobjective.ecore#//LinearFuzzyThreshold"/>
     <genClasses ecoreClass="servicelevelobjective.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute servicelevelobjective.ecore#//NamedElement/name"/>
     </genClasses>
+    <genClasses ecoreClass="servicelevelobjective.ecore#//SoftThreshold">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute servicelevelobjective.ecore#//SoftThreshold/softLimit"/>
+    </genClasses>
+    <genClasses ecoreClass="servicelevelobjective.ecore#//QuadraticFuzzyThreshold"/>
+    <genClasses ecoreClass="servicelevelobjective.ecore#//NegativeQuadraticFuzzyThreshold"/>
   </genPackages>
 </genmodel:GenModel>
