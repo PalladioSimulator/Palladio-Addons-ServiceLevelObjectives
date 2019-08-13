@@ -16,82 +16,82 @@ import de.uka.ipd.sdq.stoex.provider.StoexEditPlugin;
 import de.uka.ipd.sdq.units.provider.UnitsEditPlugin;
 
 /**
- * This is the central singleton for the ServiceLevelObjective editor plugin. <!-- begin-user-doc
+ * This is the central singleton for the ServiceLevelObjective editor plugin.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public final class ServiceLevelObjectiveEditorPlugin extends EMFPlugin {
 
-    /**
-     * Keep track of the singleton. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public static final ServiceLevelObjectiveEditorPlugin INSTANCE = new ServiceLevelObjectiveEditorPlugin();
+	/**
+	 * Keep track of the singleton.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final ServiceLevelObjectiveEditorPlugin INSTANCE = new ServiceLevelObjectiveEditorPlugin();
 
-    /**
-     * Keep track of the singleton. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    private static Implementation plugin;
+	/**
+	 * Keep track of the singleton.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static Implementation plugin;
 
-    /**
-     * Create the instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public ServiceLevelObjectiveEditorPlugin() {
-        super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
-                MetricSpecEditPlugin.INSTANCE, MonitorrepositoryEditPlugin.INSTANCE,
-                PalladioComponentModelEditPlugin.INSTANCE, ProbabilityFunctionEditPlugin.INSTANCE,
-                StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
-    }
+	/**
+	 * Create the instance.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceLevelObjectiveEditorPlugin() {
+		super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
+				MetricSpecEditPlugin.INSTANCE, MonitorrepositoryEditPlugin.INSTANCE,
+				PalladioComponentModelEditPlugin.INSTANCE, ProbabilityFunctionEditPlugin.INSTANCE,
+				StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
+	}
 
-    /**
-     * Returns the singleton instance of the Eclipse plugin. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @return the singleton instance.
-     * @generated
-     */
-    @Override
-    public ResourceLocator getPluginResourceLocator() {
-        return plugin;
-    }
+	/**
+	 * Returns the singleton instance of the Eclipse plugin.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @return the singleton instance.
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getPluginResourceLocator() {
+		return plugin;
+	}
 
-    /**
-     * Returns the singleton instance of the Eclipse plugin. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @return the singleton instance.
-     * @generated
-     */
-    public static Implementation getPlugin() {
-        return plugin;
-    }
+	/**
+	 * Returns the singleton instance of the Eclipse plugin.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @return the singleton instance.
+	 * @generated
+	 */
+	public static Implementation getPlugin() {
+		return plugin;
+	}
 
-    /**
-     * The actual implementation of the Eclipse <b>Plugin</b>. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @generated
-     */
-    public static class Implementation extends EclipseUIPlugin {
+	/**
+	 * The actual implementation of the Eclipse <b>Plugin</b>.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 */
+	public static class Implementation extends EclipseUIPlugin {
 
-        /**
-         * Creates an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
-         * @generated
-         */
-        public Implementation() {
-            super();
+		/**
+		 * Creates an instance.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Implementation() {
+			super();
 
-            // Remember the static instance.
-            //
-            plugin = this;
-        }
-    }
+			// Remember the static instance.
+			//
+			plugin = this;
+		}
+	}
 
 }
