@@ -1,4 +1,3 @@
-palladioBuild {
-	webserverDir = 'servicelevelobjectives'
-	updateSiteLocation = 'releng/org.palladiosimulator.servicelevelobjectives.updatesite/target/repository'
+PalladioPipeline {
+    deployUpdatesite 'releng/org.palladiosimulator.servicelevelobjectives.updatesite/target/repository'
 }
