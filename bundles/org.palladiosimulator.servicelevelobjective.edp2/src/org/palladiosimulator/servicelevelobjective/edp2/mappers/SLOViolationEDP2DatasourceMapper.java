@@ -21,6 +21,12 @@ import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.SoftThreshold;
 import org.palladiosimulator.servicelevelobjective.Threshold;
 
+/**
+ * This mapper offers the computation of SLO fulfillment grades for measurements 
+ * in relation to their assigned service level objectives.
+ * This enables evaluation of fuzzy thresholded service level objectives.
+ *
+ */
 public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements IPersistable, IPersistableElement {
 	@SuppressWarnings({ "rawtypes"})
 	HashMap<Measure, Double> map = new HashMap<Measure, Double>();
@@ -43,7 +49,7 @@ public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements 
 	/**
 	 * Determines whether an SLO violations occurred for the given SLO member
 	 * variable and for the given measurement, computes their fulfillment Grade for fuzzy Thresholds.
-	 *  Linear, Quadratic and Negative Quadratic Thresholds are supported
+	 * Linear, Quadratic and Negative Quadratic Thresholds are supported
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings({ "rawtypes" })
@@ -86,6 +92,9 @@ public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements 
 
 	}
 
+	/**
+	 * Computes the grade of fulfillment of a measurement regarding the lower and upper threshold
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private double getGrade(Measure measurement, Threshold lower, Threshold upper) {
 
@@ -97,7 +106,7 @@ public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements 
 			if ((lower instanceof SoftThreshold)) {
 				final Measure lowerThresholdSoftLimit = ((SoftThreshold) lower).getSoftLimit();
 				if (measurement.compareTo(lowerThresholdSoftLimit) < 0) {
-					return gradeSoftLowerThreshold(measurement, (SoftThreshold) lower); // modify this
+					return gradeSoftLowerThreshold(measurement, (SoftThreshold) lower);
 				}
 			}
 		}
@@ -119,6 +128,10 @@ public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements 
 
 		return 0.0;
 	}
+	
+	/**
+	 * Handles grading of measurements in lower fuzzy range
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private double gradeSoftLowerThreshold(Measure toGrade, SoftThreshold lowerThreshold) {
 		double x = (double) toGrade.getValue();
@@ -136,7 +149,9 @@ public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements 
 		}
 		return 0;
 	}
-
+	/**
+	 * Handles grading of measurements in upper fuzzy range
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private double gradeSoftUpperThreshold(Measure toGrade, SoftThreshold upperThreshold) {
 		double x = (double) toGrade.getValue();
@@ -167,7 +182,7 @@ public class SLOViolationEDP2DatasourceMapper extends AbstractFilter implements 
 	}
 
 	/**
-	 * returns a Hashmap containing the Measurements and their corresponding Grades according to the SLO 
+	 * Returns a Hashmap containing the Measurements and their corresponding Grades according to the SLO 
 	 * @return Hashmap<Measurement, Grade>
 	 */
 	@SuppressWarnings({ "rawtypes"})
