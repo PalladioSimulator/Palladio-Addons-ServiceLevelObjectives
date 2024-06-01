@@ -1,9 +1,6 @@
 # Palladio-Addons-ServiceLevelObjectives
 Service Level Objectives can be used to specifiy thresholds for monitored elements (see Monitor Repository). Currently upper and lower thresholds are supported as either hard thresholds or linear fuzzy thresholds with an additional "soft" threshold.
 
-## Documentation
-For comprehensive documentation, please visit our [wiki page](https://sdqweb.ipd.kit.edu/wiki/PCM_AddOns).
-
 ## Support
 For support
 * visit our [issue tracking system](https://palladio-simulator.com/jira)
