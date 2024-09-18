@@ -2,3 +2,5 @@ target/
 # Compiled class file
 *.class
 bin/
+tests/org.palladiosimulator.servicelevelobjective.tests/test.metricspec
+tests/org.palladiosimulator.servicelevelobjective.tests/test.slo
