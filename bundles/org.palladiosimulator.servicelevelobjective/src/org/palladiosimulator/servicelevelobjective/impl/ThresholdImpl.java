@@ -2,7 +2,7 @@
  */
 package org.palladiosimulator.servicelevelobjective.impl;
 
-import javax.measure.Measure;
+import jakarta.measure.Measure;
 
 import org.eclipse.emf.ecore.EClass;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;

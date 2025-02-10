@@ -5,12 +5,12 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Collections;
 
-import javax.measure.DecimalMeasure;
-import javax.measure.Measure;
-import javax.measure.quantity.Duration;
-import javax.measure.quantity.Quantity;
-import javax.measure.unit.SI;
-import javax.measure.unit.Unit;
+import jakarta.measure.DecimalMeasure;
+import jakarta.measure.Measure;
+import jakarta.measure.quantity.Duration;
+import jakarta.measure.quantity.Quantity;
+import jakarta.measure.unit.SI;
+import jakarta.measure.unit.Unit;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;

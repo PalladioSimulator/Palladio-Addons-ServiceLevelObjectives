@@ -1,6 +1,6 @@
 package org.palladiosimulator.servicelevelobjective.edp2.filters;
 
-import javax.measure.Measure;
+import jakarta.measure.Measure;
 
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistable;

@@ -2,7 +2,7 @@ package org.palladiosimulator.servicelevelobjective.edp2.mappers;
 
 import java.util.HashMap;
 
-import javax.measure.Measure;
+import jakarta.measure.Measure;
 
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistable;

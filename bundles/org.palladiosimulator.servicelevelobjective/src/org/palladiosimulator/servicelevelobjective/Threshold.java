@@ -2,7 +2,7 @@
  */
 package org.palladiosimulator.servicelevelobjective;
 
-import javax.measure.Measure;
+import jakarta.measure.Measure;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 

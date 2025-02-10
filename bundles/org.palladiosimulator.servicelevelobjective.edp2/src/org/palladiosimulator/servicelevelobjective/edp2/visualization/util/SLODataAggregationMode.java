@@ -3,9 +3,9 @@ package org.palladiosimulator.servicelevelobjective.edp2.visualization.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
-import javax.measure.unit.Unit;
+import jakarta.measure.Measure;
+import jakarta.measure.quantity.Quantity;
+import jakarta.measure.unit.Unit;
 
 import org.apache.commons.math.stat.descriptive.DescriptiveStatistics;
 import org.palladiosimulator.edp2.datastream.IDataSource;

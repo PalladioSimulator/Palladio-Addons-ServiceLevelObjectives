@@ -1,7 +1,7 @@
 package org.palladiosimulator.servicelevelobjective.edp2.visualization.wizards;
 
-import javax.measure.Measure;
-import javax.measure.quantity.Quantity;
+import jakarta.measure.Measure;
+import jakarta.measure.quantity.Quantity;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
