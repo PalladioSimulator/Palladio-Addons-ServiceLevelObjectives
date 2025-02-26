@@ -31,7 +31,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.monitorrepository.feature.feature.group" version="3.0.2.201712121319"/>
-<repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/branches/no_ui-workflow"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/branches/no_ui-workflow_edp2"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.pcm.feature.feature.group" version="4.1.0.201709282114"/>
@@ -39,7 +39,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.pcm.feature.feature.group" version="4.1.0.201709282114"/>
-<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/branches/no_ui-workflow"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/branches/no_ui-workflow_edp2"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.edp2.feature.feature.group" version="1.0.0.201712071336"/>
@@ -49,7 +49,7 @@
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.edp2.feature.feature.group" version="1.0.0.201712071336"/>
 <unit id="org.palladiosimulator.edp2.ui.feature.feature.group" version="1.0.1.201712071336"/>
-<repository location="https://updatesite.palladio-simulator.com/palladio-qual-edp2/branches/no_ui-workflow"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-qual-edp2/branches/no_ui-workflow_edp2"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.measurementframework.feature.feature.group" version="1.0.1.201606011729"/>
@@ -65,7 +65,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.editors.commons.feature.feature.group" version="2.1.1.201709282144"/>
-<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/branches/no_ui-workflow"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/branches/no_ui-workflow_edp2"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 <unit id="tools.mdsd.library.emfeditutils.feature.feature.group" version="0.0.0"/>
