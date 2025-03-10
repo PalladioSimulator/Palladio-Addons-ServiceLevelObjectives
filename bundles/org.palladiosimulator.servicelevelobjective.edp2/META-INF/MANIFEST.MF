@@ -19,7 +19,8 @@ Require-Bundle: org.apache.commons.math,
  org.palladiosimulator.edp2.visualization.jfreechart;bundle-version="1.0.0",
  org.palladiosimulator.measurementframework;bundle-version="1.0.0",
  org.palladiosimulator.servicelevelobjective;bundle-version="0.1.0",
- org.palladiosimulator.edp2.datastream.ui;bundle-version="5.2.1"
+ org.palladiosimulator.edp2.datastream.ui;bundle-version="5.2.1",
+ org.palladiosimulator.servicelevelobjective.edp2.core;bundle-version="5.2.1";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.palladiosimulator.servicelevelobjective.edp2,

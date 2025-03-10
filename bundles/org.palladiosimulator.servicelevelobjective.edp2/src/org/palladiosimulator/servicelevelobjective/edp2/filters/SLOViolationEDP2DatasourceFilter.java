@@ -12,6 +12,7 @@ import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
+import org.palladiosimulator.servicelevelobjective.edp2.core.filters.SLOViolationEDP2DatasourceFilterConfiguration;
 
 public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements IPersistable, IPersistableElement {
 
