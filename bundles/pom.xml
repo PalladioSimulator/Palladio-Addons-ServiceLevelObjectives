@@ -15,8 +15,8 @@
 		<module>org.palladiosimulator.servicelevelobjective</module>
 		<module>org.palladiosimulator.servicelevelobjective.edit</module>
 		<module>org.palladiosimulator.servicelevelobjective.editor</module>
+		<module>org.palladiosimulator.servicelevelobjective.edp2.core</module>
 		<module>org.palladiosimulator.servicelevelobjective.edp2</module>
-		<module>org.palladiosimulator.servicelevelobjective.edp2.ui</module>
 	</modules>
 	
 </project>

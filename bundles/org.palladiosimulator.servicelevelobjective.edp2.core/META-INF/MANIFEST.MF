@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.palladiosimulator.servicelevelobjective.edp2.ui
-Bundle-SymbolicName: org.palladiosimulator.servicelevelobjective.edp2.ui
+Bundle-Name: org.palladiosimulator.servicelevelobjective.edp2.core
+Bundle-SymbolicName: org.palladiosimulator.servicelevelobjective.edp2.core
 Bundle-Version: 5.2.1.qualifier
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-17
