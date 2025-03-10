@@ -1,8 +1,8 @@
 package org.palladiosimulator.servicelevelobjective.edp2.filters;
 
 import org.eclipse.ui.IMemento;
-import org.palladiosimulator.edp2.datastream.configurable.DataSinkElementFactory;
 import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
+import org.palladiosimulator.edp2.datastream.ui.configurable.DataSinkElementFactory;
 
 public class SLOViolationEDP2DatasourceFilterFactory extends DataSinkElementFactory {
 
