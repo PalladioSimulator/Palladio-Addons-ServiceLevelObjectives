@@ -1,10 +1,7 @@
-package org.palladiosimulator.servicelevelobjective.edp2.filters;
+package org.palladiosimulator.servicelevelobjective.edp2.core.filters;
 
 import javax.measure.Measure;
 
-import org.eclipse.ui.IMemento;
-import org.eclipse.ui.IPersistable;
-import org.eclipse.ui.IPersistableElement;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
@@ -13,7 +10,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 
-public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements IPersistable, IPersistableElement {
+public class SLOViolationEDP2DatasourceFilter extends AbstractFilter {
 
     public SLOViolationEDP2DatasourceFilter() {
         // FIXME: Which metric should really be given here?
@@ -41,50 +38,42 @@ public class SLOViolationEDP2DatasourceFilter extends AbstractFilter implements 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     protected boolean shouldSkip(final MeasuringValue measurement) {
-        if (this.getConfiguration().isPropertyNotSet(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY)) {
-            //    throw new RuntimeException("Filter Configuration requires a Service Level Object.");
+        if (this.getConfiguration()
+            .isPropertyNotSet(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY)) {
+            // throw new RuntimeException("Filter Configuration requires a Service Level Object.");
             return false;
         }
 
-        final Object propertyObject = this.getConfiguration().getProperties()
-                .get(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
+        final Object propertyObject = this.getConfiguration()
+            .getProperties()
+            .get(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
         if (!(propertyObject instanceof ServiceLevelObjective)) {
-            //    throw new RuntimeException("Expected a ServiceLevelObjective for the property "
-            //            + SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
+            // throw new RuntimeException("Expected a ServiceLevelObjective for the property "
+            // + SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY);
             return false;
         }
 
         final ServiceLevelObjective serviceLevelObjective = (ServiceLevelObjective) propertyObject;
-        final Measure responseTime = measurement.getMeasureForMetric(serviceLevelObjective
-                .getMeasurementSpecification().getMetricDescription());
+        final Measure responseTime = measurement.getMeasureForMetric(serviceLevelObjective.getMeasurementSpecification()
+            .getMetricDescription());
 
         if (serviceLevelObjective.getLowerThreshold() != null) {
-            final Measure lowerThreshold = serviceLevelObjective.getLowerThreshold().getThresholdLimit();
+            final Measure lowerThreshold = serviceLevelObjective.getLowerThreshold()
+                .getThresholdLimit();
             if (responseTime.compareTo(lowerThreshold) < 0) {
                 return false;
             }
         }
 
         if (serviceLevelObjective.getUpperThreshold() != null) {
-            final Measure upperThreshold = serviceLevelObjective.getUpperThreshold().getThresholdLimit();
+            final Measure upperThreshold = serviceLevelObjective.getUpperThreshold()
+                .getThresholdLimit();
             if (responseTime.compareTo(upperThreshold) > 0) {
                 return false;
             }
         }
 
         return true;
-    }
-
-    @Override
-    public String getFactoryId() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void saveState(final IMemento memento) {
-        // TODO Auto-generated method stub
-
     }
 
     /*
