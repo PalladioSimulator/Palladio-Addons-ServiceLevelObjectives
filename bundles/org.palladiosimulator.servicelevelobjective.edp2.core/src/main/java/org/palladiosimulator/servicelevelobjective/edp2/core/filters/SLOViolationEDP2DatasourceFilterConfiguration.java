@@ -1,4 +1,4 @@
-package org.palladiosimulator.servicelevelobjective.edp2.filters;
+package org.palladiosimulator.servicelevelobjective.edp2.core.filters;
 
 import java.util.HashMap;
 import java.util.Map;
