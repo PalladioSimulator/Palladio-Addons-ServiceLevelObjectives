@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.palladiosimulator.servicelevelobjective.edp2.core
 Bundle-SymbolicName: org.palladiosimulator.servicelevelobjective.edp2.core
-Bundle-Version: 5.2.1.qualifier
+Bundle-Version: 5.2.2
 Export-Package: org.palladiosimulator.servicelevelobjective.edp2.core.filters
-Require-Bundle: org.palladiosimulator.edp2.datastream;bundle-version="5.2.1",
- org.palladiosimulator.servicelevelobjective;bundle-version="5.2.1"
+Require-Bundle: org.palladiosimulator.edp2.datastream;bundle-version="5.2.2",
+ org.palladiosimulator.servicelevelobjective;bundle-version="5.2.2"
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
