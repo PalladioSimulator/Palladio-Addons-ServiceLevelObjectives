@@ -57,9 +57,10 @@
                sinkID="org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput">
          </datasink>
          <filter
-               filterClass="org.palladiosimulator.servicelevelobjective.edp2.filters.SLOViolationEDP2DatasourceFilter">
+               filterClass="org.palladiosimulator.servicelevelobjective.edp2.core.filters.SLOViolationEDP2DatasourceFilter">
          </filter>
       </chainDescription>
    </extension>
 
 </plugin>
+
