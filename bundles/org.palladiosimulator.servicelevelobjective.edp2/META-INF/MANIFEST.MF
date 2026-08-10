@@ -21,7 +21,7 @@ Require-Bundle: org.apache.commons.math,
  org.palladiosimulator.servicelevelobjective,
  org.palladiosimulator.edp2.datastream.ui,
  org.palladiosimulator.servicelevelobjective.edp2.core;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Export-Package: org.palladiosimulator.servicelevelobjective.edp2,
  org.palladiosimulator.servicelevelobjective.edp2.filters,

@@ -7,6 +7,6 @@ Export-Package: org.palladiosimulator.servicelevelobjective.edp2.core.filters
 Require-Bundle: org.palladiosimulator.edp2.datastream,
  org.palladiosimulator.servicelevelobjective
 Bundle-Vendor: palladiosimulator.org
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 
