@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.palladiosimulator.servicelevelobjective.edp2;singleton:
 Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.palladiosimulator.servicelevelobjective.edp2.SLOEDP2UIPlugin
 Bundle-Vendor: palladiosimulator.org
-Require-Bundle: org.apache.commons.math,
+Require-Bundle: org.apache.commons.math3,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.emf.common.ui,
