@@ -38,7 +38,7 @@
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.apache.commons.math"/>
+      <import plugin="org.apache.commons.math3"/>
       <import plugin="org.eclipse.emf.common.ui"/>
       <import plugin="org.jfree.jfreechart"/>
       <import plugin="org.palladiosimulator.commons"/>
